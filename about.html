@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#f3f0e7">
+<meta name="description" content="David Mullett — independent researcher building theorem-grounded warning criteria for recursive feedback systems. Loopzero is a diagnostic framework with a formal component in Lean 4.">
+<title>About · David Mullett</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400;1,8..60,500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream:     #f3f0e7;
+  --ink:       #1a1710;
+  --ink-2:     #48443c;
+  --ink-3:     #8c8880;
+  --rule-lt:   #d8d4c8;
+  --ph:        #2dd67a;
+  --ph-dim:    rgba(45,214,122,.06);
+  --ph-border: rgba(45,214,122,.55);
+  --serif:     'Source Serif 4', Georgia, serif;
+  --mono:      'IBM Plex Mono', 'Courier New', Courier, monospace;
+}
+
+html {
+  font-size: 18px;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "liga" 1, "kern" 1, "onum" 1;
+  background: #f3f0e7;
+  color-scheme: only light;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--serif);
+  line-height: 1.75;
+}
+
+/* ── LAYOUT ── */
+.page {
+  max-width: 680px;
+  margin: 0 auto 0 max(80px, 14vw);
+  padding: 56px 0 128px;
+}
+
+/* ── NAV ── */
+nav {
+  margin-bottom: 64px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--rule-lt);
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 0 28px;
+  flex-wrap: wrap;
+}
+.nav-list a {
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  text-decoration: none;
+}
+.nav-list a:hover { color: var(--ph); }
+.nav-list a[aria-current="page"] { color: var(--ink-2); }
+
+.mark { display: block; line-height: 0; margin-bottom: 20px; opacity: 0.82; }
+.mark svg { display: block; overflow: visible; }
+
+/* ── LINKS ── */
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-lt);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color .14s, color .14s;
+}
+a:hover {
+  text-decoration-color: var(--ph);
+  color: var(--ph);
+}
+
+/* ── TYPOGRAPHY ── */
+p {
+  max-width: 54ch;
+  margin-bottom: 1.2em;
+  font-size: 1rem;
+  line-height: 1.74;
+  color: var(--ink);
+}
+p:last-child { margin-bottom: 0; }
+
+h2 {
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin-bottom: 22px;
+  line-height: 1.4;
+}
+
+/* ── PAGE HEADER ── */
+.page-header {
+  margin-bottom: 56px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--rule-lt);
+}
+.page-name {
+  font-family: var(--serif);
+  font-size: 0.82rem;
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.page-descriptor {
+  font-family: var(--mono);
+  font-size: 0.61rem;
+  font-weight: 300;
+  color: var(--ink-2);
+  letter-spacing: 0.03em;
+  line-height: 1.60;
+}
+
+/* ── SECTIONS ── */
+section {
+  margin-bottom: 52px;
+}
+section:last-of-type { margin-bottom: 0; }
+
+/* ── BACKGROUND LEDGER ── */
+.ledger { list-style: none; max-width: 54ch; }
+.ledger li {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule-lt);
+  gap: 3px;
+}
+.ledger li:first-child { border-top: 1px solid var(--rule-lt); }
+.l-primary { font-size: 0.9rem; line-height: 1.45; color: var(--ink); }
+.l-secondary {
+  font-size: 0.62rem;
+  font-family: var(--mono);
+  font-weight: 300;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+}
+
+/* ── CONTACT BLOCK ── */
+.contact-block {
+  max-width: 54ch;
+}
+.contact-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--rule-lt);
+}
+.contact-row:first-child { border-top: 1px solid var(--rule-lt); }
+.contact-label {
+  font-family: var(--mono);
+  font-size: 0.54rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  min-width: 52px;
+  flex-shrink: 0;
+}
+.contact-value {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 400;
+  color: var(--ink-2);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.contact-value:hover { color: var(--ph); text-decoration: none; }
+a.contact-value {
+  text-decoration: none;
+}
+
+/* ── FOOTER ── */
+footer {
+  margin-top: 88px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule-lt);
+}
+.footer-text {
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  font-weight: 300;
+  color: var(--ink-2);
+  letter-spacing: 0.05em;
+  line-height: 1.9;
+}
+.footer-text a {
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  font-weight: 300;
+  color: var(--ink-2);
+  text-decoration: none;
+}
+.footer-text a:hover { color: var(--ph); }
+.foot-sep { color: var(--ink-3); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 760px) {
+  html { font-size: 17px; }
+  .page { margin: 0 auto; padding: 44px 32px 96px; }
+}
+@media (max-width: 460px) {
+  html { font-size: 16px; }
+  .page { padding: 36px 20px 80px; }
+  .nav-list { gap: 12px 20px; }
+}
+</style>
+</head>
+<body style="background:#f3f0e7 !important; color:#1a1710 !important;">
+<div class="page">
+
+<nav aria-label="Site navigation">
+  <ul class="nav-list">
+    <li><a href="index.html">Research</a></li>
+    <li><a href="about.html" aria-current="page">About</a></li>
+    <li><a href="mailto:d@loopzero.org">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="mark">
+    <svg id="spiralSvgAbout" width="36" height="36" viewBox="0 0 80 80"
+         xmlns="http://www.w3.org/2000/svg"
+         aria-label="Loopzero mark" role="img"></svg>
+  </div>
+
+  <div class="page-name">David Mullett</div>
+  <div class="page-descriptor">Independent researcher.</div>
+</div>
+
+
+<!-- 1. INTRODUCTION -->
+<section>
+  <h2>Introduction</h2>
+
+  <p>
+    I am an independent researcher building theorem-grounded warning criteria
+    for collapse in recursive feedback systems. My current work centers on
+    Loopzero — a theorem-grounded diagnostic framework for this class of
+    systems, with a formal component in Lean&nbsp;4 and empirical evaluation
+    of a corresponding detection criterion forthcoming.
+  </p>
+
+  <p>
+    The research is focused on a specific and bounded problem: characterizing
+    the conditions under which recursive feedback systems reach a fixed
+    point and stop evolving. The goal is a precise, machine-checkable object
+    that others can inspect, extend, and apply.
+  </p>
+</section>
+
+
+<!-- 2. RESEARCH ORIENTATION -->
+<section>
+  <h2>Research orientation</h2>
+
+  <p>
+    After Meta Reality Labs, I focused on the structural conditions under
+    which recursive feedback systems collapse — a problem that recurs across
+    recommendation, discovery, and trading architectures and is rarely
+    specified with precision. Loopzero is an attempt to provide that
+    specification in a form that is machine-checkable and extensible.
+  </p>
+</section>
+
+
+<!-- 3. BACKGROUND -->
+<section>
+  <h2>Background</h2>
+
+  <ul class="ledger">
+    <li>
+      <span class="l-primary">Independent researcher</span>
+      <span class="l-secondary">2023–present</span>
+    </li>
+    <li>
+      <span class="l-primary">Lead Product Designer&nbsp;·&nbsp;Meta Reality Labs</span>
+      <span class="l-secondary">2021–2022</span>
+    </li>
+    <li>
+      <span class="l-primary">Co-Founder &amp; Chief Design Officer&nbsp;·&nbsp;Pupil (now&nbsp;Digital&nbsp;Reality&nbsp;Corp.)</span>
+      <span class="l-secondary">2015–2021</span>
+    </li>
+    <li>
+      <span class="l-primary">MA Visual Communication&nbsp;·&nbsp;Royal College of Art</span>
+      <span class="l-secondary"></span>
+    </li>
+    <li>
+      <span class="l-primary">BA Art History&nbsp;·&nbsp;Northwestern University</span>
+      <span class="l-secondary"></span>
+    </li>
+  </ul>
+</section>
+
+
+<!-- 3b. CURRENT WORK / IP -->
+<section>
+  <h2>Current work</h2>
+
+  <ul class="ledger">
+    <li>
+      <span class="l-primary">A theorem-grounded warning criterion for collapse in recursive systems</span>
+      <span class="l-secondary">Preprint in preparation · target submission Q3 2026</span>
+    </li>
+    <li>
+      <span class="l-primary">USPTO Provisional Application 64/042,661</span>
+      <span class="l-secondary">Filed April 2026 · Loopzero, Inc.</span>
+    </li>
+  </ul>
+</section>
+
+
+<!-- 4. CONTACT -->
+<section>
+  <h2>Contact</h2>
+
+  <div class="contact-block">
+    <div class="contact-row">
+      <span class="contact-label">Email</span>
+      <a class="contact-value" href="mailto:d@loopzero.org">d@loopzero.org</a>
+    </div>
+    <div class="contact-row">
+      <span class="contact-label">ORCID</span>
+      <a class="contact-value"
+         href="https://orcid.org/0009-0004-2543-1664"
+         target="_blank" rel="noopener"
+         title="ORCID researcher profile">0009-0004-2543-1664</a>
+    </div>
+    <div class="contact-row">
+      <span class="contact-label">GitHub</span>
+      <a class="contact-value"
+         href="https://github.com/davidmullett"
+         target="_blank" rel="noopener">github.com/davidmullett</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<footer>
+  <div class="footer-text">
+    davidmullett.com
+    <span class="foot-sep">&nbsp;·&nbsp;</span>
+    <a href="https://orcid.org/0009-0004-2543-1664"
+       target="_blank" rel="noopener">ORCID&nbsp;0009-0004-2543-1664</a>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function() {
+  const svg = document.getElementById('spiralSvgAbout');
+  if (!svg) return;
+  const ns = 'http://www.w3.org/2000/svg';
+
+  const path = document.createElementNS(ns, 'path');
+  path.setAttribute('fill', 'none');
+  path.setAttribute('stroke', '#1a1814');
+  path.setAttribute('stroke-width', '1.2');
+  path.setAttribute('stroke-linecap', 'round');
+  path.setAttribute('d', `M40,40 Q40,8 66,14 Q82,25 80,48 Q74,69 50,74 Q23,78 9,56 Q-4,34 8,14 Q20,-4 42,2 Q66,8 76,30 Q84,54 70,68 Q54,82 34,80 Q14,78 6,62 Q-2,46 8,34 Q18,22 34,20 Q52,18 60,34 Q68,50 58,62 Q48,74 36,70 Q24,66 22,54 Q20,44 28,38 Q36,32 44,36 Q52,40 50,48 Q48,56 42,54 Q38,52 38,48 Q38,44 41,42`);
+  svg.appendChild(path);
+
+  const dot = document.createElementNS(ns, 'circle');
+  dot.setAttribute('cx', '41');
+  dot.setAttribute('cy', '42');
+  dot.setAttribute('r', '2');
+  dot.setAttribute('fill', '#1a1814');
+  svg.appendChild(dot);
+})();
+</script>
+
+</body>
+</html>
