@@ -5,28 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="only light">
 <meta name="theme-color" content="#f3f0e7">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-<meta name="description" content="David Mullett — independent researcher building theorem-grounded warning criteria for recursive feedback systems. Loopzero is a diagnostic framework with a formal component in Lean 4.">
-
-<!-- Open Graph / Facebook / WhatsApp / iMessage / LinkedIn -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://davidmullett.com/">
-<meta property="og:title" content="David Mullett — Research">
-<meta property="og:description" content="Independent researcher building theorem-grounded warning criteria for recursive feedback systems.">
-<meta property="og:image" content="https://davidmullett.com/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="David Mullett — Independent researcher building theorem-grounded warning criteria for recursive feedback systems.">
-
-<!-- Twitter / X -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://davidmullett.com/">
-<meta name="twitter:title" content="David Mullett — Research">
-<meta name="twitter:description" content="Independent researcher building theorem-grounded warning criteria for recursive feedback systems.">
-<meta name="twitter:image" content="https://davidmullett.com/og-image.png">
-<title>Research · David Mullett</title>
+<meta name="description" content="David Mullett — independent researcher working on formal models of collapse in digital feedback systems. Loopzero: a formally specified warning criterion for collapse in recursive systems, with a claim-boundary artifact in Lean 4 and an empirical bridge evaluated on two public benchmark domains.">
+<title>David Mullett</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,7 +22,7 @@
   --ink-3:     #8c8880;
   --rule-lt:   #d8d4c8;
   --ph:        #2dd67a;
-  --ph-dim:    rgba(45,214,122,.04);
+  --ph-dim:    rgba(45,214,122,.06);
   --ph-border: rgba(45,214,122,.55);
   --serif:     'Source Serif 4', Georgia, serif;
   --mono:      'IBM Plex Mono', 'Courier New', Courier, monospace;
@@ -65,14 +45,28 @@ body {
   line-height: 1.75;
 }
 
+/* Asymmetric column — Scher: left-anchored, intentional right void */
 .page {
   max-width: 680px;
   margin: 0 auto 0 max(80px, 14vw);
   padding: 56px 0 128px;
 }
 
+/* ── LINKS ── */
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-lt);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color .14s;
+}
+a:hover { text-decoration-color: var(--ink-2); }
+
+
+/* ── NAV ── */
 nav {
-  margin-bottom: 64px;
+  margin-bottom: 48px;
   padding-bottom: 18px;
   border-bottom: 1px solid var(--rule-lt);
 }
@@ -91,37 +85,20 @@ nav {
   color: var(--ink-3);
   text-decoration: none;
 }
+.nav-list a:hover { color: var(--ink); }
 .nav-list a[aria-current="page"] { color: var(--ink-2); }
 
-.mark { display: block; line-height: 0; margin-bottom: 20px; opacity: 0.82; }
-.mark svg { display: block; overflow: visible; }
-
-a {
-  color: var(--ink);
-  text-decoration: underline;
-  text-decoration-color: var(--rule-lt);
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
-  transition: text-decoration-color .14s, color .14s;
-}
-a:hover {
-  text-decoration-color: var(--ph);
-  color: var(--ph);
-}
-.nav-list a:hover {
-  color: var(--ph);
-}
-footer .footer-text a:hover { color: var(--ph); }
-
+/* ── BODY PARAGRAPHS ── */
 p {
   max-width: 54ch;
   margin-bottom: 1.2em;
+  color: var(--ink);
   font-size: 1rem;
   line-height: 1.74;
-  color: var(--ink);
 }
 p:last-child { margin-bottom: 0; }
 
+/* ── SECTION LABELS — Scher: pulled into left margin ── */
 h2 {
   font-family: var(--mono);
   font-size: 0.56rem;
@@ -129,147 +106,265 @@ h2 {
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--ink-2);
-  margin-bottom: 22px;
+  margin-bottom: 26px;
+  margin-left: -80px;
+  width: calc(100% + 80px);
   line-height: 1.4;
 }
 
-.page-header {
-  margin-bottom: 56px;
-  padding-bottom: 28px;
-  border-bottom: 1px solid var(--rule-lt);
-}
-.page-name {
+/* ════════════════════
+   BLOCK 1 — IDENTITY
+════════════════════ */
+header { margin-bottom: 56px; }
+
+.mark { display: block; line-height: 0; margin-bottom: 20px; opacity: 0.82; }
+.mark svg { display: block; overflow: visible; }
+
+.name {
   font-family: var(--serif);
   font-size: 0.82rem;
   font-style: italic;
   font-weight: 300;
   letter-spacing: -0.01em;
+  line-height: 1.0;
   color: var(--ink);
   margin-bottom: 6px;
 }
-.page-descriptor {
+
+.descriptor {
   font-family: var(--mono);
   font-size: 0.61rem;
   font-weight: 300;
   color: var(--ink-2);
   letter-spacing: 0.03em;
   line-height: 1.60;
+  margin-bottom: 14px;
+  max-width: 52ch;
 }
 
-section {
-  margin-bottom: 52px;
-}
-section:last-of-type { margin-bottom: 0; }
-
-.status-pill {
-  display: inline-block;
+.header-meta {
   font-family: var(--mono);
   font-size: 0.56rem;
-  font-weight: 400;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ph);
-  padding: 4px 10px;
-  border: 1px solid var(--rule-lt);
-  border-radius: 2px;
-  margin-bottom: 18px;
-}
-
-.theorem-figure {
-  margin: 22px 0 1.4em;
-  max-width: 54ch;
-}
-.theorem-body {
-  border-left: 1.5px solid var(--ph-border);
-  border-top: 1px solid var(--rule-lt);
-  border-right: 1px solid var(--rule-lt);
-  border-bottom: 1px solid var(--rule-lt);
-  padding: 16px 20px;
-  background: var(--ph-dim);
-  margin-bottom: 9px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-.lean-block {
-  margin: 0;
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  line-height: 1.56;
-  color: var(--ink);
-  white-space: pre;
-  overflow-x: auto;
-  tab-size: 2;
-  -webkit-overflow-scrolling: touch;
-}
-.lean-block code {
-  font-family: var(--mono);
-  font-size: inherit;
-  color: inherit;
-}
-.theorem-caption {
-  font-family: var(--mono);
-  font-size: 0.54rem;
   font-weight: 300;
-  color: var(--ink-2);
-  letter-spacing: 0.04em;
-  line-height: 1.65;
-}
-p code, .theorem-caption code {
-  font-family: var(--mono);
-  font-size: 0.86em;
-  background: rgba(216, 212, 200, 0.28);
-  padding: 1px 5px;
-  border-radius: 2px;
-  color: var(--ink-2);
-}
-@media (max-width: 460px) {
-  .lean-block { font-size: 0.72rem; line-height: 1.54; }
-  .theorem-body { padding: 16px 18px; overflow-x: auto; }
-}
-
-.claim-list {
-  list-style: none;
-  max-width: 54ch;
-}
-.claim-list li {
-  display: grid;
-  grid-template-columns: 110px 1fr;
-  gap: 18px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--rule-lt);
+  color: var(--ink-3);
+  letter-spacing: 0.05em;
+  line-height: 1.9;
+  display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
 }
-.claim-list li:first-child { border-top: 1px solid var(--rule-lt); }
-.claim-label {
+.meta-sep { margin: 0 8px; color: var(--ink-3); }
+.header-meta a {
   font-family: var(--mono);
-  font-size: 0.58rem;
-  font-weight: 400;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-2);
+  font-size: 0.56rem;
+  font-weight: 300;
+  color: var(--ink-2);       /* lifted — must scan clearly */
+  text-decoration: none;
+  letter-spacing: 0.05em;
 }
-.claim-body {
-  font-size: 0.92rem;
-  line-height: 1.6;
-  color: var(--ink);
-}
-@media (max-width: 460px) {
-  .claim-list li {
-    grid-template-columns: 1fr;
-    gap: 6px;
-  }
+.header-meta a:hover { color: var(--ink); }
+
+/* ═══════════════════════════════
+   BLOCK 2 — PRIMARY RESEARCH OBJECT
+═══════════════════════════════ */
+section { margin-bottom: 52px; }
+section:last-of-type { margin-bottom: 0; }
+
+.paper-block {
+  border-left: 2px solid var(--ph-border);  /* slightly firmer */
+  padding: 22px 24px 20px;
+  margin: 0 0 0;
+  max-width: 54ch;
+  background: var(--ph-dim);
 }
 
+.paper-label {
+  font-family: var(--mono);
+  font-size: 0.52rem;
+  font-weight: 400;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ph);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.paper-title {
+  font-family: var(--serif);
+  font-size: 1.04rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.42;      /* lifted to 500 — firmer, more publication-grade */
+  line-height: 1.45;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.paper-meta {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 300;
+  color: #3f3a32;
+  letter-spacing: 0.02em;
+  margin-bottom: 14px;
+  line-height: 1.7;
+}
+
+.paper-abstract {
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.72;
+  color: var(--ink);
+  margin-bottom: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule-lt);
+}
+
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 24px;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule-lt);
+  margin-top: 2px;
+}
+.paper-links a {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 400;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-lt);
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+.paper-links a:hover { text-decoration-color: var(--ph); }
+
+/* ═══════════════════════════════
+   BLOCK 3 — CONTRIBUTION
+═══════════════════════════════ */
+.contribution-list { list-style: none; max-width: 54ch; }
+.contribution-list li {
+  padding: 13px 0;
+  border-bottom: 1px solid var(--rule-lt);
+}
+.contribution-list li:first-child { border-top: 1px solid var(--rule-lt); }
+
+.contrib-label {
+  font-family: var(--mono);
+  font-size: 0.54rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ph);
+  display: block;
+  margin-bottom: 6px;
+}
+.contrib-text {
+  font-family: var(--serif);
+  font-size: 1rem;           /* aligned with body — scans cleanly */
+  color: var(--ink);
+  line-height: 1.68;
+}
+
+/* ═══════════════════════════════
+   BLOCK 4 — PROVED / TESTED / OPEN
+═══════════════════════════════ */
+.status-grid { max-width: 54ch; }
+
+.status-item {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule-lt);
+}
+.status-item:first-child { border-top: 1px solid var(--rule-lt); }
+
+.status-label {
+  font-family: var(--mono);
+  font-size: 0.54rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Open work: visually quieter — ambition, not evidence */
+.status-item.open .status-label { color: var(--ink-3); }
+.status-item.open .status-body  { color: var(--ink-3); }
+
+.status-body {
+  font-family: var(--serif);
+  font-size: 0.95rem;        /* slight lift — visual parity with body register */
+  color: var(--ink);
+  line-height: 1.65;
+}
+
+/* ═══════════════════════════════
+   BLOCK 6 — BACKGROUND
+═══════════════════════════════ */
+.ledger { list-style: none; max-width: 54ch; }
+.ledger li {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule-lt);
+  gap: 3px;
+}
+.ledger li:first-child { border-top: 1px solid var(--rule-lt); }
+.l-primary { font-size: 0.9rem; line-height: 1.45; color: var(--ink); }
+.l-secondary {
+  font-size: 0.62rem;
+  font-family: var(--mono);
+  font-weight: 300;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+}
+
+/* ═══════════════════════════════
+   BLOCK 7 — CONTACT
+═══════════════════════════════ */
+.contact-list { list-style: none; max-width: 54ch; }
+.contact-list li {
+  padding: 11px 0;
+  border-bottom: 1px solid var(--rule-lt);
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.contact-list li:first-child { border-top: 1px solid var(--rule-lt); }
+.contact-list a {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 400;          /* 300→400: links feel actionable */
+  color: var(--ink-2);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+.contact-list a:hover { color: var(--ph); }
+.contact-url {
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  font-weight: 300;
+  color: var(--ink-2);       /* lifted — URL must be readable */
+  letter-spacing: 0.02em;
+}
+.contact-arrow { color: var(--ink-3); }  /* readable, not decorative */
+
+/* ═══════════════════════════════
+   FOOTER
+═══════════════════════════════ */
 footer {
-  margin-top: 88px;
+  margin-top: 72px;
   padding-top: 20px;
   border-top: 1px solid var(--rule-lt);
 }
 .footer-text {
   font-family: var(--mono);
-  font-size: 0.56rem;
+  font-size: 0.56rem;        /* slight lift */
   font-weight: 300;
-  color: var(--ink-2);
+  color: var(--ink-2);       /* lifted from ink-3 — complete, not whispered */
   letter-spacing: 0.05em;
   line-height: 1.9;
 }
@@ -281,122 +376,341 @@ footer {
   text-decoration: none;
 }
 .footer-text a:hover { color: var(--ph); }
-.foot-sep { color: var(--ink-3); }
+.foot-sep { color: #6f6a61; }
 
+/* ── RESPONSIVE ── */
 @media (max-width: 760px) {
   html { font-size: 17px; }
-  .page { margin: 0 auto; padding: 44px 32px 96px; }
+  .page { margin: 0 auto; padding: 60px 32px 96px; }
+  h2 { margin-left: 0; width: 100%; }
+  /* ledger is now stacked — no grid override needed */
 }
 @media (max-width: 460px) {
   html { font-size: 16px; }
   .page { padding: 36px 20px 80px; }
   .nav-list { gap: 12px 20px; }
+  .header-meta { flex-direction: column; }
+  .meta-sep { display: none; }
+  .contact-list li { flex-wrap: wrap; gap: 2px 8px; }
+  .contact-url { flex-basis: 100%; }
 }
+
+/* ═══════════════════════════════
+   OPTIONAL: EVIDENCE MODULE
+   Activate by uncommenting the HTML section below.
+   Accepts: theorem excerpt, formal diagram, benchmark diagram.
+   Rules: real artifact only, plain caption, trust-increasing.
+═══════════════════════════════ */
+.evidence-module { margin-bottom: 52px; }
+.evidence-fig { max-width: 54ch; margin: 0; }
+.evidence-body {
+  border: 1px solid var(--rule-lt);
+  padding: 20px 24px;
+  background: rgba(0,0,0,.018);
+  margin-bottom: 10px;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+.evidence-caption {
+  font-family: var(--mono);
+  font-size: 0.54rem;
+  font-weight: 300;
+  color: var(--ink-2);
+  letter-spacing: 0.04em;
+  line-height: 1.65;
+}
+
+
+/* ── HOMEPAGE THEOREM MODULE ── */
+.home-theorem-module {
+  margin-bottom: 52px;
+}
+.home-theorem-module h2 {
+  color: var(--ph);
+  margin-bottom: 18px;  /* slightly tighter than standard 26px */
+}
+.home-lean-block {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.56;
+  color: var(--ink);         /* full ink — not dimmed */
+  white-space: pre;
+  overflow-x: auto;
+  tab-size: 2;
+  -webkit-overflow-scrolling: touch;
+}
+.home-theorem-body {
+  border-left: 1.5px solid var(--ph-border);  /* slightly lighter than paper card's 2px */
+  border-top: 1px solid var(--rule-lt);
+  border-right: 1px solid var(--rule-lt);
+  border-bottom: 1px solid var(--rule-lt);
+  padding: 16px 20px;                         /* tighter — more inset, less card */
+  background: rgba(45,214,122,.04);           /* ph-dim is .06 — this is fractionally lighter */
+  margin-bottom: 9px;
+  max-width: 54ch;
+  overflow-x: auto;
+}
+.home-theorem-caption {
+  font-family: var(--mono);
+  font-size: 0.54rem;
+  font-weight: 300;
+  color: var(--ink-2);
+  letter-spacing: 0.04em;
+  line-height: 1.65;
+  max-width: 54ch;
+}
+@media (max-width: 460px) {
+  .home-lean-block { font-size: 0.72rem; line-height: 1.54; }
+  .home-theorem-body { padding: 16px 18px; overflow-x: auto; }
+}
+
 </style>
 </head>
 <body style="background:#f3f0e7 !important; color:#1a1710 !important;">
 <div class="page">
+<main>
 
 <nav aria-label="Site navigation">
   <ul class="nav-list">
-    <li><a href="index.html" aria-current="page">Research</a></li>
+    <li><a href="/" aria-current="page">Research</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="mailto:d@loopzero.org">Contact</a></li>
   </ul>
 </nav>
 
-<main>
+<!-- BLOCK 1 — IDENTITY -->
+<header>
 
-<div class="page-header">
   <div class="mark">
-    <svg id="spiralSvgIndex" width="36" height="36" viewBox="0 0 80 80"
+    <svg id="spiralSvg" width="36" height="36" viewBox="0 0 80 80"
          xmlns="http://www.w3.org/2000/svg"
          aria-label="Loopzero mark" role="img"></svg>
   </div>
 
-  <div class="page-name">David Mullett</div>
-  <div class="page-descriptor">Independent researcher building theorem-grounded warning criteria for recursive feedback systems.</div>
-</div>
+  <div class="name">David Mullett</div>
+
+  <div class="descriptor">
+    Independent researcher working on formal models of collapse in digital feedback systems.
+  </div>
+
+  <div class="header-meta">
+    <a href="mailto:d@loopzero.org">d@loopzero.org</a>
+    <span class="meta-sep">·</span>
+    <a href="https://orcid.org/0009-0004-2543-1664"
+       target="_blank" rel="noopener"
+       title="ORCID researcher profile">ORCID&nbsp;0009-0004-2543-1664</a>
+    <span class="meta-sep">·</span>
+    <a href="https://github.com/davidmullett"
+       target="_blank" rel="noopener">GitHub</a>
+  </div>
+
+</header>
 
 
+<!-- BLOCK 2 — PRIMARY RESEARCH OBJECT -->
 <section>
-  <h2>Current research</h2>
+  <h2>Research</h2>
 
-  <div class="status-pill">Preprint in preparation</div>
-
-  <p>
-    A theorem-grounded warning criterion for collapse in recursive systems.
-    The work consists of a no-progress obstruction theorem formalized in
-    Lean&nbsp;4 and a corresponding empirical detection criterion under
-    matched alert-budget benchmarking.
-  </p>
-
-  <p>
-    The theorem itself is short. In any preorder, the configuration
-    <em>x &lt; y &le; z &le; x</em> is impossible:
-  </p>
-
-  <figure class="theorem-figure">
-    <div class="theorem-body">
-<pre class="lean-block"><code>import Mathlib.Order.Basic
-
-variable {α : Type*} [Preorder α]
-
-theorem no_progress_cycle_public {x y z : α}
-    (hxy : x &lt; y) (hyz : y ≤ z) (hzx : z ≤ x) : False := by
-  have hxz : x &lt; z := lt_of_lt_of_le hxy hyz
-  have hxx : x &lt; x := lt_of_lt_of_le hxz hzx
-  exact lt_irrefl x hxx</code></pre>
+  <div class="paper-block">
+    <span class="paper-label">Preprint</span>
+    <div class="paper-title">
+      A formally specified warning criterion for collapse
+      in recursive systems
     </div>
-    <figcaption class="theorem-caption">
-      Kernel-checked in Lean 4; <code>#print axioms</code> reports no additional
-      axioms. Designed for independent re-checking.
-    </figcaption>
-  </figure>
+    <div class="paper-meta">
+      David Mullett &nbsp;·&nbsp; arXiv preprint
+      
+    </div>
+    <div class="paper-abstract">
+      Loopzero defines a warning criterion for collapse in recursive systems
+      around a minimal no-progress obstruction, formalized in Lean&nbsp;4 to
+      make the claim boundary explicit. The criterion is instantiated as a
+      triplet of telemetry witnesses — gain (G), recursive persistence (p),
+      and diversity (δ) — and evaluated on two public benchmark domains
+      under a matched false-positive contract, with a secondary consistency
+      analysis on published model-collapse trajectories.
+    </div>
+  </div>
 
-  <p>
-    Preprint in preparation. Selected Lean artifacts and public research
-    materials will be linked here on publication.
-  </p>
 </section>
 
 
-<section>
-  <h2>What is claimed</h2>
+<!-- ═══════════════════════════════════════════════════════════════════
+     OPTIONAL: EVIDENCE MODULE — scaffold ready, not rendered
+     ═══════════════════════════════════════════════════════════════════
+     Uncomment and populate when a real artifact is available.
+     Accepts: theorem excerpt, formal architecture diagram,
+     benchmark diagram, or evaluation pipeline diagram.
+     Rules: must increase trust, must not be decorative, must not be fake.
 
-  <ul class="claim-list">
+<section class="evidence-module">
+  <h2>Figure</h2>
+  <figure class="evidence-fig">
+    <figcaption class="evidence-caption">
+      [Plain, exact caption — e.g., "Evaluation pipeline for the
+      Loopzero benchmark protocol across two public benchmark domains."]
+    </figcaption>
+    <div class="evidence-body">
+      [Real artifact here — SVG, image, or code excerpt]
+    </div>
+  </figure>
+</section>
+
+CSS to add when activated:
+.evidence-module { margin-bottom: 56px; }
+.evidence-fig { max-width: 54ch; }
+.evidence-body {
+  border: 1px solid var(--rule-lt);
+  padding: 20px;
+  background: rgba(0,0,0,.015);
+  margin-bottom: 10px;
+}
+.evidence-caption {
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  font-weight: 300;
+  color: var(--ink-2);
+  letter-spacing: 0.04em;
+  line-height: 1.65;
+}
+═══════════════════════════════════════════════════════════════════ -->
+
+
+<!-- BLOCK 3 — CONTRIBUTION -->
+<section>
+  <h2>What Is New</h2>
+
+  <ul class="contribution-list">
     <li>
-      <span class="claim-label">Established</span>
-      <span class="claim-body">A no-progress obstruction theorem in any preorder, formalized in Lean&nbsp;4 and kernel-checked with no additional axioms reported.</span>
+      <span class="contrib-label">Specifies</span>
+      <span class="contrib-text">A formal claim boundary for one specific failure
+      mode in recursive feedback systems, articulated in Lean&nbsp;4. The artifact
+      is intentionally elementary — it exists to make the empirical bridge
+      assumption explicit and inspectable.</span>
     </li>
     <li>
-      <span class="claim-label">Tested</span>
-      <span class="claim-body">A corresponding telemetry-level detection criterion, evaluated under matched alert-budget protocols against bounded benchmark families. Lead-time and admissibility receipts are computed at evaluation time.</span>
+      <span class="contrib-label">Tests</span>
+      <span class="contrib-text">A conditional empirical bridge from the formal
+      claim boundary to a measurable pre-collapse footprint, evaluated on two
+      public benchmark domains under a locked equal-false-positive contract.
+      A secondary consistency analysis on published model-collapse trajectories
+      (Shumailov et al., 2024) corroborates the witness pattern in a third
+      recursive setting.</span>
     </li>
     <li>
-      <span class="claim-label">Open</span>
-      <span class="claim-body">Generalization beyond the tested domains; the relationship between the formal obstruction and the telemetry analogue is empirical, not derived. Calibration parameters are domain-specific and are not claimed as universal.</span>
+      <span class="contrib-label">Introduces</span>
+      <span class="contrib-text">A matched-false-positive comparator contract —
+      detectors compared at the same alert budget rather than at arbitrary
+      thresholds — designed as extensible infrastructure for evaluating
+      recursive-collapse detectors across system families.</span>
     </li>
   </ul>
+
 </section>
 
-</main>
+
+<!-- BLOCK 4 — PROVED / TESTED / OPEN -->
+<section>
+  <h2>Current Status</h2>
+
+  <div class="status-grid">
+
+    <div class="status-item">
+      <span class="status-label">Specified</span>
+      <div class="status-body">
+        A minimal no-progress obstruction in Lean&nbsp;4, together with a
+        measurement-map bridge and a schematic telemetry specialization.
+        The artifact establishes what is and is not claimed: it verifies the
+        abstract obstruction, not that real benchmark telemetry supplies the
+        required measurement map.
+      </div>
+    </div>
+
+    <div class="status-item">
+      <span class="status-label">Empirically tested</span>
+      <div class="status-body">
+        Two public benchmark domains under a matched-false-positive contract:
+        a public-data markets event family (Volmageddon 2018, COVID March 2020
+        circuit breakers) and an offline MovieLens-25M recursive recommender
+        replay benchmark. A secondary consistency analysis on Shumailov et al.
+        (2024) corroborates the witness pattern in a third recursive setting;
+        matched-FP comparator evaluation in that domain is deferred to
+        follow-up work. Empirical claims are bounded to the protocol and
+        analyses described in the preprint.
+      </div>
+    </div>
+
+    <div class="status-item open">
+      <span class="status-label">Open work</span>
+      <div class="status-body">
+        A v1.1 program is in development: adding the proposed criterion's own
+        matched-FP operating point to the comparator table, threshold-path
+        calibration of comparators, recommender negative controls, and
+        cluster-robust dependency analysis. Future work includes extension to
+        additional recursive domains with matched-FP comparator evaluation.
+      </div>
+    </div>
+
+  </div>
+
+</section>
 
 
+<!-- BLOCK 5 — CONTEXT / WHY IT MATTERS -->
+<section>
+  <h2>Why It Matters</h2>
+
+  <p>
+    Recursive feedback systems — algorithmic, financial, and social — are
+    widely studied. Their failure modes are often described operationally and
+    less often specified as formal objects. Loopzero approaches one specific
+    failure mode by treating it as a formally bounded claim: the obstruction
+    is specified in Lean&nbsp;4, the bridge from that obstruction to
+    observable telemetry is stated explicitly as a conditional assumption,
+    and the empirical claims are bounded to a defined benchmark protocol.
+    The aim is not deeper formal machinery; it is making what is claimed
+    easier to inspect, contest, and test across domains.
+  </p>
+
+</section>
+
+
+<!-- BLOCK 7 — LINKS / NEXT ACTION -->
+<section>
+  <h2>Access</h2>
+
+  <ul class="contact-list">
+    <li>
+      <a href="mailto:d@loopzero.org">Research · collaboration · press <span class="contact-arrow">→</span></a>
+      <span class="contact-url">d@loopzero.org</span>
+    </li>
+  </ul>
+
+</section>
+
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-text">
     davidmullett.com
     <span class="foot-sep">&nbsp;·&nbsp;</span>
     <a href="https://orcid.org/0009-0004-2543-1664"
-       target="_blank" rel="noopener">ORCID&nbsp;0009-0004-2543-1664</a>
+       target="_blank" rel="noopener"
+       title="ORCID researcher profile">ORCID&nbsp;0009-0004-2543-1664</a>
+    <span class="foot-sep">&nbsp;·&nbsp;</span>
+    loopzero.org
   </div>
 </footer>
 
+</main>
 </div>
 
 <script>
 (function() {
-  const svg = document.getElementById('spiralSvgIndex');
+  const svg = document.getElementById('spiralSvg');
   if (!svg) return;
   const ns = 'http://www.w3.org/2000/svg';
 
@@ -416,6 +730,5 @@ theorem no_progress_cycle_public {x y z : α}
   svg.appendChild(dot);
 })();
 </script>
-
 </body>
 </html>

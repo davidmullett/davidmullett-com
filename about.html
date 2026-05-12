@@ -5,27 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="only light">
 <meta name="theme-color" content="#f3f0e7">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-<meta name="description" content="David Mullett — independent researcher building theorem-grounded warning criteria for recursive feedback systems. Loopzero is a diagnostic framework with a formal component in Lean 4.">
-
-<!-- Open Graph / Facebook / WhatsApp / iMessage / LinkedIn -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://davidmullett.com/about.html">
-<meta property="og:title" content="David Mullett — About">
-<meta property="og:description" content="Independent researcher building theorem-grounded warning criteria for recursive feedback systems.">
-<meta property="og:image" content="https://davidmullett.com/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="David Mullett — Independent researcher building theorem-grounded warning criteria for recursive feedback systems.">
-
-<!-- Twitter / X -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://davidmullett.com/about.html">
-<meta name="twitter:title" content="David Mullett — About">
-<meta name="twitter:description" content="Independent researcher building theorem-grounded warning criteria for recursive feedback systems.">
-<meta name="twitter:image" content="https://davidmullett.com/og-image.png">
+<meta name="description" content="David Mullett — independent researcher working on formal models of collapse in digital feedback systems. Creator of Loopzero, a formally specified warning criterion for collapse in recursive systems.">
 <title>About · David Mullett</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -93,7 +73,7 @@ nav {
   color: var(--ink-3);
   text-decoration: none;
 }
-.nav-list a:hover { color: var(--ph); }
+.nav-list a:hover { color: var(--ink); }
 .nav-list a[aria-current="page"] { color: var(--ink-2); }
 
 .mark { display: block; line-height: 0; margin-bottom: 20px; opacity: 0.82; }
@@ -106,12 +86,9 @@ a {
   text-decoration-color: var(--rule-lt);
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
-  transition: text-decoration-color .14s, color .14s;
+  transition: text-decoration-color .14s;
 }
-a:hover {
-  text-decoration-color: var(--ph);
-  color: var(--ph);
-}
+a:hover { text-decoration-color: var(--ink-2); }
 
 /* ── TYPOGRAPHY ── */
 p {
@@ -259,7 +236,7 @@ footer {
 
 <nav aria-label="Site navigation">
   <ul class="nav-list">
-    <li><a href="index.html">Research</a></li>
+    <li><a href="/">Research</a></li>
     <li><a href="about.html" aria-current="page">About</a></li>
     <li><a href="mailto:d@loopzero.org">Contact</a></li>
   </ul>
@@ -276,7 +253,7 @@ footer {
   </div>
 
   <div class="page-name">David Mullett</div>
-  <div class="page-descriptor">Independent researcher building theorem-grounded warning criteria for recursive feedback systems.</div>
+  <div class="page-descriptor">Independent researcher working on formal models of collapse in digital feedback systems.</div>
 </div>
 
 
@@ -285,18 +262,20 @@ footer {
   <h2>Introduction</h2>
 
   <p>
-    I am an independent researcher building theorem-grounded warning criteria
-    for recursive feedback systems. My current work centers on Loopzero —
-    a theorem-grounded diagnostic framework for this class of systems, with
-    a formal component in Lean&nbsp;4 and empirical evaluation of a
-    corresponding detection criterion forthcoming.
+    I am an independent researcher working on formal models of collapse in
+    recursive digital feedback systems. My current work centers on Loopzero —
+    a formally specified warning criterion for collapse in recursive systems,
+    with a claim-boundary artifact in Lean&nbsp;4 and an empirical bridge
+    evaluated on two public benchmark domains.
   </p>
 
   <p>
     The research is focused on a specific and bounded problem: characterizing
-    the conditions under which recursive feedback systems reach a fixed
-    point and stop evolving. The goal is a precise, machine-checkable object
-    that others can inspect, extend, and apply.
+    the conditions under which recursive systems enter a no-progress regime
+    where local updates remain coherent but meaningful forward improvement
+    becomes inaccessible. The goal is a precise, inspectable specification
+    of what is and is not claimed, paired with an empirical bridge that can
+    be tested under a defined protocol.
   </p>
 </section>
 
@@ -306,11 +285,19 @@ footer {
   <h2>Research orientation</h2>
 
   <p>
-    After Meta Reality Labs, I focused on the structural conditions under
-    which recursive feedback systems collapse — a problem that recurs across
-    recommendation, discovery, and trading architectures and is rarely
+    After Meta Reality Labs, I spent an extended period studying the history
+    and structure of the attention economy — from early mass-market print
+    media through behaviorism, early AI, and the feedback architectures that
+    define contemporary digital platforms. The central question was whether
+    the collapse patterns observable in these systems have a formally
+    describable structure, or whether they are only described informally.
+    My background in art history and cultural theory gave me one set of tools;
+    working at scale inside recommendation and discovery architectures gave me
+    another. The move to formal methods came from noticing that the structural
+    conditions for collapse were regularly encountered in practice and rarely
     specified with precision. Loopzero is an attempt to provide that
-    specification in a form that is machine-checkable and extensible.
+    specification with a precise claim boundary in Lean&nbsp;4 and an
+    empirical bridge that can be tested under a defined protocol.
   </p>
 </section>
 
@@ -329,35 +316,34 @@ footer {
       <span class="l-secondary">2021–2022</span>
     </li>
     <li>
-      <span class="l-primary">Co-Founder &amp; Chief Design Officer&nbsp;·&nbsp;Pupil (now&nbsp;Digital&nbsp;Reality&nbsp;Corp.)</span>
+      <span class="l-primary">Co-Founder &amp; Chief Design Officer&nbsp;·&nbsp;Pupil</span>
       <span class="l-secondary">2015–2021</span>
     </li>
     <li>
-      <span class="l-primary">MA Visual Communication&nbsp;·&nbsp;Royal College of Art</span>
+      <span class="l-primary">MA Visual Design, Distinction&nbsp;·&nbsp;Royal College of Art, London</span>
       <span class="l-secondary"></span>
     </li>
     <li>
-      <span class="l-primary">BA Art History&nbsp;·&nbsp;Northwestern University</span>
+      <span class="l-primary">BA Art History, Honors&nbsp;·&nbsp;Northwestern University</span>
       <span class="l-secondary"></span>
     </li>
   </ul>
 </section>
 
 
-<!-- 3b. CURRENT WORK / IP -->
-<section>
-  <h2>Current work</h2>
 
-  <ul class="ledger">
-    <li>
-      <span class="l-primary">A theorem-grounded warning criterion for collapse in recursive systems</span>
-      <span class="l-secondary">Preprint in preparation · formal and domain review in progress</span>
-    </li>
-    <li>
-      <span class="l-primary">USPTO Provisional Application 64/042,661</span>
-      <span class="l-secondary">Filed April 2026 · Loopzero, Inc.</span>
-    </li>
-  </ul>
+<!-- WORKING METHOD — optional, 3 lines, structurally quiet -->
+<section>
+  <h2>Working method</h2>
+
+  <p>
+    The work uses formal verification to specify a claim boundary as a
+    machine-checked object, and empirical evaluation to test the bridge from
+    that boundary to observable telemetry. The two are kept structurally
+    separate: what is proved in Lean is a deliberately elementary obstruction;
+    what is tested empirically is a conditional bridge to measurable
+    pre-collapse witnesses under a defined benchmark protocol.
+  </p>
 </section>
 
 
@@ -395,6 +381,8 @@ footer {
     <span class="foot-sep">&nbsp;·&nbsp;</span>
     <a href="https://orcid.org/0009-0004-2543-1664"
        target="_blank" rel="noopener">ORCID&nbsp;0009-0004-2543-1664</a>
+    <span class="foot-sep">&nbsp;·&nbsp;</span>
+    loopzero.org
   </div>
 </footer>
 
