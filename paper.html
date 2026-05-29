@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#f3f0e7">
+<meta name="description" content="Benchmarking Recursive-Collapse Warning Claims Under Matched False-Positive Control — David Mullett, arXiv preprint 2026. A claim-bounded benchmark framework for evaluating recursive-collapse warning claims under explicit false-positive control.">
+<title>Paper · David Mullett</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400;1,8..60,500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream:     #f3f0e7;
+  --ink:       #1a1710;
+  --ink-2:     #48443c;
+  --ink-3:     #8c8880;
+  --rule-lt:   #d8d4c8;
+  --ph:        #2dd67a;
+  --ph-dim:    rgba(45,214,122,.06);
+  --ph-border: rgba(45,214,122,.55);
+  --serif:     'Source Serif 4', Georgia, serif;
+  --mono:      'IBM Plex Mono', 'Courier New', Courier, monospace;
+}
+
+html {
+  font-size: 18px;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "liga" 1, "kern" 1, "onum" 1;
+  background: #f3f0e7;
+  color-scheme: only light;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--serif);
+  line-height: 1.75;
+}
+
+/* ── LAYOUT ── */
+.page {
+  max-width: 680px;
+  margin: 0 auto 0 max(80px, 14vw);
+  padding: 56px 0 128px;
+}
+
+/* ── NAV ── */
+nav {
+  margin-bottom: 48px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--rule-lt);
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 0 28px;
+  flex-wrap: wrap;
+}
+.nav-list a {
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  text-decoration: none;
+}
+.nav-list a:hover { color: var(--ink); }
+.nav-list a[aria-current="page"] { color: var(--ink-2); }
+
+/* ── LINKS ── */
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-lt);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color .14s;
+}
+a:hover { text-decoration-color: var(--ink-2); }
+
+/* ── TYPOGRAPHY ── */
+p {
+  max-width: 54ch;
+  margin-bottom: 1.2em;
+  font-size: 1rem;
+  line-height: 1.74;
+  color: var(--ink);
+}
+p:last-child { margin-bottom: 0; }
+
+h1 {
+  font-family: var(--serif);
+  font-size: 1.18rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.36;
+  color: var(--ink);
+  max-width: 52ch;
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin-bottom: 22px;
+  line-height: 1.4;
+}
+
+/* ── PAPER BYLINE ── */
+.paper-byline {
+  font-family: var(--mono);
+  font-size: 0.54rem;
+  font-weight: 300;
+  color: var(--ink-3);
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+  text-transform: none;
+}
+
+/* ── TITLE BLOCK ── */
+.title-block {
+  margin-bottom: 52px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--rule-lt);
+}
+
+.paper-status {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 300;
+  color: var(--ink-2);
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+  margin-bottom: 4px;
+}
+
+.paper-status-note {
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  font-weight: 300;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 24px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule-lt);
+}
+.paper-links a {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 400;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-lt);
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+.paper-links a:hover { text-decoration-color: var(--ph); }
+
+/* ── SECTIONS ── */
+section {
+  margin-bottom: 52px;
+}
+section:last-of-type { margin-bottom: 0; }
+
+/* ── SUMMARY SECTION ── */
+.summary-section p { max-width: 52ch; }
+
+.summary-hero {
+  font-family: var(--serif);
+  font-size: 1.04rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--ink);
+  max-width: 52ch;
+  margin-bottom: 16px;
+}
+
+/* ── ABSTRACT BLOCK ── */
+.abstract-block {
+  border-left: 2px solid var(--ph-border);
+  padding: 22px 24px 20px;
+  max-width: 54ch;
+  background: var(--ph-dim);
+}
+.abstract-block p {
+  margin-bottom: 1em;
+}
+.abstract-block p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── FORMAL ARTIFACT BLOCK ── */
+.formal-artifact { max-width: 54ch; }
+
+.formal-artifact p {
+  font-size: 0.97rem;
+  line-height: 1.7;
+}
+
+.formal-detail-list {
+  list-style: none;
+  margin: 18px 0;
+}
+.formal-detail-list li {
+  padding: 11px 0;
+  border-bottom: 1px solid var(--rule-lt);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.formal-detail-list li:first-child {
+  border-top: 1px solid var(--rule-lt);
+}
+.formal-label {
+  font-family: var(--mono);
+  font-size: 0.52rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.formal-value {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  font-weight: 300;
+  color: var(--ink-2);
+  line-height: 1.55;
+  word-break: break-all;
+}
+.formal-value a {
+  color: var(--ink-2);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-lt);
+  text-underline-offset: 3px;
+}
+.formal-value a:hover { text-decoration-color: var(--ph); }
+.formal-value code {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--ink-2);
+  background: rgba(0,0,0,.025);
+  padding: 1px 5px;
+  border-radius: 2px;
+}
+
+.formal-note {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--ink-2);
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule-lt);
+  max-width: 54ch;
+}
+
+/* ── CATEGORIES BLOCK ── */
+.categories-block {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--ink-2);
+  max-width: 54ch;
+}
+.categories-block code {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  background: rgba(0,0,0,.025);
+  padding: 1px 6px;
+  border-radius: 2px;
+  color: var(--ink);
+}
+
+/* ── CITE BLOCK ── */
+.cite-text {
+  font-family: var(--serif);
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: var(--ink);
+  max-width: 54ch;
+  margin-bottom: 18px;
+}
+
+.bibtex-block {
+  max-width: 54ch;
+  margin: 0;
+}
+.bibtex-body {
+  border: 1px solid var(--rule-lt);
+  padding: 18px 22px;
+  background: rgba(0,0,0,.018);
+  overflow-x: auto;
+}
+.bibtex-body pre {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+  white-space: pre;
+}
+
+/* ── ARTIFACTS GRID ── */
+.artifacts-grid {
+  display: flex;
+  flex-direction: column;
+  max-width: 54ch;
+  gap: 0;
+}
+.artifact-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--rule-lt);
+}
+.artifact-row:first-child { border-top: 1px solid var(--rule-lt); }
+.artifact-label {
+  font-family: var(--mono);
+  font-size: 0.54rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  min-width: 90px;
+  flex-shrink: 0;
+}
+.artifact-link {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 300;
+  color: var(--ink-2);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  word-break: break-all;
+}
+.artifact-link:hover { color: var(--ph); text-decoration: none; }
+
+/* ── FOOTER ── */
+footer {
+  margin-top: 72px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule-lt);
+}
+.footer-text {
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  font-weight: 300;
+  color: var(--ink-2);
+  letter-spacing: 0.05em;
+  line-height: 1.9;
+}
+.footer-text a {
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  font-weight: 300;
+  color: var(--ink-2);
+  text-decoration: none;
+}
+.footer-text a:hover { color: var(--ph); }
+.foot-sep { color: var(--ink-3); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 760px) {
+  html { font-size: 17px; }
+  .page { margin: 0 auto; padding: 44px 32px 96px; }
+  .formal-value { font-size: 0.7rem; }
+  .bibtex-body pre { font-size: 0.72rem; }
+}
+@media (max-width: 460px) {
+  html { font-size: 16px; }
+  .page { padding: 36px 20px 80px; }
+  .nav-list { gap: 12px 20px; }
+  .artifact-label { min-width: 72px; }
+  .bibtex-body { padding: 14px 16px; }
+  .bibtex-body pre { font-size: 0.68rem; line-height: 1.55; }
+  .formal-value { font-size: 0.66rem; }
+}
+</style>
+</head>
+<body style="background:#f3f0e7 !important; color:#1a1710 !important;">
+<div class="page">
+
+<nav aria-label="Site navigation">
+  <ul class="nav-list">
+    <li><a href="/">Research</a></li>
+    <li><a href="paper.html" aria-current="page">Paper</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="mailto:d@loopzero.org">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- 1. TITLE BLOCK -->
+<div class="title-block">
+
+  <div class="paper-byline">David Mullett</div>
+
+  <h1>Benchmarking Recursive-Collapse Warning Claims Under Matched False-Positive Control</h1>
+
+  <div class="paper-status">
+    David Mullett &nbsp;·&nbsp; Independent Researcher &nbsp;·&nbsp; arXiv preprint
+  </div>
+  <div class="paper-status-note">
+    Link active shortly after submission clears processing.
+  </div>
+
+  <div class="paper-links">
+    <a href="{{ARXIV_URL}}" target="_blank" rel="noopener">Abstract</a>
+    <a href="https://arxiv.org/pdf/{{ARXIV_ID}}" target="_blank" rel="noopener">PDF</a>
+    <a href="https://github.com/davidmullett/loopzero-paper-public" target="_blank" rel="noopener">Repository</a>
+  </div>
+
+</div>
+
+
+<!-- 2. SUMMARY -->
+<section class="summary-section">
+  <h2>Summary</h2>
+
+  <p class="summary-hero">
+    A claim-bounded benchmark framework for testing recursive-collapse warning
+    claims under explicit false-positive control.
+  </p>
+
+  <p>
+    Loopzero v1.0 is a reproducible, falsifiable benchmark framework for
+    evaluating recursive-collapse warning claims across complex systems —
+    financial markets, recommender systems, and AI training loops. The core
+    idea: collapse may be detectable from telemetry before overt failure
+    becomes visible, but only if measured against an explicit false-positive
+    budget. The methodological contribution is the framework itself —
+    non-acceptance reported as a first-class scientific outcome.
+  </p>
+</section>
+
+
+<!-- 3. ABSTRACT -->
+<section>
+  <h2>Abstract</h2>
+
+  <div class="abstract-block">
+    <p>
+      Recursive systems can enter collapse-like regimes — self-reinforcing
+      amplification, persistent recursion, and narrowing diversity that mask
+      accelerating internal degradation — before overt failure becomes
+      visible. We introduce Loopzero, a claim-bounded benchmark framework for
+      testing whether recursive failures follow a directional telemetry
+      pattern: rising gain (G), recursive persistence (p), and declining
+      diversity (δ). The claim boundary is specified in Lean; the Lean
+      artifact does not verify real telemetry, benchmark validity, or
+      detector performance.
+    </p>
+
+    <p>
+      We evaluate the bridge on two frozen public-artifact benchmarks: a
+      segmented public-markets benchmark (Volmageddon 2018, COVID MWCB 2020)
+      and a MovieLens-25M offline deterministic recommender replay. Detectors
+      are evaluated under a locked equal-false-positive contract (FP ∈ [0.03,
+      0.07], pre-registered) so all configurations face the same alert
+      budget. Neither tested standard comparators nor Loopzero's
+      pre-registered quantile detector achieved an accepted operating point.
+      Directional witness alignment held on both canonical benchmarks, with
+      adjacent-horizon and row-level limitations disclosed. Digitized
+      Shumailov et al. (2024) LLM training-loop trajectories are
+      directionally consistent with the pattern; matched-FP evaluation in
+      that domain is deferred.
+    </p>
+
+    <p>
+      The contribution is a reproducible, falsifiable benchmark framework
+      for evaluating recursive-collapse warning claims under an explicit
+      alert-budget contract — non-acceptance reported as a first-class
+      scientific outcome.
+    </p>
+  </div>
+</section>
+
+
+<!-- 4. FORMAL ARTIFACT -->
+<section>
+  <h2>Formal artifact</h2>
+
+  <div class="formal-artifact">
+
+    <p>
+      The mathematical claim boundary is specified in Lean&nbsp;4 and
+      publicly archived at the Loopzero paper repository.
+    </p>
+
+    <ul class="formal-detail-list">
+      <li>
+        <span class="formal-label">Lean snapshot</span>
+        <span class="formal-value">
+          Commit <code>7afd763f38182ca49b2016fe38eeefff4560cdf0</code> (tag <code>lean-v1.0</code>)
+        </span>
+      </li>
+      <li>
+        <span class="formal-label">Tagged source</span>
+        <span class="formal-value">
+          <a href="https://github.com/davidmullett/loopzero-paper-public/tree/lean-v1.0"
+             target="_blank" rel="noopener">github.com/davidmullett/loopzero-paper-public/tree/lean-v1.0</a>
+        </span>
+      </li>
+      <li>
+        <span class="formal-label">Mathlib pin</span>
+        <span class="formal-value">
+          <code>3ba1ec58ec69cd649b9e5c61485a98d1dd37a00f</code>
+        </span>
+      </li>
+      <li>
+        <span class="formal-label">Reproducibility</span>
+        <span class="formal-value">
+          Builds cleanly under Lean v4.30.0-rc2 via <code>lake build</code>.
+          An axiom audit verifies that the three obstruction theorems compile
+          without axiom dependencies; the two telemetry-bridge theorems depend
+          only on the standard Mathlib trusted base (<code>propext</code>,
+          <code>Classical.choice</code>, <code>Quot.sound</code>).
+        </span>
+      </li>
+    </ul>
+
+    <p class="formal-note">
+      The Lean artifact verifies the structure of the claim. It does not
+      verify real telemetry, benchmark validity, or detector performance —
+      those are separately evaluated in the benchmark framework.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- 5. ARXIV CATEGORIES -->
+<section>
+  <h2>Categories</h2>
+
+  <div class="categories-block">
+    Primary: <code>eess.SY</code> (Systems and Control)
+    &nbsp;·&nbsp;
+    Cross-listed: <code>cs.LG</code> (Machine Learning), <code>stat.ML</code> (Statistics — Machine Learning)
+    <br>
+    License: CC BY 4.0
+  </div>
+</section>
+
+
+<!-- 6. HOW TO CITE -->
+<section>
+  <h2>How to cite</h2>
+
+  <p class="cite-text">
+    Mullett, D. (2026). <em>Benchmarking Recursive-Collapse Warning Claims
+    Under Matched False-Positive Control.</em> arXiv preprint
+    <a href="{{ARXIV_URL}}" target="_blank" rel="noopener">{{ARXIV_URL}}</a>
+  </p>
+
+  <figure class="bibtex-block">
+    <div class="bibtex-body">
+<pre>@misc{mullett2026loopzero,
+  author        = {Mullett, David},
+  title         = {Benchmarking Recursive-Collapse Warning Claims Under Matched False-Positive Control},
+  year          = {2026},
+  eprint        = {{{ARXIV_ID}}},
+  archivePrefix = {arXiv},
+  primaryClass  = {eess.SY},
+  url           = {{{ARXIV_URL}}},
+  note          = {Lean snapshot: \url{https://github.com/davidmullett/loopzero-paper-public/tree/lean-v1.0} (commit 7afd763f38182ca49b2016fe38eeefff4560cdf0)}
+}</pre>
+    </div>
+  </figure>
+</section>
+
+
+<!-- 7. ARTIFACTS -->
+<section>
+  <h2>Artifacts</h2>
+
+  <div class="artifacts-grid">
+    <div class="artifact-row">
+      <span class="artifact-label">Abstract</span>
+      <a class="artifact-link" href="{{ARXIV_URL}}"
+         target="_blank" rel="noopener">arxiv.org &mdash; abstract</a>
+    </div>
+    <div class="artifact-row">
+      <span class="artifact-label">PDF</span>
+      <a class="artifact-link" href="https://arxiv.org/pdf/{{ARXIV_ID}}"
+         target="_blank" rel="noopener">arxiv.org &mdash; PDF</a>
+    </div>
+    <div class="artifact-row">
+      <span class="artifact-label">Repository</span>
+      <a class="artifact-link" href="https://github.com/davidmullett/loopzero-paper-public"
+         target="_blank" rel="noopener">github.com/davidmullett/loopzero-paper-public</a>
+    </div>
+    <div class="artifact-row">
+      <span class="artifact-label">Lean&nbsp;tag</span>
+      <a class="artifact-link" href="https://github.com/davidmullett/loopzero-paper-public/tree/lean-v1.0"
+         target="_blank" rel="noopener">loopzero-paper-public/tree/lean-v1.0</a>
+    </div>
+    <div class="artifact-row">
+      <span class="artifact-label">ORCID</span>
+      <a class="artifact-link" href="https://orcid.org/0009-0004-2543-1664"
+         target="_blank" rel="noopener"
+         title="ORCID researcher profile">0009-0004-2543-1664</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<footer>
+  <div class="footer-text">
+    davidmullett.com
+    <span class="foot-sep">&nbsp;·&nbsp;</span>
+    <a href="https://orcid.org/0009-0004-2543-1664"
+       target="_blank" rel="noopener">ORCID&nbsp;0009-0004-2543-1664</a>
+    <span class="foot-sep">&nbsp;·&nbsp;</span>
+    loopzero.org
+  </div>
+</footer>
+
+</div>
+
+</body>
+</html>
