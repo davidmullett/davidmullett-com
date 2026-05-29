@@ -145,7 +145,7 @@ header {
   letter-spacing: -0.01em;
   line-height: 1.0;
   color: var(--ink);
-  margin-bottom: 6px;
+  margin: 0 0 6px;
 }
 .descriptor {
   font-family: var(--mono);
@@ -241,6 +241,44 @@ footer {
   .meta-sep { display: none; }
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://davidmullett.com/#person",
+  "name": "David Mullett",
+  "url": "https://davidmullett.com/",
+  "jobTitle": "Independent researcher",
+  "description": "Independent researcher building falsifiable benchmarks for collapse in recursive systems.",
+  "email": "d@loopzero.org",
+  "sameAs": [
+    "https://orcid.org/0009-0004-2543-1664",
+    "https://github.com/davidmullett"
+  ],
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "ORCID",
+    "value": "0009-0004-2543-1664",
+    "url": "https://orcid.org/0009-0004-2543-1664"
+  },
+  "affiliation": {
+    "@type": "Organization",
+    "name": "Loopzero",
+    "url": "https://loopzero.org"
+  },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Royal College of Art" },
+    { "@type": "CollegeOrUniversity", "name": "Northwestern University" }
+  ],
+  "knowsAbout": [
+    "Formal verification",
+    "Recursive systems",
+    "Benchmark design",
+    "Collapse dynamics",
+    "Recommender systems"
+  ]
+}
+</script>
 </head>
 <body style="background:#f3f0e7 !important; color:#1a1710 !important;">
 <div class="page">
@@ -264,7 +302,7 @@ footer {
          aria-label="Loopzero mark" role="img"></svg>
   </div>
 
-  <div class="name">David Mullett</div>
+  <h1 class="name">David Mullett</h1>
   <div class="descriptor">Independent researcher building falsifiable benchmarks for collapse in recursive systems.</div>
 
   <div class="header-meta">
