@@ -5,8 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="only light">
 <meta name="theme-color" content="#f3f0e7">
-<meta name="description" content="David Mullett — independent researcher working on formal models of collapse in digital feedback systems. Loopzero: a formally specified warning criterion for collapse in recursive systems, with a claim-boundary artifact in Lean 4 and an empirical bridge evaluated on two public benchmark domains.">
+<meta name="description" content="David Mullett — independent researcher building falsifiable benchmarks for collapse in recursive systems. Loopzero: a claim-bounded benchmark framework for evaluating recursive-collapse warning claims under matched false-positive control, with a claim boundary specified in Lean 4 and evaluation on two frozen public benchmarks.">
 <title>David Mullett</title>
+
+<link rel="canonical" href="https://davidmullett.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="David Mullett">
+<meta property="og:url" content="https://davidmullett.com/">
+<meta property="og:title" content="David Mullett — Independent Researcher">
+<meta property="og:description" content="Independent researcher building falsifiable benchmarks for collapse in recursive systems. Loopzero: a benchmark framework for recursive-collapse warning claims under matched false-positive control.">
+<meta property="og:image" content="https://davidmullett.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="David Mullett — independent researcher. Loopzero benchmark framework.">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="David Mullett — Independent Researcher">
+<meta name="twitter:description" content="Loopzero: a benchmark framework for recursive-collapse warning claims under matched false-positive control.">
+<meta name="twitter:image" content="https://davidmullett.com/og-image.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -241,66 +263,6 @@ section:last-of-type { margin-bottom: 0; }
 .paper-links a:hover { text-decoration-color: var(--ph); }
 
 /* ═══════════════════════════════
-   BLOCK 3 — CONTRIBUTION
-═══════════════════════════════ */
-.contribution-list { list-style: none; max-width: 54ch; }
-.contribution-list li {
-  padding: 13px 0;
-  border-bottom: 1px solid var(--rule-lt);
-}
-.contribution-list li:first-child { border-top: 1px solid var(--rule-lt); }
-
-.contrib-label {
-  font-family: var(--mono);
-  font-size: 0.54rem;
-  font-weight: 400;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ph);
-  display: block;
-  margin-bottom: 6px;
-}
-.contrib-text {
-  font-family: var(--serif);
-  font-size: 1rem;           /* aligned with body — scans cleanly */
-  color: var(--ink);
-  line-height: 1.68;
-}
-
-/* ═══════════════════════════════
-   BLOCK 4 — PROVED / TESTED / OPEN
-═══════════════════════════════ */
-.status-grid { max-width: 54ch; }
-
-.status-item {
-  padding: 14px 0;
-  border-bottom: 1px solid var(--rule-lt);
-}
-.status-item:first-child { border-top: 1px solid var(--rule-lt); }
-
-.status-label {
-  font-family: var(--mono);
-  font-size: 0.54rem;
-  font-weight: 400;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-2);
-  display: block;
-  margin-bottom: 5px;
-}
-
-/* Open work: visually quieter — ambition, not evidence */
-.status-item.open .status-label { color: var(--ink-3); }
-.status-item.open .status-body  { color: var(--ink-3); }
-
-.status-body {
-  font-family: var(--serif);
-  font-size: 0.95rem;        /* slight lift — visual parity with body register */
-  color: var(--ink);
-  line-height: 1.65;
-}
-
-/* ═══════════════════════════════
    BLOCK 6 — BACKGROUND
 ═══════════════════════════════ */
 .ledger { list-style: none; max-width: 54ch; }
@@ -494,7 +456,7 @@ footer {
   <div class="name">David Mullett</div>
 
   <div class="descriptor">
-    Independent researcher working on formal models of collapse in digital feedback systems.
+    Independent researcher building falsifiable benchmarks for collapse in recursive systems.
   </div>
 
   <div class="header-meta">
@@ -518,21 +480,27 @@ footer {
   <div class="paper-block">
     <span class="paper-label">Preprint</span>
     <div class="paper-title">
-      A formally specified warning criterion for collapse
-      in recursive systems
+      Benchmarking Recursive-Collapse Warning Claims
+      Under Matched False-Positive Control
     </div>
     <div class="paper-meta">
       David Mullett &nbsp;·&nbsp; arXiv preprint
       
     </div>
     <div class="paper-abstract">
-      Loopzero defines a warning criterion for collapse in recursive systems
-      around a minimal no-progress obstruction, formalized in Lean&nbsp;4 to
-      make the claim boundary explicit. The criterion is instantiated as a
-      triplet of telemetry witnesses — gain (G), recursive persistence (p),
-      and diversity (δ) — and evaluated on two public benchmark domains
-      under a matched false-positive contract, with a secondary consistency
-      analysis on published model-collapse trajectories.
+      Loopzero is a claim-bounded benchmark framework for testing whether
+      recursive failures show a directional telemetry pattern — rising gain
+      (G), recursive persistence (p), and declining diversity (δ) — before
+      overt collapse. The claim boundary is specified in Lean&nbsp;4;
+      detectors are then evaluated under a locked equal-false-positive
+      contract on two frozen public benchmarks: a segmented markets family
+      (Volmageddon 2018, COVID 2020) and a MovieLens-25M recommender replay.
+      Digitized LLM training-loop trajectories (Shumailov et al., 2024) are
+      included as a directional-consistency check. Non-acceptance is reported
+      as a first-class scientific outcome.
+    </div>
+    <div class="paper-links">
+      <a href="paper.html">Read the paper →</a>
     </div>
   </div>
 
@@ -580,100 +548,31 @@ CSS to add when activated:
 ═══════════════════════════════════════════════════════════════════ -->
 
 
-<!-- BLOCK 3 — CONTRIBUTION -->
+<!-- BLOCK 3 — STATUS -->
 <section>
-  <h2>What Is New</h2>
-
-  <ul class="contribution-list">
-    <li>
-      <span class="contrib-label">Specifies</span>
-      <span class="contrib-text">A formal claim boundary for one specific failure
-      mode in recursive feedback systems, articulated in Lean&nbsp;4. The artifact
-      is intentionally elementary — it exists to make the empirical bridge
-      assumption explicit and inspectable.</span>
-    </li>
-    <li>
-      <span class="contrib-label">Tests</span>
-      <span class="contrib-text">A conditional empirical bridge from the formal
-      claim boundary to a measurable pre-collapse footprint, evaluated on two
-      public benchmark domains under a locked equal-false-positive contract.
-      A secondary consistency analysis on published model-collapse trajectories
-      (Shumailov et al., 2024) corroborates the witness pattern in a third
-      recursive setting.</span>
-    </li>
-    <li>
-      <span class="contrib-label">Introduces</span>
-      <span class="contrib-text">A matched-false-positive comparator contract —
-      detectors compared at the same alert budget rather than at arbitrary
-      thresholds — designed as extensible infrastructure for evaluating
-      recursive-collapse detectors across system families.</span>
-    </li>
-  </ul>
-
-</section>
-
-
-<!-- BLOCK 4 — PROVED / TESTED / OPEN -->
-<section>
-  <h2>Current Status</h2>
-
-  <div class="status-grid">
-
-    <div class="status-item">
-      <span class="status-label">Specified</span>
-      <div class="status-body">
-        A minimal no-progress obstruction in Lean&nbsp;4, together with a
-        measurement-map bridge and a schematic telemetry specialization.
-        The artifact establishes what is and is not claimed: it verifies the
-        abstract obstruction, not that real benchmark telemetry supplies the
-        required measurement map.
-      </div>
-    </div>
-
-    <div class="status-item">
-      <span class="status-label">Empirically tested</span>
-      <div class="status-body">
-        Two public benchmark domains under a matched-false-positive contract:
-        a public-data markets event family (Volmageddon 2018, COVID March 2020
-        circuit breakers) and an offline MovieLens-25M recursive recommender
-        replay benchmark. A secondary consistency analysis on Shumailov et al.
-        (2024) corroborates the witness pattern in a third recursive setting;
-        matched-FP comparator evaluation in that domain is deferred to
-        follow-up work. Empirical claims are bounded to the protocol and
-        analyses described in the preprint.
-      </div>
-    </div>
-
-    <div class="status-item open">
-      <span class="status-label">Open work</span>
-      <div class="status-body">
-        A v1.1 program is in development: adding the proposed criterion's own
-        matched-FP operating point to the comparator table, threshold-path
-        calibration of comparators, recommender negative controls, and
-        cluster-robust dependency analysis. Future work includes extension to
-        additional recursive domains with matched-FP comparator evaluation.
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- BLOCK 5 — CONTEXT / WHY IT MATTERS -->
-<section>
-  <h2>Why It Matters</h2>
+  <h2>Status</h2>
 
   <p>
-    Recursive feedback systems — algorithmic, financial, and social — are
-    widely studied. Their failure modes are often described operationally and
-    less often specified as formal objects. Loopzero approaches one specific
-    failure mode by treating it as a formally bounded claim: the obstruction
-    is specified in Lean&nbsp;4, the bridge from that obstruction to
-    observable telemetry is stated explicitly as a conditional assumption,
-    and the empirical claims are bounded to a defined benchmark protocol.
-    The aim is not deeper formal machinery; it is making what is claimed
-    easier to inspect, contest, and test across domains.
+    The claim boundary is specified in Lean&nbsp;4. The bridge is tested on
+    two frozen public benchmarks under a matched false-positive contract,
+    with a directional-consistency check on published model-collapse
+    trajectories (Shumailov et al., 2024). Recommender negative controls,
+    cluster-robust dependence analysis, and additional domains remain open.
+  </p>
+
+</section>
+
+
+<!-- BLOCK 4 — CONTEXT -->
+<section>
+  <h2>Context</h2>
+
+  <p>
+    Recursive feedback systems — algorithmic, financial, social — are widely
+    studied, but their failure modes are usually described operationally
+    rather than specified as formal objects. Loopzero treats one such failure
+    mode as a bounded, falsifiable claim, so that what is asserted can be
+    inspected, contested, and tested across domains.
   </p>
 
 </section>

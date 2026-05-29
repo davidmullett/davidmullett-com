@@ -8,6 +8,28 @@
 <meta name="description" content="Benchmarking Recursive-Collapse Warning Claims Under Matched False-Positive Control — David Mullett, arXiv preprint 2026. A claim-bounded benchmark framework for evaluating recursive-collapse warning claims under explicit false-positive control.">
 <title>Paper · David Mullett</title>
 
+<link rel="canonical" href="https://davidmullett.com/paper.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="David Mullett">
+<meta property="og:url" content="https://davidmullett.com/paper.html">
+<meta property="og:title" content="Benchmarking Recursive-Collapse Warning Claims Under Matched False-Positive Control">
+<meta property="og:description" content="A claim-bounded benchmark framework for testing recursive-collapse warning claims under explicit false-positive control. arXiv preprint — David Mullett.">
+<meta property="og:image" content="https://davidmullett.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Loopzero — benchmark framework for recursive-collapse warning claims.">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Benchmarking Recursive-Collapse Warning Claims Under Matched False-Positive Control">
+<meta name="twitter:description" content="A claim-bounded benchmark framework for recursive-collapse warning claims under matched false-positive control. arXiv preprint.">
+<meta name="twitter:image" content="https://davidmullett.com/og-image.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400;1,8..60,500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -76,6 +98,54 @@ nav {
 .nav-list a:hover { color: var(--ink); }
 .nav-list a[aria-current="page"] { color: var(--ink-2); }
 
+/* ── PAGE HEADER (standardized to match Research) ── */
+header {
+  margin-bottom: 56px;
+}
+.mark { display: block; line-height: 0; margin-bottom: 20px; opacity: 0.82; }
+.mark svg { display: block; overflow: visible; }
+.name {
+  font-family: var(--serif);
+  font-size: 0.82rem;
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 1.0;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.descriptor {
+  font-family: var(--mono);
+  font-size: 0.61rem;
+  font-weight: 300;
+  color: var(--ink-2);
+  letter-spacing: 0.03em;
+  line-height: 1.60;
+  margin-bottom: 14px;
+  max-width: 52ch;
+}
+.header-meta {
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  font-weight: 300;
+  color: var(--ink-3);
+  letter-spacing: 0.05em;
+  line-height: 1.9;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.meta-sep { margin: 0 8px; color: var(--ink-3); }
+.header-meta a {
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  font-weight: 300;
+  color: var(--ink-2);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+.header-meta a:hover { color: var(--ink); }
+
 /* ── LINKS ── */
 a {
   color: var(--ink);
@@ -117,17 +187,6 @@ h2 {
   color: var(--ink-2);
   margin-bottom: 22px;
   line-height: 1.4;
-}
-
-/* ── PAPER BYLINE ── */
-.paper-byline {
-  font-family: var(--mono);
-  font-size: 0.54rem;
-  font-weight: 300;
-  color: var(--ink-3);
-  letter-spacing: 0.06em;
-  margin-bottom: 12px;
-  text-transform: none;
 }
 
 /* ── TITLE BLOCK ── */
@@ -196,6 +255,20 @@ section:last-of-type { margin-bottom: 0; }
   color: var(--ink);
   max-width: 52ch;
   margin-bottom: 16px;
+}
+
+/* ── COMPANION NOTE ── */
+.companion-note {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 300;
+  color: var(--ink-3);
+  letter-spacing: 0.03em;
+  line-height: 1.7;
+  max-width: 52ch;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule-lt);
 }
 
 /* ── ABSTRACT BLOCK ── */
@@ -395,6 +468,8 @@ footer {
   html { font-size: 16px; }
   .page { padding: 36px 20px 80px; }
   .nav-list { gap: 12px 20px; }
+  .header-meta { flex-direction: column; }
+  .meta-sep { display: none; }
   .artifact-label { min-width: 72px; }
   .bibtex-body { padding: 14px 16px; }
   .bibtex-body pre { font-size: 0.68rem; line-height: 1.55; }
@@ -416,15 +491,36 @@ footer {
 
 <main>
 
+<!-- PAGE HEADER -->
+<header>
+  <div class="mark">
+    <svg id="spiralSvg" width="36" height="36" viewBox="0 0 80 80"
+         xmlns="http://www.w3.org/2000/svg"
+         aria-label="Loopzero mark" role="img"></svg>
+  </div>
+
+  <div class="name">David Mullett</div>
+  <div class="descriptor">Independent researcher building falsifiable benchmarks for collapse in recursive systems.</div>
+
+  <div class="header-meta">
+    <a href="mailto:d@loopzero.org">d@loopzero.org</a>
+    <span class="meta-sep">·</span>
+    <a href="https://orcid.org/0009-0004-2543-1664"
+       target="_blank" rel="noopener"
+       title="ORCID researcher profile">ORCID&nbsp;0009-0004-2543-1664</a>
+    <span class="meta-sep">·</span>
+    <a href="https://github.com/davidmullett"
+       target="_blank" rel="noopener">GitHub</a>
+  </div>
+</header>
+
 <!-- 1. TITLE BLOCK -->
 <div class="title-block">
-
-  <div class="paper-byline">David Mullett</div>
 
   <h1>Benchmarking Recursive-Collapse Warning Claims Under Matched False-Positive Control</h1>
 
   <div class="paper-status">
-    David Mullett &nbsp;·&nbsp; Independent Researcher &nbsp;·&nbsp; arXiv preprint
+    arXiv preprint
   </div>
   <div class="paper-status-note">
     Link active shortly after submission clears processing.
@@ -456,6 +552,10 @@ footer {
     becomes visible, but only if measured against an explicit false-positive
     budget. The methodological contribution is the framework itself —
     non-acceptance reported as a first-class scientific outcome.
+  </p>
+
+  <p class="companion-note">
+    An interactive visual companion to this paper is in preparation.
   </p>
 </section>
 
@@ -555,7 +655,64 @@ footer {
 </section>
 
 
-<!-- 5. ARXIV CATEGORIES -->
+<!-- 5. REPRODUCIBILITY & ANCHORS -->
+<section>
+  <h2>Reproducibility</h2>
+
+  <div class="formal-artifact">
+
+    <p>
+      All empirical results are anchored to immutable frozen artifacts indexed
+      by SHA-256 hash. The released derived-telemetry packets, frozen
+      comparator-calibration state, and benchmark freeze-states let a third
+      party re-run the matched-false-positive contract independently of the
+      analysis framework. For the recommender benchmark, the MovieLens-25M
+      source archive and a deterministic replay engine reproduce all three
+      horizon panels byte-for-byte. For markets, derived telemetry packets are
+      public; raw vendor minute-bars require an Alpaca Markets subscription
+      under vendor terms.
+    </p>
+
+    <ul class="formal-detail-list">
+      <li>
+        <span class="formal-label">MovieLens-25M source archive</span>
+        <span class="formal-value"><code>8b21cfb7eb1706b4ec0aac894368d90acf26ebdfb6aced3ebd4ad5bd1eb9c6aa</code></span>
+      </li>
+      <li>
+        <span class="formal-label">Recommender benchmark freeze-state</span>
+        <span class="formal-value"><code>050aa725e6608f659b3f7eb103731bb7fbabaa23aeefdc4b11043999b7fed4cf</code></span>
+      </li>
+      <li>
+        <span class="formal-label">Recommender contract</span>
+        <span class="formal-value"><code>2e256b255a7f074c1516d70315ebb216241a4a7e8aba2db88b194417705fd71d</code></span>
+      </li>
+      <li>
+        <span class="formal-label">Markets comparator merged state (v2)</span>
+        <span class="formal-value"><code>784895418953b1646bd40eb7b5266e39901326b1335b2ec5f2390b70af4642c7</code></span>
+      </li>
+      <li>
+        <span class="formal-label">Witness-direction bridge state (v3)</span>
+        <span class="formal-value"><code>bd47e75851fcaea1e6d843f9b74156ec036ddb487ca76e815d7b6fb0cf258f94</code></span>
+      </li>
+      <li>
+        <span class="formal-label">Replay engine</span>
+        <span class="formal-value">movielens_recursive_replay_engine v1.0.0 (item-item collaborative filtering, hash <code>56c1cff225d60c09</code>)</span>
+      </li>
+    </ul>
+
+    <p class="formal-note">
+      The complete freeze-manifest table (Supplementary Table S5), per-directory
+      lock notes, and raw-input provenance manifests are in the
+      <a href="https://github.com/davidmullett/loopzero-paper-public"
+         target="_blank" rel="noopener">paper repository</a>.
+      Replication questions: <a href="mailto:d@loopzero.org">d@loopzero.org</a>.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- 6. ARXIV CATEGORIES -->
 <section>
   <h2>Categories</h2>
 
@@ -645,6 +802,29 @@ footer {
 </footer>
 
 </div>
+
+<script>
+(function() {
+  const svg = document.getElementById('spiralSvg');
+  if (!svg) return;
+  const ns = 'http://www.w3.org/2000/svg';
+
+  const path = document.createElementNS(ns, 'path');
+  path.setAttribute('fill', 'none');
+  path.setAttribute('stroke', '#1a1814');
+  path.setAttribute('stroke-width', '1.2');
+  path.setAttribute('stroke-linecap', 'round');
+  path.setAttribute('d', `M40,40 Q40,8 66,14 Q82,25 80,48 Q74,69 50,74 Q23,78 9,56 Q-4,34 8,14 Q20,-4 42,2 Q66,8 76,30 Q84,54 70,68 Q54,82 34,80 Q14,78 6,62 Q-2,46 8,34 Q18,22 34,20 Q52,18 60,34 Q68,50 58,62 Q48,74 36,70 Q24,66 22,54 Q20,44 28,38 Q36,32 44,36 Q52,40 50,48 Q48,56 42,54 Q38,52 38,48 Q38,44 41,42`);
+  svg.appendChild(path);
+
+  const dot = document.createElementNS(ns, 'circle');
+  dot.setAttribute('cx', '41');
+  dot.setAttribute('cy', '42');
+  dot.setAttribute('r', '2');
+  dot.setAttribute('fill', '#1a1814');
+  svg.appendChild(dot);
+})();
+</script>
 
 </body>
 </html>

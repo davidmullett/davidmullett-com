@@ -5,8 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="only light">
 <meta name="theme-color" content="#f3f0e7">
-<meta name="description" content="David Mullett — independent researcher working on formal models of collapse in digital feedback systems. Creator of Loopzero, a formally specified warning criterion for collapse in recursive systems.">
+<meta name="description" content="David Mullett — independent researcher building falsifiable benchmarks for collapse in recursive systems. Creator of Loopzero, a claim-bounded benchmark framework for evaluating recursive-collapse warning claims under matched false-positive control.">
 <title>About · David Mullett</title>
+
+<link rel="canonical" href="https://davidmullett.com/about.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="David Mullett">
+<meta property="og:url" content="https://davidmullett.com/about.html">
+<meta property="og:title" content="About · David Mullett">
+<meta property="og:description" content="Independent researcher building falsifiable benchmarks for collapse in recursive systems. Background and research orientation.">
+<meta property="og:image" content="https://davidmullett.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="David Mullett — independent researcher.">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About · David Mullett">
+<meta name="twitter:description" content="Independent researcher building falsifiable benchmarks for collapse in recursive systems.">
+<meta name="twitter:image" content="https://davidmullett.com/og-image.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -111,29 +133,51 @@ h2 {
   line-height: 1.4;
 }
 
-/* ── PAGE HEADER ── */
-.page-header {
+/* ── PAGE HEADER (standardized to match Research) ── */
+header {
   margin-bottom: 56px;
-  padding-bottom: 28px;
-  border-bottom: 1px solid var(--rule-lt);
 }
-.page-name {
+.name {
   font-family: var(--serif);
   font-size: 0.82rem;
   font-style: italic;
   font-weight: 300;
   letter-spacing: -0.01em;
+  line-height: 1.0;
   color: var(--ink);
   margin-bottom: 6px;
 }
-.page-descriptor {
+.descriptor {
   font-family: var(--mono);
   font-size: 0.61rem;
   font-weight: 300;
   color: var(--ink-2);
   letter-spacing: 0.03em;
   line-height: 1.60;
+  margin-bottom: 14px;
+  max-width: 52ch;
 }
+.header-meta {
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  font-weight: 300;
+  color: var(--ink-3);
+  letter-spacing: 0.05em;
+  line-height: 1.9;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.meta-sep { margin: 0 8px; color: var(--ink-3); }
+.header-meta a {
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  font-weight: 300;
+  color: var(--ink-2);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+.header-meta a:hover { color: var(--ink); }
 
 /* ── SECTIONS ── */
 section {
@@ -158,41 +202,6 @@ section:last-of-type { margin-bottom: 0; }
   font-weight: 300;
   color: var(--ink-3);
   letter-spacing: 0.04em;
-}
-
-/* ── CONTACT BLOCK ── */
-.contact-block {
-  max-width: 54ch;
-}
-.contact-row {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  padding: 11px 0;
-  border-bottom: 1px solid var(--rule-lt);
-}
-.contact-row:first-child { border-top: 1px solid var(--rule-lt); }
-.contact-label {
-  font-family: var(--mono);
-  font-size: 0.54rem;
-  font-weight: 400;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  min-width: 52px;
-  flex-shrink: 0;
-}
-.contact-value {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  font-weight: 400;
-  color: var(--ink-2);
-  text-decoration: none;
-  letter-spacing: 0.02em;
-}
-.contact-value:hover { color: var(--ph); text-decoration: none; }
-a.contact-value {
-  text-decoration: none;
 }
 
 /* ── FOOTER ── */
@@ -228,6 +237,8 @@ footer {
   html { font-size: 16px; }
   .page { padding: 36px 20px 80px; }
   .nav-list { gap: 12px 20px; }
+  .header-meta { flex-direction: column; }
+  .meta-sep { display: none; }
 }
 </style>
 </head>
@@ -246,16 +257,27 @@ footer {
 <main>
 
 <!-- PAGE HEADER -->
-<div class="page-header">
+<header>
   <div class="mark">
     <svg id="spiralSvgAbout" width="36" height="36" viewBox="0 0 80 80"
          xmlns="http://www.w3.org/2000/svg"
          aria-label="Loopzero mark" role="img"></svg>
   </div>
 
-  <div class="page-name">David Mullett</div>
-  <div class="page-descriptor">Independent researcher working on formal models of collapse in digital feedback systems.</div>
-</div>
+  <div class="name">David Mullett</div>
+  <div class="descriptor">Independent researcher building falsifiable benchmarks for collapse in recursive systems.</div>
+
+  <div class="header-meta">
+    <a href="mailto:d@loopzero.org">d@loopzero.org</a>
+    <span class="meta-sep">·</span>
+    <a href="https://orcid.org/0009-0004-2543-1664"
+       target="_blank" rel="noopener"
+       title="ORCID researcher profile">ORCID&nbsp;0009-0004-2543-1664</a>
+    <span class="meta-sep">·</span>
+    <a href="https://github.com/davidmullett"
+       target="_blank" rel="noopener">GitHub</a>
+  </div>
+</header>
 
 
 <!-- 1. INTRODUCTION -->
@@ -263,20 +285,18 @@ footer {
   <h2>Introduction</h2>
 
   <p>
-    I am an independent researcher working on formal models of collapse in
-    recursive digital feedback systems. My current work centers on Loopzero —
-    a formally specified warning criterion for collapse in recursive systems,
-    with a claim-boundary artifact in Lean&nbsp;4 and an empirical bridge
-    evaluated on two public benchmark domains.
+    I am an independent researcher working on collapse in recursive digital
+    systems — formal claim boundaries and falsifiable benchmarks. My current
+    work centers on Loopzero, the framework I built: a claim boundary
+    specified in Lean&nbsp;4, and an empirical bridge evaluated on two frozen
+    public benchmarks under a matched false-positive contract.
   </p>
 
   <p>
     The research is focused on a specific and bounded problem: characterizing
     the conditions under which recursive systems enter a no-progress regime
     where local updates remain coherent but meaningful forward improvement
-    becomes inaccessible. The goal is a precise, inspectable specification
-    of what is and is not claimed, paired with an empirical bridge that can
-    be tested under a defined protocol.
+    becomes inaccessible.
   </p>
 </section>
 
@@ -289,16 +309,15 @@ footer {
     After Meta Reality Labs, I spent an extended period studying the history
     and structure of the attention economy — from early mass-market print
     media through behaviorism, early AI, and the feedback architectures that
-    define contemporary digital platforms. The central question was whether
-    the collapse patterns observable in these systems have a formally
-    describable structure, or whether they are only described informally.
-    My background in art history and cultural theory gave me one set of tools;
-    working at scale inside recommendation and discovery architectures gave me
-    another. The move to formal methods came from noticing that the structural
-    conditions for collapse were regularly encountered in practice and rarely
-    specified with precision. Loopzero is an attempt to provide that
-    specification with a precise claim boundary in Lean&nbsp;4 and an
-    empirical bridge that can be tested under a defined protocol.
+    define contemporary digital platforms. The hypothesis that drove the work
+    was that the collapse patterns recurring across these systems have a
+    formally describable structure — one regularly encountered in practice but
+    otherwise described only informally. My background in art history and
+    cultural theory gave me one set of tools; working at scale inside
+    recommendation and discovery architectures gave me another. Loopzero is my
+    attempt to provide that specification: a precise claim boundary in
+    Lean&nbsp;4 and an empirical bridge that can be tested under a defined
+    protocol.
   </p>
 </section>
 
@@ -332,46 +351,6 @@ footer {
 </section>
 
 
-
-<!-- WORKING METHOD — optional, 3 lines, structurally quiet -->
-<section>
-  <h2>Working method</h2>
-
-  <p>
-    The work uses formal verification to specify a claim boundary as a
-    machine-checked object, and empirical evaluation to test the bridge from
-    that boundary to observable telemetry. The two are kept structurally
-    separate: what is proved in Lean is a deliberately elementary obstruction;
-    what is tested empirically is a conditional bridge to measurable
-    pre-collapse witnesses under a defined benchmark protocol.
-  </p>
-</section>
-
-
-<!-- 4. CONTACT -->
-<section>
-  <h2>Contact</h2>
-
-  <div class="contact-block">
-    <div class="contact-row">
-      <span class="contact-label">Email</span>
-      <a class="contact-value" href="mailto:d@loopzero.org">d@loopzero.org</a>
-    </div>
-    <div class="contact-row">
-      <span class="contact-label">ORCID</span>
-      <a class="contact-value"
-         href="https://orcid.org/0009-0004-2543-1664"
-         target="_blank" rel="noopener"
-         title="ORCID researcher profile">0009-0004-2543-1664</a>
-    </div>
-    <div class="contact-row">
-      <span class="contact-label">GitHub</span>
-      <a class="contact-value"
-         href="https://github.com/davidmullett"
-         target="_blank" rel="noopener">github.com/davidmullett</a>
-    </div>
-  </div>
-</section>
 
 </main>
 
