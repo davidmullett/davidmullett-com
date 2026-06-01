@@ -5,29 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="only light">
 <meta name="theme-color" content="#f3f0e7">
-<meta name="description" content="David Mullett — independent researcher building falsifiable benchmarks for collapse in recursive systems. Loopzero: a claim-bounded benchmark framework for evaluating recursive-collapse warning claims under matched false-positive control, with a claim boundary specified in Lean 4 and evaluation on two frozen public benchmarks.">
-<title>David Mullett</title>
+<meta name="description" content="David Mullett — independent researcher and former Meta Reality Labs design lead. I design and study the digital systems that shape behavior at scale — and how they fail. Now leading the research program Loopzero.">
 
 <link rel="canonical" href="https://davidmullett.com/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
 
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="David Mullett">
 <meta property="og:url" content="https://davidmullett.com/">
-<meta property="og:title" content="David Mullett — Independent Researcher">
-<meta property="og:description" content="Independent researcher building falsifiable benchmarks for collapse in recursive systems. Loopzero: a benchmark framework for recursive-collapse warning claims under matched false-positive control.">
+<meta property="og:title" content="David Mullett">
+<meta property="og:description" content="I design and study the digital systems that shape behavior at scale — and how they fail. Independent researcher · former Meta Reality Labs design lead.">
 <meta property="og:image" content="https://davidmullett.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="David Mullett — independent researcher. Loopzero benchmark framework.">
 
-<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="David Mullett — Independent Researcher">
-<meta name="twitter:description" content="Loopzero: a benchmark framework for recursive-collapse warning claims under matched false-positive control.">
+<meta name="twitter:title" content="David Mullett">
+<meta name="twitter:description" content="I design and study the digital systems that shape behavior at scale — and how they fail.">
 <meta name="twitter:image" content="https://davidmullett.com/og-image.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,638 +31,239 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400;1,8..60,500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
 :root {
-  --cream:     #f3f0e7;
-  --ink:       #1a1710;
-  --ink-2:     #48443c;
-  --ink-3:     #8c8880;
-  --rule-lt:   #d8d4c8;
-  --ph:        #2dd67a;
-  --ph-dim:    rgba(45,214,122,.06);
-  --ph-border: rgba(45,214,122,.55);
-  --serif:     'Source Serif 4', Georgia, serif;
-  --mono:      'IBM Plex Mono', 'Courier New', Courier, monospace;
+  --cream:#f3f0e7; --paper-2:#efebe0; --ink:#1a1710; --ink-2:#48443c; --ink-3:#8c8880;
+  --rule-lt:#d8d4c8; --rule-2:#c9c4b6; --ph:#1faa5e; --ph-border:rgba(45,214,122,.5); --ph-dim:rgba(45,214,122,.05);
+  --serif:'Source Serif 4',Georgia,serif; --mono:'IBM Plex Mono','Courier New',monospace;
 }
+html { font-size:18px; -webkit-text-size-adjust:100%; text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased; font-feature-settings:"liga" 1,"kern" 1,"onum" 1;
+  background:var(--cream); color-scheme:only light; }
+body { background:var(--cream); color:var(--ink); font-family:var(--serif); line-height:1.75; }
 
-html {
-  font-size: 18px;
-  -webkit-text-size-adjust: 100%;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  font-feature-settings: "liga" 1, "kern" 1, "onum" 1;
-  background: #f3f0e7;
-  color-scheme: only light;
-}
+/* Editorial column — airier than loopzero, same left anchor */
+.page { max-width:680px; margin:0 auto 0 max(80px,14vw); padding:56px 0 132px; }
 
-body {
-  background: var(--cream);
-  color: var(--ink);
-  font-family: var(--serif);
-  line-height: 1.75;
-}
+a { color:var(--ink); text-decoration:underline; text-decoration-color:var(--rule-2);
+  text-underline-offset:3px; text-decoration-thickness:1px; transition:text-decoration-color .14s,color .14s; }
+a:hover { text-decoration-color:var(--ink-2); }
+/* family rule: green is reserved for links that point to the work */
+a.lz { text-decoration-color:var(--ph-border); }
+a.lz:hover { color:var(--ph); text-decoration-color:var(--ph); }
 
-/* Asymmetric column — Scher: left-anchored, intentional right void */
-.page {
-  max-width: 680px;
-  margin: 0 auto 0 max(80px, 14vw);
-  padding: 56px 0 128px;
-}
+nav { margin-bottom:52px; padding-bottom:16px; border-bottom:1px solid var(--rule-lt); }
+.nav-list { list-style:none; display:flex; gap:0 28px; flex-wrap:wrap; }
+.nav-list a { font-family:var(--mono); font-size:0.56rem; font-weight:400; letter-spacing:0.2em;
+  text-transform:uppercase; color:var(--ink-3); text-decoration:none; }
+.nav-list a:hover { color:var(--ink); }
+.nav-list a[aria-current="page"] { color:var(--ink-2); }
 
-/* ── LINKS ── */
-a {
-  color: var(--ink);
-  text-decoration: underline;
-  text-decoration-color: var(--rule-lt);
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
-  transition: text-decoration-color .14s;
+/* Mark — quiet, static, links to the work */
+.mark { display:inline-block; line-height:0; margin-bottom:26px; }
+.mark svg { display:block; overflow:visible; }
+.mark .spiral { stroke:var(--ink); stroke-width:2; fill:none; stroke-linecap:round; }
+.mark .core { fill:var(--ink); transition:fill .15s; }
+.mark:hover .core { fill:var(--ph); }
+@media (prefers-reduced-motion: no-preference) {
+  .mark .spiral { stroke-dasharray:1; stroke-dashoffset:1; animation: draw 2.1s cubic-bezier(.6,.02,.2,1) .15s forwards; }
+  .mark .core { opacity:0; animation: glow 1s ease 1.7s forwards; }
 }
-a:hover { text-decoration-color: var(--ink-2); }
+@keyframes draw { to { stroke-dashoffset:0; } }
+@keyframes glow { to { opacity:1; } }
 
+header { margin-bottom:56px; }
+.hero { font-family:var(--serif); font-size:1.6rem; font-weight:400; line-height:1.34;
+  letter-spacing:-0.012em; color:var(--ink); max-width:21ch; margin-bottom:22px; text-wrap:balance; }
+.hero .em { font-style:italic; }
+.descriptor { font-family:var(--mono); font-size:0.61rem; font-weight:300; color:var(--ink-2);
+  letter-spacing:0.03em; line-height:1.7; max-width:62ch; margin-bottom:16px; }
+.header-meta { font-family:var(--mono); font-size:0.56rem; font-weight:300; color:var(--ink-3);
+  letter-spacing:0.05em; line-height:1.9; display:flex; flex-wrap:wrap; align-items:baseline; }
+.header-meta a { font-family:var(--mono); font-size:0.56rem; color:var(--ink-2); text-decoration:none; letter-spacing:0.05em; }
+.header-meta a:hover { color:var(--ink); }
+.meta-sep { margin:0 8px; color:var(--ink-3); }
 
-/* ── NAV ── */
-nav {
-  margin-bottom: 48px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--rule-lt);
-}
-.nav-list {
-  list-style: none;
-  display: flex;
-  gap: 0 28px;
-  flex-wrap: wrap;
-}
-.nav-list a {
-  font-family: var(--mono);
-  font-size: 0.56rem;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  text-decoration: none;
-}
-.nav-list a:hover { color: var(--ink); }
-.nav-list a[aria-current="page"] { color: var(--ink-2); }
+section { margin-bottom:52px; }
+h2 { font-family:var(--mono); font-size:0.56rem; font-weight:400; letter-spacing:0.24em;
+  text-transform:uppercase; color:var(--ink-2); margin-bottom:24px; margin-left:-80px;
+  width:calc(100% + 80px); line-height:1.4; }
+p { max-width:54ch; margin-bottom:1.2em; font-size:1rem; line-height:1.74; }
+p:last-child { margin-bottom:0; }
 
-/* ── BODY PARAGRAPHS ── */
-p {
-  max-width: 54ch;
-  margin-bottom: 1.2em;
-  color: var(--ink);
-  font-size: 1rem;
-  line-height: 1.74;
-}
-p:last-child { margin-bottom: 0; }
+/* Current work card — the one place green appears as accent (points to the work) */
+.work-card { max-width:54ch; border-left:2px solid var(--ph-border); background:var(--ph-dim); padding:20px 24px; }
+.work-kicker { font-family:var(--mono); font-size:0.52rem; font-weight:400; letter-spacing:0.26em;
+  text-transform:uppercase; color:var(--ph); display:block; margin-bottom:10px; }
+.work-card p { font-size:0.98rem; max-width:none; margin-bottom:14px; }
+.work-link { font-family:var(--mono); font-size:0.62rem; font-weight:400; color:var(--ink);
+  text-decoration:underline; text-decoration-color:var(--ph-border); text-underline-offset:3px; }
+.work-link:hover { color:var(--ph); text-decoration-color:var(--ph); }
 
-/* ── SECTION LABELS — Scher: pulled into left margin ── */
-h2 {
-  font-family: var(--mono);
-  font-size: 0.56rem;
-  font-weight: 400;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--ink-2);
-  margin-bottom: 26px;
-  margin-left: -80px;
-  width: calc(100% + 80px);
-  line-height: 1.4;
-}
+/* Selected work ledger */
+.ledger { list-style:none; max-width:54ch; border-top:1px solid var(--rule-lt); }
+.ledger li { display:flex; flex-direction:column; padding:14px 0; border-bottom:1px solid var(--rule-lt); gap:4px; }
+.l-primary { font-size:0.92rem; line-height:1.45; color:var(--ink); }
+.l-secondary { font-size:0.62rem; font-family:var(--mono); font-weight:300; color:var(--ink-3); letter-spacing:0.04em; }
+.l-note { font-size:0.86rem; line-height:1.55; color:var(--ink-2); max-width:48ch; }
 
-/* ════════════════════
-   BLOCK 1 — IDENTITY
-════════════════════ */
-header { margin-bottom: 56px; }
+.contact-list { list-style:none; max-width:54ch; }
+.contact-list li { padding:11px 0; border-bottom:1px solid var(--rule-lt); display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+.contact-list li:first-child { border-top:1px solid var(--rule-lt); }
+.contact-list a { font-family:var(--mono); font-size:0.62rem; font-weight:400; color:var(--ink-2); text-decoration:none; letter-spacing:0.04em; }
+.contact-list a:hover { color:var(--ink); }
+.contact-list a.lz:hover { color:var(--ph); }
+.contact-url { font-family:var(--mono); font-size:0.56rem; font-weight:300; color:var(--ink-3); letter-spacing:0.02em; }
+.contact-arrow { color:var(--ink-3); }
 
-.mark { display: block; line-height: 0; margin-bottom: 20px; opacity: 0.82; }
-.mark svg { display: block; overflow: visible; }
+footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt); }
+.footer-text { font-family:var(--mono); font-size:0.56rem; font-weight:300; color:var(--ink-2); letter-spacing:0.05em; line-height:1.9; }
+.footer-text a { font-family:var(--mono); font-size:0.56rem; font-weight:300; color:var(--ink-2); text-decoration:none; }
+.footer-text a:hover { color:var(--ph); }
+.foot-sep { color:var(--ink-3); }
 
-.name {
-  font-family: var(--serif);
-  font-size: 0.82rem;
-  font-style: italic;
-  font-weight: 300;
-  letter-spacing: -0.01em;
-  line-height: 1.0;
-  color: var(--ink);
-  margin: 0 0 6px;
-}
-
-.descriptor {
-  font-family: var(--mono);
-  font-size: 0.61rem;
-  font-weight: 300;
-  color: var(--ink-2);
-  letter-spacing: 0.03em;
-  line-height: 1.60;
-  margin-bottom: 14px;
-  max-width: 52ch;
-}
-
-.header-meta {
-  font-family: var(--mono);
-  font-size: 0.56rem;
-  font-weight: 300;
-  color: var(--ink-3);
-  letter-spacing: 0.05em;
-  line-height: 1.9;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-}
-.meta-sep { margin: 0 8px; color: var(--ink-3); }
-.header-meta a {
-  font-family: var(--mono);
-  font-size: 0.56rem;
-  font-weight: 300;
-  color: var(--ink-2);       /* lifted — must scan clearly */
-  text-decoration: none;
-  letter-spacing: 0.05em;
-}
-.header-meta a:hover { color: var(--ink); }
-
-/* ═══════════════════════════════
-   BLOCK 2 — PRIMARY RESEARCH OBJECT
-═══════════════════════════════ */
-section { margin-bottom: 52px; }
-section:last-of-type { margin-bottom: 0; }
-
-.paper-block {
-  border-left: 2px solid var(--ph-border);  /* slightly firmer */
-  padding: 22px 24px 20px;
-  margin: 0 0 0;
-  max-width: 54ch;
-  background: var(--ph-dim);
-}
-
-.paper-label {
-  font-family: var(--mono);
-  font-size: 0.52rem;
-  font-weight: 400;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: var(--ph);
-  display: block;
-  margin-bottom: 10px;
-}
-
-.paper-title {
-  font-family: var(--serif);
-  font-size: 1.04rem;
-  font-style: italic;
-  font-weight: 500;
-  line-height: 1.42;      /* lifted to 500 — firmer, more publication-grade */
-  line-height: 1.45;
-  color: var(--ink);
-  margin-bottom: 8px;
-}
-
-.paper-meta {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  font-weight: 300;
-  color: #3f3a32;
-  letter-spacing: 0.02em;
-  margin-bottom: 14px;
-  line-height: 1.7;
-}
-
-.paper-abstract {
-  font-family: var(--serif);
-  font-size: 1rem;
-  line-height: 1.72;
-  color: var(--ink);
-  margin-bottom: 16px;
-  padding-top: 14px;
-  border-top: 1px solid var(--rule-lt);
-}
-
-.paper-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 24px;
-  padding-top: 14px;
-  border-top: 1px solid var(--rule-lt);
-  margin-top: 2px;
-}
-.paper-links a {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  font-weight: 400;
-  color: var(--ink);
-  text-decoration: underline;
-  text-decoration-color: var(--rule-lt);
-  text-underline-offset: 3px;
-  white-space: nowrap;
-}
-.paper-links a:hover { text-decoration-color: var(--ph); }
-
-/* ═══════════════════════════════
-   BLOCK 6 — BACKGROUND
-═══════════════════════════════ */
-.ledger { list-style: none; max-width: 54ch; }
-.ledger li {
-  display: flex;
-  flex-direction: column;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--rule-lt);
-  gap: 3px;
-}
-.ledger li:first-child { border-top: 1px solid var(--rule-lt); }
-.l-primary { font-size: 0.9rem; line-height: 1.45; color: var(--ink); }
-.l-secondary {
-  font-size: 0.62rem;
-  font-family: var(--mono);
-  font-weight: 300;
-  color: var(--ink-3);
-  letter-spacing: 0.04em;
-}
-
-/* ═══════════════════════════════
-   BLOCK 7 — CONTACT
-═══════════════════════════════ */
-.contact-list { list-style: none; max-width: 54ch; }
-.contact-list li {
-  padding: 11px 0;
-  border-bottom: 1px solid var(--rule-lt);
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-}
-.contact-list li:first-child { border-top: 1px solid var(--rule-lt); }
-.contact-list a {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  font-weight: 400;          /* 300→400: links feel actionable */
-  color: var(--ink-2);
-  text-decoration: none;
-  letter-spacing: 0.04em;
-  flex-shrink: 0;
-}
-.contact-list a:hover { color: var(--ph); }
-.contact-url {
-  font-family: var(--mono);
-  font-size: 0.56rem;
-  font-weight: 300;
-  color: var(--ink-2);       /* lifted — URL must be readable */
-  letter-spacing: 0.02em;
-}
-.contact-arrow { color: var(--ink-3); }  /* readable, not decorative */
-
-/* ═══════════════════════════════
-   FOOTER
-═══════════════════════════════ */
-footer {
-  margin-top: 72px;
-  padding-top: 20px;
-  border-top: 1px solid var(--rule-lt);
-}
-.footer-text {
-  font-family: var(--mono);
-  font-size: 0.56rem;        /* slight lift */
-  font-weight: 300;
-  color: var(--ink-2);       /* lifted from ink-3 — complete, not whispered */
-  letter-spacing: 0.05em;
-  line-height: 1.9;
-}
-.footer-text a {
-  font-family: var(--mono);
-  font-size: 0.56rem;
-  font-weight: 300;
-  color: var(--ink-2);
-  text-decoration: none;
-}
-.footer-text a:hover { color: var(--ph); }
-.foot-sep { color: #6f6a61; }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 760px) {
-  html { font-size: 17px; }
-  .page { margin: 0 auto; padding: 60px 32px 96px; }
-  h2 { margin-left: 0; width: 100%; }
-  /* ledger is now stacked — no grid override needed */
-}
-@media (max-width: 460px) {
-  html { font-size: 16px; }
-  .page { padding: 36px 20px 80px; }
-  .nav-list { gap: 12px 20px; }
-  .header-meta { flex-direction: column; }
-  .meta-sep { display: none; }
-  .contact-list li { flex-wrap: wrap; gap: 2px 8px; }
-  .contact-url { flex-basis: 100%; }
-}
-
-/* ═══════════════════════════════
-   OPTIONAL: EVIDENCE MODULE
-   Activate by uncommenting the HTML section below.
-   Accepts: theorem excerpt, formal diagram, benchmark diagram.
-   Rules: real artifact only, plain caption, trust-increasing.
-═══════════════════════════════ */
-.evidence-module { margin-bottom: 52px; }
-.evidence-fig { max-width: 54ch; margin: 0; }
-.evidence-body {
-  border: 1px solid var(--rule-lt);
-  padding: 20px 24px;
-  background: rgba(0,0,0,.018);
-  margin-bottom: 10px;
-  font-family: var(--mono);
-  font-size: 0.82rem;
-  line-height: 1.6;
-  color: var(--ink-2);
-}
-.evidence-caption {
-  font-family: var(--mono);
-  font-size: 0.54rem;
-  font-weight: 300;
-  color: var(--ink-2);
-  letter-spacing: 0.04em;
-  line-height: 1.65;
-}
-
-
-/* ── HOMEPAGE THEOREM MODULE ── */
-.home-theorem-module {
-  margin-bottom: 52px;
-}
-.home-theorem-module h2 {
-  color: var(--ph);
-  margin-bottom: 18px;  /* slightly tighter than standard 26px */
-}
-.home-lean-block {
-  margin: 0;
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  line-height: 1.56;
-  color: var(--ink);         /* full ink — not dimmed */
-  white-space: pre;
-  overflow-x: auto;
-  tab-size: 2;
-  -webkit-overflow-scrolling: touch;
-}
-.home-theorem-body {
-  border-left: 1.5px solid var(--ph-border);  /* slightly lighter than paper card's 2px */
-  border-top: 1px solid var(--rule-lt);
-  border-right: 1px solid var(--rule-lt);
-  border-bottom: 1px solid var(--rule-lt);
-  padding: 16px 20px;                         /* tighter — more inset, less card */
-  background: rgba(45,214,122,.04);           /* ph-dim is .06 — this is fractionally lighter */
-  margin-bottom: 9px;
-  max-width: 54ch;
-  overflow-x: auto;
-}
-.home-theorem-caption {
-  font-family: var(--mono);
-  font-size: 0.54rem;
-  font-weight: 300;
-  color: var(--ink-2);
-  letter-spacing: 0.04em;
-  line-height: 1.65;
-  max-width: 54ch;
-}
-@media (max-width: 460px) {
-  .home-lean-block { font-size: 0.72rem; line-height: 1.54; }
-  .home-theorem-body { padding: 16px 18px; overflow-x: auto; }
-}
-
+@media (max-width:760px){ html{font-size:17px;} .page{margin:0 auto;padding:46px 32px 96px;} h2{margin-left:0;width:100%;} .hero{font-size:1.42rem;} }
+@media (max-width:460px){ html{font-size:16px;} .page{padding:34px 20px 80px;} .nav-list{gap:12px 20px;} .header-meta{flex-direction:column;} .meta-sep{display:none;} }
 </style>
+
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
+  "@context":"https://schema.org",
+  "@graph":[
     {
-      "@type": "Person",
-      "@id": "https://davidmullett.com/#person",
-      "name": "David Mullett",
-      "url": "https://davidmullett.com/",
-      "jobTitle": "Independent researcher",
-      "description": "Independent researcher building falsifiable benchmarks for collapse in recursive systems.",
-      "email": "d@loopzero.org",
-      "sameAs": [
-        "https://orcid.org/0009-0004-2543-1664",
-        "https://github.com/davidmullett"
-      ],
-      "identifier": {
-        "@type": "PropertyValue",
-        "propertyID": "ORCID",
-        "value": "0009-0004-2543-1664",
-        "url": "https://orcid.org/0009-0004-2543-1664"
-      },
-      "affiliation": {
-        "@type": "Organization",
-        "name": "Loopzero",
-        "url": "https://loopzero.org"
-      }
+      "@type":"Person","@id":"https://davidmullett.com/#person",
+      "name":"David Mullett","url":"https://davidmullett.com/",
+      "jobTitle":"Independent researcher",
+      "description":"I design and study the digital systems that shape behavior at scale — and how they fail.",
+      "email":"d@loopzero.org",
+      "sameAs":["https://orcid.org/0009-0004-2543-1664","https://github.com/davidmullett"],
+      "affiliation":{"@type":"Organization","name":"Loopzero","url":"https://loopzero.org"},
+      "alumniOf":[{"@type":"CollegeOrUniversity","name":"Royal College of Art"},{"@type":"CollegeOrUniversity","name":"Northwestern University"}]
     },
-    {
-      "@type": "WebSite",
-      "@id": "https://davidmullett.com/#website",
-      "url": "https://davidmullett.com/",
-      "name": "David Mullett",
-      "publisher": { "@id": "https://davidmullett.com/#person" }
-    }
+    {"@type":"WebSite","@id":"https://davidmullett.com/#website","url":"https://davidmullett.com/","name":"David Mullett","publisher":{"@id":"https://davidmullett.com/#person"}}
   ]
 }
 </script>
 </head>
+
 <body style="background:#f3f0e7 !important; color:#1a1710 !important;">
 <div class="page">
 <main>
 
 <nav aria-label="Site navigation">
   <ul class="nav-list">
-    <li><a href="/" aria-current="page">Research</a></li>
-    <li><a href="paper.html">Paper</a></li>
+    <li><a href="index.html" aria-current="page">David Mullett</a></li>
     <li><a href="about.html">About</a></li>
+    <li><a href="https://loopzero.org/" class="lz" target="_blank" rel="noopener">Loopzero</a></li>
     <li><a href="mailto:d@loopzero.org">Contact</a></li>
   </ul>
 </nav>
 
-<!-- BLOCK 1 — IDENTITY -->
 <header>
+  <a class="mark" href="https://loopzero.org/" target="_blank" rel="noopener" aria-label="Loopzero — the research program">
+    <svg width="40" height="40" viewBox="-8 -8 96 96" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Loopzero mark">
+      <path class="spiral" pathLength="1" d="M40,40 Q40,8 66,14 Q82,25 80,48 Q74,69 50,74 Q23,78 9,56 Q-4,34 8,14 Q20,-4 42,2 Q66,8 76,30 Q84,54 70,68 Q54,82 34,80 Q14,78 6,62 Q-2,46 8,34 Q18,22 34,20 Q52,18 60,34 Q68,50 58,62 Q48,74 36,70 Q24,66 22,54 Q20,44 28,38 Q36,32 44,36 Q52,40 50,48 Q48,56 42,54 Q38,52 38,48 Q38,44 41,42"/>
+      <circle class="core" cx="41" cy="42" r="2"/>
+    </svg>
+  </a>
 
-  <div class="mark">
-    <svg id="spiralSvg" width="36" height="36" viewBox="0 0 80 80"
-         xmlns="http://www.w3.org/2000/svg"
-         aria-label="Loopzero mark" role="img"></svg>
-  </div>
-
-  <h1 class="name">David Mullett</h1>
+  <h1 class="hero">I design and study the digital systems that shape behavior at scale&nbsp;<span class="em">— and how they&nbsp;fail.</span></h1>
 
   <div class="descriptor">
-    Independent researcher building falsifiable benchmarks for collapse in recursive systems.
+    Independent&nbsp;researcher · former&nbsp;Meta&nbsp;Reality&nbsp;Labs&nbsp;design&nbsp;lead.
   </div>
 
   <div class="header-meta">
     <a href="mailto:d@loopzero.org">d@loopzero.org</a>
     <span class="meta-sep">·</span>
-    <a href="https://orcid.org/0009-0004-2543-1664"
-       target="_blank" rel="noopener"
-       title="ORCID researcher profile">ORCID&nbsp;0009-0004-2543-1664</a>
+    <a href="https://orcid.org/0009-0004-2543-1664" target="_blank" rel="noopener" title="ORCID researcher profile">ORCID&nbsp;0009-0004-2543-1664</a>
     <span class="meta-sep">·</span>
-    <a href="https://github.com/davidmullett"
-       target="_blank" rel="noopener">GitHub</a>
+    <a href="https://github.com/davidmullett" target="_blank" rel="noopener">GitHub</a>
   </div>
-
 </header>
 
-
-<!-- BLOCK 2 — PRIMARY RESEARCH OBJECT -->
+<!-- CURRENT WORK -->
 <section>
-  <h2>Research</h2>
-
-  <div class="paper-block">
-    <span class="paper-label">Preprint</span>
-    <div class="paper-title">
-      Benchmarking Recursive-Collapse Warning Claims
-      Under Matched False-Positive Control
-    </div>
-    <div class="paper-meta">
-      David Mullett &nbsp;·&nbsp; arXiv preprint
-      
-    </div>
-    <div class="paper-abstract">
-      Loopzero is a claim-bounded benchmark framework for testing whether
-      recursive failures show a directional telemetry pattern — rising gain
-      (G), recursive persistence (p), and declining diversity (δ) — before
-      overt collapse. The claim boundary is specified in Lean&nbsp;4;
-      detectors are then evaluated under a locked equal-false-positive
-      contract on two frozen public benchmarks: a segmented markets family
-      (Volmageddon 2018, COVID 2020) and a MovieLens-25M recommender replay.
-      Digitized LLM training-loop trajectories (Shumailov et al., 2024) are
-      included as a directional-consistency check. Where no detector clears
-      that band, the result is reported in full.
-    </div>
-    <div class="paper-links">
-      <a href="paper.html">Read the paper →</a>
-    </div>
+  <h2>Current work</h2>
+  <div class="work-card">
+    <span class="work-kicker">Loopzero</span>
+    <p>
+      An independent research program on early-warning signatures in recursive
+      systems. It pairs a formally specified, Lean-verified obstruction with a
+      matched-false-positive benchmark on public market and recommender data.
+    </p>
+    <p>
+      The current status is deliberately bounded: the framework is falsifiable
+      and the directional evidence holds, but no detector — the standard methods
+      or my own — has yet reached an accepted operating point under the locked
+      test. So the framework stands; an operational detector is an open problem.
+    </p>
+    <a class="work-link" href="https://loopzero.org/" target="_blank" rel="noopener">The research program → loopzero.org</a>
   </div>
-
 </section>
 
-
-<!-- ═══════════════════════════════════════════════════════════════════
-     OPTIONAL: EVIDENCE MODULE — scaffold ready, not rendered
-     ═══════════════════════════════════════════════════════════════════
-     Uncomment and populate when a real artifact is available.
-     Accepts: theorem excerpt, formal architecture diagram,
-     benchmark diagram, or evaluation pipeline diagram.
-     Rules: must increase trust, must not be decorative, must not be fake.
-
-<section class="evidence-module">
-  <h2>Figure</h2>
-  <figure class="evidence-fig">
-    <figcaption class="evidence-caption">
-      [Plain, exact caption — e.g., "Evaluation pipeline for the
-      Loopzero benchmark protocol across two public benchmark domains."]
-    </figcaption>
-    <div class="evidence-body">
-      [Real artifact here — SVG, image, or code excerpt]
-    </div>
-  </figure>
-</section>
-
-CSS to add when activated:
-.evidence-module { margin-bottom: 56px; }
-.evidence-fig { max-width: 54ch; }
-.evidence-body {
-  border: 1px solid var(--rule-lt);
-  padding: 20px;
-  background: rgba(0,0,0,.015);
-  margin-bottom: 10px;
-}
-.evidence-caption {
-  font-family: var(--mono);
-  font-size: 0.56rem;
-  font-weight: 300;
-  color: var(--ink-2);
-  letter-spacing: 0.04em;
-  line-height: 1.65;
-}
-═══════════════════════════════════════════════════════════════════ -->
-
-
-<!-- BLOCK 3 — STATUS -->
+<!-- CONTINUITY -->
 <section>
-  <h2>Status</h2>
-
+  <h2>The throughline</h2>
   <p>
-    The claim boundary is specified in Lean&nbsp;4. The bridge is tested on
-    two frozen public benchmarks under a matched false-positive contract,
-    with a directional-consistency check on published model-collapse
-    trajectories (Shumailov et al., 2024). Recommender negative controls,
-    cluster-robust dependence analysis, and additional domains remain open.
+    For over a decade I built immersive and behavior-shaping products — at Meta
+    Reality Labs, and as founder of Pupil before that. The constant was always
+    systems: how they pull behavior in a direction, and what that does at scale.
+    A few years ago I turned the same attention to the inverse question — how
+    recursive systems lose the ability to make progress before they visibly
+    break. That is what Loopzero studies.
   </p>
-
 </section>
 
-
-<!-- BLOCK 4 — CONTEXT -->
+<!-- SELECTED WORK -->
 <section>
-  <h2>Context</h2>
-
-  <p>
-    Recursive feedback systems — algorithmic, financial, social — are widely
-    studied, but their failure modes are usually described operationally
-    rather than specified as formal objects. Loopzero treats one such failure
-    mode as a bounded, falsifiable claim, so that what is asserted can be
-    inspected, contested, and tested across domains.
-  </p>
-
-</section>
-
-
-<!-- BLOCK 7 — LINKS / NEXT ACTION -->
-<section>
-  <h2>Access</h2>
-
-  <ul class="contact-list">
+  <h2>Selected work</h2>
+  <ul class="ledger">
     <li>
-      <a href="mailto:d@loopzero.org">Research · collaboration · press <span class="contact-arrow">→</span></a>
-      <span class="contact-url">d@loopzero.org</span>
+      <span class="l-primary">Quest discovery &amp; VR Explore · Meta Reality Labs</span>
+      <span class="l-secondary">Lead Product Designer · 2021–2022</span>
+      <span class="l-note">Design for the platform people use to find and re-enter experiences on Quest.</span>
+    </li>
+    <li>
+      <span class="l-primary">Pupil</span>
+      <span class="l-secondary">Co-founder &amp; Chief Design Officer · 2015–2021</span>
+      <span class="l-note">A design-led immersive software company — ~300 people, ~$50M raised — building spatial and VR products with brand and platform partners.</span>
+    </li>
+    <li>
+      <span class="l-primary">Immersive editorial &amp; spatial content</span>
+      <span class="l-secondary">Earlier work</span>
+      <span class="l-note">Early VR/spatial content and creative direction across culture and brand.</span>
     </li>
   </ul>
-
 </section>
 
+<!-- CONTACT -->
+<section>
+  <h2>Contact</h2>
+  <ul class="contact-list">
+    <li>
+      <a href="mailto:d@loopzero.org">Email <span class="contact-arrow">→</span></a>
+      <span class="contact-url">d@loopzero.org</span>
+    </li>
+    <li>
+      <a class="lz" href="https://loopzero.org/" target="_blank" rel="noopener">The research <span class="contact-arrow">→</span></a>
+      <span class="contact-url">loopzero.org</span>
+    </li>
+  </ul>
+</section>
 
-<!-- FOOTER -->
+</main>
+
 <footer>
   <div class="footer-text">
     davidmullett.com
     <span class="foot-sep">&nbsp;·&nbsp;</span>
-    <a href="https://orcid.org/0009-0004-2543-1664"
-       target="_blank" rel="noopener"
-       title="ORCID researcher profile">ORCID&nbsp;0009-0004-2543-1664</a>
+    <a href="https://orcid.org/0009-0004-2543-1664" target="_blank" rel="noopener">ORCID&nbsp;0009-0004-2543-1664</a>
     <span class="foot-sep">&nbsp;·&nbsp;</span>
-    loopzero.org
+    <a href="https://loopzero.org/" target="_blank" rel="noopener">loopzero.org</a>
   </div>
 </footer>
 
-</main>
 </div>
-
-<script>
-(function() {
-  const svg = document.getElementById('spiralSvg');
-  if (!svg) return;
-  const ns = 'http://www.w3.org/2000/svg';
-
-  const path = document.createElementNS(ns, 'path');
-  path.setAttribute('fill', 'none');
-  path.setAttribute('stroke', '#1a1814');
-  path.setAttribute('stroke-width', '1.2');
-  path.setAttribute('stroke-linecap', 'round');
-  path.setAttribute('d', `M40,40 Q40,8 66,14 Q82,25 80,48 Q74,69 50,74 Q23,78 9,56 Q-4,34 8,14 Q20,-4 42,2 Q66,8 76,30 Q84,54 70,68 Q54,82 34,80 Q14,78 6,62 Q-2,46 8,34 Q18,22 34,20 Q52,18 60,34 Q68,50 58,62 Q48,74 36,70 Q24,66 22,54 Q20,44 28,38 Q36,32 44,36 Q52,40 50,48 Q48,56 42,54 Q38,52 38,48 Q38,44 41,42`);
-  svg.appendChild(path);
-
-  const dot = document.createElementNS(ns, 'circle');
-  dot.setAttribute('cx', '41');
-  dot.setAttribute('cy', '42');
-  dot.setAttribute('r', '2');
-  dot.setAttribute('fill', '#1a1814');
-  svg.appendChild(dot);
-})();
-</script>
 </body>
 </html>
