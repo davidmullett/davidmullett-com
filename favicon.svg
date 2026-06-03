@@ -1,6 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-label="Loopzero">
-  <rect width="80" height="80" rx="14" fill="#f3f0e7"/>
-  <path d="M40,40 Q40,8 66,14 Q82,25 80,48 Q74,69 50,74 Q23,78 9,56 Q-4,34 8,14 Q20,-4 42,2 Q66,8 76,30 Q84,54 70,68 Q54,82 34,80 Q14,78 6,62 Q-2,46 8,34 Q18,22 34,20 Q52,18 60,34 Q68,50 58,62 Q48,74 36,70 Q24,66 22,54 Q20,44 28,38 Q36,32 44,36 Q52,40 50,48 Q48,56 42,54 Q38,52 38,48 Q38,44 41,42"
-        fill="none" stroke="#1a1710" stroke-width="2.4" stroke-linecap="round"/>
-  <circle cx="41" cy="42" r="4.2" fill="#1faa5e"/>
+  <style>
+    .bg{fill:#1a1710} .mk{stroke:#f3f0e7}
+    @media (prefers-color-scheme: dark){ .bg{fill:#f3f0e7} .mk{stroke:#1a1710} }
+  </style>
+  <rect class="bg" width="80" height="80" rx="14"/>
+  <g transform="translate(1.367,2.164) scale(0.937)">
+    <path class="mk" d="M40,40 Q40,8 66,14 Q82,25 80,48 Q74,69 50,74 Q23,78 9,56 Q-4,34 8,14 Q20,-4 42,2 Q66,8 76,30 Q84,54 70,68 Q54,82 34,80 Q14,78 6,62 Q-2,46 8,34 Q18,22 34,20 Q52,18 60,34 Q68,50 58,62 Q48,74 36,70 Q24,66 22,54 Q20,44 28,38 Q36,32 44,36 Q52,40 50,48 Q48,56 42,54 Q38,52 38,48 Q38,44 41,42" fill="none" stroke-width="3.3" stroke-linecap="round"/>
+    <circle cx="41" cy="42" r="6" fill="#1faa5e"/>
+  </g>
 </svg>

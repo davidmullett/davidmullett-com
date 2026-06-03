@@ -9,6 +9,10 @@
 
 <link rel="canonical" href="https://davidmullett.com/about.html">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="David Mullett">
@@ -29,8 +33,8 @@
 <style>
 *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
 :root {
-  --cream:#f3f0e7; --ink:#1a1710; --ink-2:#48443c; --ink-3:#8c8880;
-  --rule-lt:#d8d4c8; --rule-2:#c9c4b6; --ph:#1faa5e; --ph-border:rgba(45,214,122,.5);
+  --cream:#f3f0e7; --ink:#1a1710; --ink-2:#48443c; --ink-3:#6e6a62;
+  --rule-lt:#d8d4c8; --rule-2:#c9c4b6; --ph:#1faa5e; --ph-d:#157a43; --ph-border:rgba(45,214,122,.5);
   --serif:'Source Serif 4',Georgia,serif; --mono:'IBM Plex Mono','Courier New',monospace;
 }
 html { font-size:18px; -webkit-text-size-adjust:100%; text-rendering:optimizeLegibility;
@@ -43,7 +47,7 @@ a { color:var(--ink); text-decoration:underline; text-decoration-color:var(--rul
   text-underline-offset:3px; text-decoration-thickness:1px; transition:text-decoration-color .14s,color .14s; }
 a:hover { text-decoration-color:var(--ink-2); }
 a.lz { text-decoration-color:var(--ph-border); }
-a.lz:hover { color:var(--ph); text-decoration-color:var(--ph); }
+a.lz:hover { color:var(--ph-d); text-decoration-color:var(--ph-d); }
 
 nav { margin-bottom:48px; padding-bottom:16px; border-bottom:1px solid var(--rule-lt); }
 .nav-list { list-style:none; display:flex; gap:0 28px; flex-wrap:wrap; }
@@ -91,7 +95,7 @@ p:last-child { margin-bottom:0; }
 footer { margin-top:84px; padding-top:20px; border-top:1px solid var(--rule-lt); }
 .footer-text { font-family:var(--mono); font-size:0.56rem; font-weight:300; color:var(--ink-2); letter-spacing:0.05em; line-height:1.9; }
 .footer-text a { font-family:var(--mono); font-size:0.56rem; font-weight:300; color:var(--ink-2); text-decoration:none; }
-.footer-text a:hover { color:var(--ph); }
+.footer-text a:hover { color:var(--ph-d); }
 .foot-sep { color:var(--ink-3); }
 
 @media (max-width:760px){ html{font-size:17px;} .page{margin:0 auto;padding:46px 32px 96px;} }
