@@ -61,16 +61,10 @@ nav { margin-bottom:48px; padding-bottom:16px; border-bottom:1px solid var(--rul
 .mark .spiral { stroke:var(--ink); stroke-width:2; fill:none; stroke-linecap:round; }
 .mark .core { fill:var(--ink); transition:fill .15s; }
 .mark:hover .core { fill:var(--ph); }
-@media (prefers-reduced-motion: no-preference) {
-  .mark .spiral { stroke-dasharray:1; stroke-dashoffset:1; animation: draw 2.1s cubic-bezier(.6,.02,.2,1) .15s forwards; }
-  .mark .core { opacity:0; animation: glow 1s ease 1.7s forwards; }
-}
-@keyframes draw { to { stroke-dashoffset:0; } }
-@keyframes glow { to { opacity:1; } }
 
 header { margin-bottom:54px; }
-.name { font-family:var(--serif); font-size:0.82rem; font-style:italic; font-weight:300;
-  letter-spacing:-0.01em; line-height:1.0; color:var(--ink); margin:0 0 8px; }
+.name { font-family:var(--mono); font-size:0.92rem; font-weight:500; text-transform:uppercase;
+  letter-spacing:0.17em; line-height:1.0; color:var(--ink); margin:0 0 8px; }
 .descriptor { font-family:var(--mono); font-size:0.61rem; font-weight:300; color:var(--ink-2);
   letter-spacing:0.03em; line-height:1.6; margin-bottom:14px; max-width:62ch; }
 .header-meta { font-family:var(--mono); font-size:0.56rem; font-weight:300; color:var(--ink-3);
