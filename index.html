@@ -36,13 +36,13 @@
 *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
 :root {
   --cream:#f3f0e7; --paper-2:#efebe0; --ink:#1a1710; --ink-2:#48443c; --ink-3:#6e6a62;
-  --rule-lt:#d8d4c8; --rule-2:#c9c4b6; --ph:#1faa5e; --ph-d:#157a43; --ph-border:rgba(45,214,122,.5); --ph-dim:rgba(45,214,122,.05);
+  --rule-lt:#d8d4c8; --rule-2:#c9c4b6; --ph:#1faa5e; --ph-d:#157a43; --ph-border:rgba(45,214,122,.5); --ph-dim:rgba(45,214,122,.07);
   --serif:'Source Serif 4',Georgia,serif; --mono:'IBM Plex Mono','Courier New',monospace;
 }
 html { font-size:18px; -webkit-text-size-adjust:100%; text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased; font-feature-settings:"liga" 1,"kern" 1,"onum" 1;
   background:var(--cream); color-scheme:only light; }
-body { background:var(--cream); color:var(--ink); font-family:var(--serif); line-height:1.75; }
+body { background:var(--cream) !important; color:var(--ink) !important; font-family:var(--serif); line-height:1.75; }
 
 /* Editorial column — airier than loopzero, same left anchor */
 .page { max-width:680px; margin:0 auto 0 max(80px,14vw); padding:56px 0 132px; }
@@ -57,9 +57,9 @@ a.lz:hover { color:var(--ph-d); text-decoration-color:var(--ph-d); }
 nav { margin-bottom:52px; padding-bottom:16px; border-bottom:1px solid var(--rule-lt); }
 .nav-list { list-style:none; display:flex; gap:0 28px; flex-wrap:wrap; }
 .nav-list a { font-family:var(--mono); font-size:0.56rem; font-weight:400; letter-spacing:0.2em;
-  text-transform:uppercase; color:var(--ink-3); text-decoration:none; }
+  text-transform:uppercase; color:var(--ink-2); text-decoration:none; }
 .nav-list a:hover { color:var(--ink); }
-.nav-list a[aria-current="page"] { color:var(--ink-2); }
+.nav-list a[aria-current="page"] { color:var(--ink); }
 
 /* Mark — quiet, static, links to the work */
 .mark { display:inline-block; line-height:0; margin-bottom:26px; }
@@ -80,7 +80,7 @@ header { margin-bottom:56px; }
 .hero .em { font-style:italic; }
 .descriptor { font-family:var(--mono); font-size:0.61rem; font-weight:300; color:var(--ink-2);
   letter-spacing:0.03em; line-height:1.7; max-width:62ch; margin-bottom:16px; }
-.header-meta { font-family:var(--mono); font-size:0.56rem; font-weight:300; color:var(--ink-3);
+.header-meta { font-family:var(--mono); font-size:0.56rem; font-weight:300; color:var(--ink-2);
   letter-spacing:0.05em; line-height:1.9; display:flex; flex-wrap:wrap; align-items:baseline; }
 .header-meta a { font-family:var(--mono); font-size:0.56rem; color:var(--ink-2); text-decoration:none; letter-spacing:0.05em; }
 .header-meta a:hover { color:var(--ink); }
@@ -109,7 +109,7 @@ p:last-child { margin-bottom:0; }
 .contact-list a { font-family:var(--mono); font-size:0.62rem; font-weight:400; color:var(--ink-2); text-decoration:none; letter-spacing:0.04em; }
 .contact-list a:hover { color:var(--ink); }
 .contact-list a.lz:hover { color:var(--ph-d); }
-.contact-url { font-family:var(--mono); font-size:0.56rem; font-weight:300; color:var(--ink-3); letter-spacing:0.02em; }
+.contact-url { font-family:var(--mono); font-size:0.56rem; font-weight:300; color:var(--ink-2); letter-spacing:0.02em; }
 .contact-arrow { color:var(--ink-3); }
 
 footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt); }
@@ -142,7 +142,7 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
 </script>
 </head>
 
-<body style="background:#f3f0e7 !important; color:#1a1710 !important;">
+<body>
 <div class="page">
 <main>
 
@@ -185,9 +185,10 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
   <div class="work-card">
     <span class="work-kicker">Loopzero</span>
     <p>
-      An independent research program on early-warning signatures in recursive
-      systems. It pairs a formally specified, Lean-verified obstruction with a
-      matched-false-positive benchmark on public market and recommender data.
+      An independent research program on the conditions under which recursive
+      systems lose the ability to make progress. A claim boundary specified in
+      Lean&nbsp;4, paired with a matched-false-positive benchmark on frozen
+      public market and recommender data.
     </p>
     <p>
       The current status is deliberately bounded: the framework is falsifiable
@@ -237,7 +238,7 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
     <span class="foot-sep">&nbsp;·&nbsp;</span>
     <a href="https://scholar.google.com/citations?user=3SninzcAAAAJ" target="_blank" rel="noopener">Google&nbsp;Scholar</a>
     <span class="foot-sep">&nbsp;·&nbsp;</span>
-    <a href="https://loopzero.org/" target="_blank" rel="noopener">loopzero.org</a>
+    <a class="lz" href="https://loopzero.org/" target="_blank" rel="noopener">loopzero.org</a>
   </div>
 </footer>
 

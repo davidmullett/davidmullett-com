@@ -40,7 +40,7 @@
 html { font-size:18px; -webkit-text-size-adjust:100%; text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased; font-feature-settings:"liga" 1,"kern" 1,"onum" 1;
   background:var(--cream); color-scheme:only light; }
-body { background:var(--cream); color:var(--ink); font-family:var(--serif); line-height:1.75; }
+body { background:var(--cream) !important; color:var(--ink) !important; font-family:var(--serif); line-height:1.75; }
 .page { max-width:680px; margin:0 auto 0 max(80px,14vw); padding:56px 0 132px; }
 
 a { color:var(--ink); text-decoration:underline; text-decoration-color:var(--rule-2);
@@ -52,9 +52,9 @@ a.lz:hover { color:var(--ph-d); text-decoration-color:var(--ph-d); }
 nav { margin-bottom:52px; padding-bottom:16px; border-bottom:1px solid var(--rule-lt); }
 .nav-list { list-style:none; display:flex; gap:0 28px; flex-wrap:wrap; }
 .nav-list a { font-family:var(--mono); font-size:0.56rem; font-weight:400; letter-spacing:0.2em;
-  text-transform:uppercase; color:var(--ink-3); text-decoration:none; }
+  text-transform:uppercase; color:var(--ink-2); text-decoration:none; }
 .nav-list a:hover { color:var(--ink); }
-.nav-list a[aria-current="page"] { color:var(--ink-2); }
+.nav-list a[aria-current="page"] { color:var(--ink); }
 
 .mark { display:inline-block; line-height:0; margin-bottom:26px; }
 .mark svg { display:block; overflow:visible; }
@@ -67,7 +67,7 @@ header { margin-bottom:54px; }
   letter-spacing:0.17em; line-height:1.0; color:var(--ink); margin:0 0 8px; }
 .descriptor { font-family:var(--mono); font-size:0.61rem; font-weight:300; color:var(--ink-2);
   letter-spacing:0.03em; line-height:1.6; margin-bottom:14px; max-width:62ch; }
-.header-meta { font-family:var(--mono); font-size:0.56rem; font-weight:300; color:var(--ink-3);
+.header-meta { font-family:var(--mono); font-size:0.56rem; font-weight:300; color:var(--ink-2);
   letter-spacing:0.05em; line-height:1.9; display:flex; flex-wrap:wrap; align-items:baseline; }
 .header-meta a { font-family:var(--mono); font-size:0.56rem; color:var(--ink-2); text-decoration:none; letter-spacing:0.05em; }
 .header-meta a:hover { color:var(--ink); }
@@ -76,14 +76,15 @@ header { margin-bottom:54px; }
 section { margin-bottom:50px; }
 section:last-of-type { margin-bottom:0; }
 h2 { font-family:var(--mono); font-size:0.56rem; font-weight:400; letter-spacing:0.24em;
-  text-transform:uppercase; color:var(--ink-2); margin-bottom:22px; line-height:1.4; }
+  text-transform:uppercase; color:var(--ink-2); margin-bottom:24px; margin-left:-80px;
+  width:calc(100% + 80px); line-height:1.4; }
 p { max-width:54ch; margin-bottom:1.2em; font-size:1rem; line-height:1.74; color:var(--ink); }
 p:last-child { margin-bottom:0; }
 
 .ledger { list-style:none; max-width:54ch; border-top:1px solid var(--rule-lt); }
 .ledger li { display:flex; flex-direction:column; padding:12px 0; border-bottom:1px solid var(--rule-lt); gap:3px; }
 .l-primary { font-size:0.9rem; line-height:1.45; color:var(--ink); }
-.l-secondary { font-size:0.62rem; font-family:var(--mono); font-weight:300; color:var(--ink-3); letter-spacing:0.04em; }
+.l-secondary { font-size:0.62rem; font-family:var(--mono); font-weight:300; color:var(--ink-2); letter-spacing:0.04em; }
 .l-note { font-size:0.84rem; line-height:1.55; color:var(--ink-2); max-width:50ch; margin-top:2px; }
 
 footer { margin-top:84px; padding-top:20px; border-top:1px solid var(--rule-lt); }
@@ -92,7 +93,7 @@ footer { margin-top:84px; padding-top:20px; border-top:1px solid var(--rule-lt);
 .footer-text a:hover { color:var(--ph-d); }
 .foot-sep { color:var(--ink-3); }
 
-@media (max-width:760px){ html{font-size:17px;} .page{margin:0 auto;padding:46px 32px 96px;} }
+@media (max-width:760px){ html{font-size:17px;} .page{margin:0 auto;padding:46px 32px 96px;} h2{margin-left:0;width:100%;} }
 @media (max-width:460px){ html{font-size:16px;} .page{padding:34px 20px 80px;} .nav-list{gap:12px 20px;} .header-meta{flex-direction:column;} .meta-sep{display:none;} }
 </style>
 
@@ -109,7 +110,7 @@ footer { margin-top:84px; padding-top:20px; border-top:1px solid var(--rule-lt);
 </script>
 </head>
 
-<body style="background:#f3f0e7 !important; color:#1a1710 !important;">
+<body>
 <div class="page">
 <main>
 
@@ -149,9 +150,9 @@ footer { margin-top:84px; padding-top:20px; border-top:1px solid var(--rule-lt);
     I am an independent researcher working on collapse in recursive digital
     systems — formal claim boundaries and falsifiable benchmarks. My current
     work centers on <a class="lz" href="https://loopzero.org/" target="_blank" rel="noopener">Loopzero</a>,
-    the framework I built: a claim boundary specified in Lean&nbsp;4, and an
-    empirical bridge evaluated on two frozen public benchmarks under a matched
-    false-positive contract.
+    the framework I built: a claim boundary specified in Lean&nbsp;4, paired
+    with a matched-false-positive benchmark on frozen public market and
+    recommender data.
   </p>
   <p>
     The work is deliberately narrow: characterizing the conditions under which
@@ -174,11 +175,9 @@ footer { margin-top:84px; padding-top:20px; border-top:1px solid var(--rule-lt);
   <p>
     My background in art history and cultural theory gave me one way to see the
     problem; working at scale inside recommendation and discovery architectures
-    gave me another. Loopzero is my attempt at that specification — a precise
-    claim boundary in Lean&nbsp;4 and an empirical bridge tested under a defined
-    protocol. So far it establishes a falsifiable framework and directional
-    evidence, not a finished detector; that boundary is the point, and I keep it
-    explicit.
+    gave me another. Loopzero is my attempt at that specification. So far it
+    establishes a falsifiable framework and directional evidence, not a finished
+    detector; that boundary is the point, and I keep it explicit.
   </p>
 </section>
 
@@ -203,7 +202,7 @@ footer { margin-top:84px; padding-top:20px; border-top:1px solid var(--rule-lt);
     <span class="foot-sep">&nbsp;·&nbsp;</span>
     <a href="https://scholar.google.com/citations?user=3SninzcAAAAJ" target="_blank" rel="noopener">Google&nbsp;Scholar</a>
     <span class="foot-sep">&nbsp;·&nbsp;</span>
-    <a href="https://loopzero.org/" target="_blank" rel="noopener">loopzero.org</a>
+    <a class="lz" href="https://loopzero.org/" target="_blank" rel="noopener">loopzero.org</a>
   </div>
 </footer>
 
