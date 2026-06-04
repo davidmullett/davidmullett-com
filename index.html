@@ -38,6 +38,8 @@
   --cream:#f3f0e7; --paper-2:#efebe0; --ink:#1a1710; --ink-2:#48443c; --ink-3:#6e6a62;
   --rule-lt:#d8d4c8; --rule-2:#c9c4b6; --ph:#1faa5e; --ph-d:#157a43; --ph-border:rgba(45,214,122,.5); --ph-dim:rgba(45,214,122,.07);
   --serif:'Source Serif 4',Georgia,serif; --mono:'IBM Plex Mono','Courier New',monospace;
+  --t-label-xs:0.52rem; --t-label:0.56rem; --t-meta:0.66rem; --t-aux:0.86rem; --t-label-lg:0.92rem;
+  --t-body:1rem; --t-lede:1.04rem; --t-hero:1.6rem; --t-hero-sm:1.42rem; --t-title:1.7rem; --t-title-sm:1.46rem;
 }
 html { font-size:18px; -webkit-text-size-adjust:100%; text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased; font-feature-settings:"liga" 1,"kern" 1,"onum" 1;
@@ -56,7 +58,7 @@ a.lz:hover { color:var(--ph-d); text-decoration-color:var(--ph-d); }
 
 nav { margin-bottom:52px; padding-bottom:16px; border-bottom:1px solid var(--rule-lt); }
 .nav-list { list-style:none; display:flex; gap:0 28px; flex-wrap:wrap; }
-.nav-list a { font-family:var(--mono); font-size:0.56rem; font-weight:400; letter-spacing:0.2em;
+.nav-list a { font-family:var(--mono); font-size:var(--t-label); font-weight:400; letter-spacing:0.2em;
   text-transform:uppercase; color:var(--ink-2); text-decoration:none; }
 .nav-list a:hover { color:var(--ink); }
 .nav-list a[aria-current="page"] { color:var(--ink); }
@@ -75,30 +77,30 @@ nav { margin-bottom:52px; padding-bottom:16px; border-bottom:1px solid var(--rul
 @keyframes glow { to { opacity:1; } }
 
 header { margin-bottom:56px; }
-.hero { font-family:var(--serif); font-size:1.6rem; font-weight:400; line-height:1.34;
+.hero { font-family:var(--serif); font-size:var(--t-hero); font-weight:400; line-height:1.34;
   letter-spacing:-0.012em; color:var(--ink); max-width:21ch; margin-bottom:22px; text-wrap:balance; }
 .hero .em { font-style:italic; }
-.descriptor { font-family:var(--mono); font-size:0.61rem; font-weight:300; color:var(--ink-2);
+.descriptor { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2);
   letter-spacing:0.03em; line-height:1.7; max-width:62ch; margin-bottom:16px; }
-.header-meta { font-family:var(--mono); font-size:0.56rem; font-weight:300; color:var(--ink-2);
+.header-meta { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2);
   letter-spacing:0.05em; line-height:1.9; display:flex; flex-wrap:wrap; align-items:baseline; }
-.header-meta a { font-family:var(--mono); font-size:0.56rem; color:var(--ink-2); text-decoration:none; letter-spacing:0.05em; }
+.header-meta a { font-family:var(--mono); font-size:var(--t-label); color:var(--ink-2); text-decoration:none; letter-spacing:0.05em; }
 .header-meta a:hover { color:var(--ink); }
 .meta-sep { margin:0 8px; color:var(--ink-3); }
 
 section { margin-bottom:52px; }
-h2 { font-family:var(--mono); font-size:0.56rem; font-weight:400; letter-spacing:0.24em;
+h2 { font-family:var(--mono); font-size:var(--t-label); font-weight:400; letter-spacing:0.24em;
   text-transform:uppercase; color:var(--ink-2); margin-bottom:24px; margin-left:-80px;
   width:calc(100% + 80px); line-height:1.4; }
-p { max-width:54ch; margin-bottom:1.2em; font-size:1rem; line-height:1.74; }
+p { max-width:54ch; margin-bottom:1.2em; font-size:var(--t-body); line-height:1.74; }
 p:last-child { margin-bottom:0; }
 
 /* Current work card — the one place green appears as accent (points to the work) */
 .work-card { max-width:54ch; border-left:2px solid var(--ph-border); background:var(--ph-dim); padding:20px 24px; }
-.work-kicker { font-family:var(--mono); font-size:0.52rem; font-weight:400; letter-spacing:0.26em;
+.work-kicker { font-family:var(--mono); font-size:var(--t-label-xs); font-weight:400; letter-spacing:0.26em;
   text-transform:uppercase; color:var(--ph-d); display:block; margin-bottom:10px; }
-.work-card p { font-size:0.98rem; max-width:none; margin-bottom:14px; }
-.work-link { font-family:var(--mono); font-size:0.62rem; font-weight:400; color:var(--ink);
+.work-card p { font-size:var(--t-lede); max-width:none; margin-bottom:14px; }
+.work-link { font-family:var(--mono); font-size:var(--t-label); font-weight:400; color:var(--ink);
   text-decoration:underline; text-decoration-color:var(--ph-border); text-underline-offset:3px; }
 .work-link:hover { color:var(--ph-d); text-decoration-color:var(--ph-d); }
 
@@ -106,19 +108,19 @@ p:last-child { margin-bottom:0; }
 .contact-list { list-style:none; max-width:54ch; }
 .contact-list li { padding:11px 0; border-bottom:1px solid var(--rule-lt); display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
 .contact-list li:first-child { border-top:1px solid var(--rule-lt); }
-.contact-list a { font-family:var(--mono); font-size:0.62rem; font-weight:400; color:var(--ink-2); text-decoration:none; letter-spacing:0.04em; }
+.contact-list a { font-family:var(--mono); font-size:var(--t-label); font-weight:400; color:var(--ink-2); text-decoration:none; letter-spacing:0.04em; }
 .contact-list a:hover { color:var(--ink); }
 .contact-list a.lz:hover { color:var(--ph-d); }
-.contact-url { font-family:var(--mono); font-size:0.56rem; font-weight:300; color:var(--ink-2); letter-spacing:0.02em; }
+.contact-url { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2); letter-spacing:0.02em; }
 .contact-arrow { color:var(--ink-3); }
 
 footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt); }
-.footer-text { font-family:var(--mono); font-size:0.56rem; font-weight:300; color:var(--ink-2); letter-spacing:0.05em; line-height:1.9; }
-.footer-text a { font-family:var(--mono); font-size:0.56rem; font-weight:300; color:var(--ink-2); text-decoration:none; }
+.footer-text { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2); letter-spacing:0.05em; line-height:1.9; }
+.footer-text a { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2); text-decoration:none; }
 .footer-text a:hover { color:var(--ph-d); }
 .foot-sep { color:var(--ink-3); }
 
-@media (max-width:760px){ html{font-size:17px;} .page{margin:0 auto;padding:46px 32px 96px;} h2{margin-left:0;width:100%;} .hero{font-size:1.42rem;} }
+@media (max-width:760px){ html{font-size:17px;} .page{margin:0 auto;padding:46px 32px 96px;} h2{margin-left:0;width:100%;} .hero{font-size:var(--t-hero-sm);} }
 @media (max-width:460px){ html{font-size:16px;} .page{padding:34px 20px 80px;} .nav-list{gap:12px 20px;} .header-meta{flex-direction:column;} .meta-sep{display:none;} }
 </style>
 
