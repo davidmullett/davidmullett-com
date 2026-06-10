@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OG card source — davidmullett.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=block" rel="stylesheet">
+<style>
+  *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 1200px;
+    height: 630px;
+    background: #f3f0e7;
+    overflow: hidden;
+  }
+  body { position: relative; }
+
+  /* SPIRAL FIGURE — 780px, geometric center at (860, 315).
+     Bleeds off top, bottom, and right edges. SVG top-left at (470, -75). */
+  .figure {
+    position: absolute;
+    left: 470px;
+    top: -75px;
+    width: 780px;
+    height: 780px;
+    pointer-events: none;
+  }
+  .figure svg { display: block; overflow: visible; width: 100%; height: 100%; }
+
+  /* MASTHEAD — wordmark only, flush left at x=120, block top y=96 */
+  .wordmark {
+    position: absolute;
+    left: 120px;
+    top: 96px;
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-weight: 500;
+    font-size: 42px;
+    letter-spacing: 0.17em;
+    color: #1a1710;
+    line-height: 1;
+    margin-right: -0.17em;
+  }
+</style>
+</head>
+<body>
+  <div class="figure" aria-hidden="true">
+    <svg viewBox="-8 -8 96 96" xmlns="http://www.w3.org/2000/svg">
+      <path d="M40,40 Q40,8 66,14 Q82,25 80,48 Q74,69 50,74 Q23,78 9,56 Q-4,34 8,14 Q20,-4 42,2 Q66,8 76,30 Q84,54 70,68 Q54,82 34,80 Q14,78 6,62 Q-2,46 8,34 Q18,22 34,20 Q52,18 60,34 Q68,50 58,62 Q48,74 36,70 Q24,66 22,54 Q20,44 28,38 Q36,32 44,36 Q52,40 50,48 Q48,56 42,54 Q38,52 38,48 Q38,44 41,42" stroke="#1a1710" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <circle cx="41" cy="42" r="2" fill="#1faa5e"/>
+    </svg>
+  </div>
+  <span class="wordmark">DAVID MULLETT</span>
+</body>
+</html>
