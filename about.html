@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="only light">
-<meta name="theme-color" content="#f3f0e7">
+<meta name="theme-color" content="#f5f4f0">
 <meta name="description" content="David Mullett — independent researcher and former Lead Product Designer at Meta Reality Labs. Research orientation and background — from shaping behavior at consumer scale to studying how recursive systems fail.">
 
 <link rel="canonical" href="https://davidmullett.com/about">
@@ -30,21 +30,22 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400;1,8..60,500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400;1,8..60,500&family=IBM+Plex+Mono:wght@300;400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
 :root {
-  --cream:#f3f0e7; --ink:#1a1710; --ink-2:#48443c; --ink-3:#6e6a62;
+  --cream:#f5f4f0; --ink:#1a1710; --ink-2:#48443c; --ink-3:#6e6a62;
   --rule-lt:#d8d4c8; --rule-2:#c9c4b6; --ph:#1faa5e; --ph-d:#157a43; --ph-border:rgba(45,214,122,.5);
-  --serif:'Source Serif 4',Georgia,serif; --mono:'IBM Plex Mono','Courier New',monospace;
+  --grotesk:'Hanken Grotesk',system-ui,sans-serif; --serif:'Source Serif 4',Georgia,serif; --mono:'IBM Plex Mono','Courier New',monospace;
   --t-label-xs:0.52rem; --t-label:0.56rem; --t-meta:0.66rem; --t-aux:0.86rem; --t-label-lg:0.92rem;
   --t-body:1rem; --t-lede:1.04rem; --t-hero:1.6rem; --t-hero-sm:1.42rem; --t-title:1.7rem; --t-title-sm:1.46rem;
 }
 html { font-size:18px; -webkit-text-size-adjust:100%; text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased; font-feature-settings:"liga" 1,"kern" 1,"onum" 1;
   background:var(--cream); color-scheme:only light; }
-body { background:var(--cream) !important; color:var(--ink) !important; font-family:var(--serif); line-height:1.75; }
+body { background:var(--cream) !important; color:var(--ink) !important; font-family:var(--grotesk); line-height:1.75; }
+em { font-style:normal; font-weight:600; }
 .page { max-width:680px; margin:0 auto 0 max(80px,14vw); padding:56px 0 132px; }
 
 a { color:var(--ink); text-decoration:underline; text-decoration-color:var(--rule-2);
@@ -55,7 +56,7 @@ a.lz:hover { color:var(--ph-d); text-decoration-color:var(--ph-d); }
 
 nav { margin-bottom:52px; padding-bottom:16px; border-bottom:1px solid var(--rule-lt); }
 .nav-list { list-style:none; display:flex; gap:0 28px; flex-wrap:wrap; }
-.nav-list a { font-family:var(--mono); font-size:var(--t-label); font-weight:400; letter-spacing:0.2em;
+.nav-list a { font-family:var(--mono); font-size:var(--t-label); font-weight:400; letter-spacing:0.1em;
   text-transform:uppercase; color:var(--ink-2); text-decoration:none; }
 .nav-list a:hover { color:var(--ink); }
 .nav-list a[aria-current="page"] { color:var(--ink); }
@@ -76,14 +77,13 @@ header { margin-bottom:54px; }
 .descriptor { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2);
   letter-spacing:0.03em; line-height:1.6; margin-bottom:14px; max-width:62ch; }
 .header-meta { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2);
-  letter-spacing:0.05em; line-height:1.9; display:flex; flex-wrap:wrap; align-items:baseline; }
+  letter-spacing:0.05em; line-height:1.9; display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 18px; }
 .header-meta a { font-family:var(--mono); font-size:var(--t-label); color:var(--ink-2); text-decoration:none; letter-spacing:0.05em; }
 .header-meta a:hover { color:var(--ink); }
-.meta-sep { margin:0 8px; color:var(--ink-3); }
 
 section { margin-bottom:50px; }
 section:last-of-type { margin-bottom:0; }
-h2 { font-family:var(--mono); font-size:var(--t-label); font-weight:400; letter-spacing:0.24em;
+h2 { font-family:var(--mono); font-size:var(--t-label); font-weight:400; letter-spacing:0.1em;
   text-transform:uppercase; color:var(--ink-2); margin-bottom:24px; margin-left:-80px;
   width:calc(100% + 80px); line-height:1.4; }
 p { max-width:54ch; margin-bottom:1.2em; font-size:var(--t-body); line-height:1.74; color:var(--ink); }
@@ -97,13 +97,16 @@ p:last-child { margin-bottom:0; }
 .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 
 footer { margin-top:84px; padding-top:20px; border-top:1px solid var(--rule-lt); }
-.footer-text { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2); letter-spacing:0.05em; line-height:1.9; }
+.footer-text { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2); letter-spacing:0.05em; line-height:1.9; display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 18px; }
 .footer-text a { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2); text-decoration:none; }
 .footer-text a:hover { color:var(--ph-d); }
-.foot-sep { color:var(--ink-3); }
 
-@media (max-width:760px){ html{font-size:17px;} .page{margin:0 auto;padding:46px 32px 96px;} h2{margin-left:0;width:100%;} }
-@media (max-width:460px){ html{font-size:16px;} .page{padding:34px 20px 80px;} .nav-list{gap:12px 20px;} .header-meta{flex-direction:column;} .meta-sep{display:none;} }
+/* §06 — quiet hairline field separators between inline meta items, centered in the gap; dropped when stacked (see ≤460) */
+.header-meta > * + *, .footer-text a { position:relative; }
+.header-meta > * + *::before, .footer-text a::before { content:""; position:absolute; left:-9px; top:50%; transform:translateY(-50%); height:0.85em; border-left:1px solid var(--rule-2); }
+
+@media (max-width:760px){ html{font-size:17px;} .page{margin:0 auto 0 max(28px,6vw);padding:46px 32px 96px;} h2{margin-left:-32px;width:calc(100% + 32px);} }
+@media (max-width:460px){ html{font-size:16px;} .page{padding:34px 20px 80px;} h2{margin-left:-20px;width:calc(100% + 20px);} .nav-list{gap:12px 20px;} .header-meta{flex-direction:column;} .header-meta > * + *::before, .footer-text a::before{display:none;} }
 </style>
 
 <script type="application/ld+json">
@@ -144,11 +147,8 @@ footer { margin-top:84px; padding-top:20px; border-top:1px solid var(--rule-lt);
 
   <div class="header-meta">
     <a href="mailto:d@loopzero.org">d@loopzero.org</a>
-    <span class="meta-sep">·</span>
     <a href="https://orcid.org/0009-0004-2543-1664" target="_blank" rel="noopener" title="ORCID researcher profile">ORCID&nbsp;0009-0004-2543-1664</a>
-    <span class="meta-sep">·</span>
     <a href="https://scholar.google.com/citations?user=3SninzcAAAAJ" target="_blank" rel="noopener" title="Google Scholar profile">Google&nbsp;Scholar</a>
-    <span class="meta-sep">·</span>
     <a href="https://github.com/davidmullett" target="_blank" rel="noopener">GitHub</a>
   </div>
 </header>
@@ -188,11 +188,8 @@ footer { margin-top:84px; padding-top:20px; border-top:1px solid var(--rule-lt);
 <footer>
   <div class="footer-text">
     davidmullett.com
-    <span class="foot-sep">&nbsp;·&nbsp;</span>
     <a href="https://orcid.org/0009-0004-2543-1664" target="_blank" rel="noopener">ORCID&nbsp;0009-0004-2543-1664</a>
-    <span class="foot-sep">&nbsp;·&nbsp;</span>
     <a href="https://scholar.google.com/citations?user=3SninzcAAAAJ" target="_blank" rel="noopener">Google&nbsp;Scholar</a>
-    <span class="foot-sep">&nbsp;·&nbsp;</span>
     <a class="lz" href="https://loopzero.org/" target="_blank" rel="noopener">loopzero.org</a>
   </div>
 </footer>
