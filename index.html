@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="only light">
 <meta name="theme-color" content="#f1f0ec">
-<meta name="description" content="David Mullett — independent researcher and former Lead Product Designer at Meta Reality Labs. I designed the digital systems that shape behavior at scale. Now I study how they fail. Leading the research program Loopzero.">
+<meta name="description" content="David Mullett — fractional design and measurement leadership for AI products. I built the systems that shape behaviour at scale, then published the audit that killed my own result.">
 
 <link rel="canonical" href="https://davidmullett.com/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -18,14 +18,14 @@
 <meta property="og:site_name" content="David Mullett">
 <meta property="og:url" content="https://davidmullett.com/">
 <meta property="og:title" content="David Mullett">
-<meta property="og:description" content="I designed the digital systems that shape behavior at scale. Now I study how they fail. Independent researcher · former Lead Product Designer at Meta Reality Labs.">
+<meta property="og:description" content="David Mullett — fractional design and measurement leadership for AI products. I built the systems that shape behaviour at scale, then published the audit that killed my own result.">
 <meta property="og:image" content="https://davidmullett.com/og-image-v3.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="David Mullett">
-<meta name="twitter:description" content="I designed the digital systems that shape behavior at scale. Now I study how they fail.">
+<meta name="twitter:description" content="David Mullett — fractional design and measurement leadership for AI products. I built the systems that shape behaviour at scale, then published the audit that killed my own result.">
 <meta name="twitter:image" content="https://davidmullett.com/og-image-v3.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,6 +104,16 @@ p:last-child { margin-bottom:0; }
 .work-link:hover { color:var(--ph-d); text-decoration-color:var(--ph-d); }
 
 
+/* Ledger — shared component, verbatim from about.html (title / meta / note) */
+.ledger { list-style:none; max-width:54ch; border-top:1px solid var(--rule-lt); }
+.ledger li { display:flex; flex-direction:column; padding:12px 0; border-bottom:1px solid var(--rule-lt); gap:3px; }
+.l-primary { font-size:var(--t-aux); line-height:1.45; color:var(--ink); }
+.l-secondary { font-size:var(--t-label); font-family:var(--mono); font-weight:300; color:var(--ink-2); letter-spacing:0.04em; }
+.l-note { font-size:var(--t-aux); line-height:1.55; color:var(--ink-2); max-width:50ch; margin-top:2px; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+/* prose resuming after a ruled ledger or the work card */
+.ledger + p, .work-card + p { margin-top:24px; }
+
 .contact-list { list-style:none; max-width:54ch; }
 .contact-list li { padding:11px 0; border-bottom:1px solid var(--rule-lt); display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
 .contact-list li:first-child { border-top:1px solid var(--rule-lt); }
@@ -166,10 +176,10 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
     </svg>
   </a>
 
-  <h1 class="hero">I designed the digital systems that shape behavior at scale.<span class="em">Now I study how they&nbsp;fail.</span></h1>
+  <h1 class="hero">I designed the digital systems that shape behaviour at&nbsp;scale —<span class="em">now I audit how they measure&nbsp;it.</span></h1>
 
   <div class="descriptor">
-    Independent&nbsp;researcher in complex&nbsp;digital&nbsp;systems · former&nbsp;Lead&nbsp;Product&nbsp;Designer at Meta&nbsp;Reality&nbsp;Labs.
+    Fractional&nbsp;design and measurement&nbsp;leadership for AI&nbsp;products · former&nbsp;Lead&nbsp;Product&nbsp;Designer, Meta&nbsp;Reality&nbsp;Labs · Mexico&nbsp;City&nbsp;/&nbsp;remote.
   </div>
 
   <div class="header-meta">
@@ -180,24 +190,50 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
   </div>
 </header>
 
+<!-- WHAT I DO -->
+<section>
+  <h2>What I do</h2>
+  <p>
+    Feeds became chat; chat is becoming agents; agents are becoming ambient. What
+    survives every one of those transitions is the measurement underneath — the
+    metric that decides what counts as a good answer, a good recommendation, a good
+    outcome. I design the surfaces of that transition, and I audit the instruments
+    behind them.
+  </p>
+  <ul class="ledger">
+    <li><span class="l-primary">Benchmark validity audit</span><span class="sr-only"> · </span><span class="l-secondary">2–3 weeks, fixed scope</span><span class="sr-only"> — </span><span class="l-note">A shadow-class census and learnability gate run against your evaluation suite, label pipeline, or harm metric: which outcomes can your instrument structurally never record, how large is that population, and does the number still mean what it claims? You get an evidence packet, and a repair design if the audit finds a pathology.</span></li>
+    <li><span class="l-primary">Design sprint</span><span class="sr-only"> · </span><span class="l-secondary">2–6 weeks, fixed scope</span><span class="sr-only"> — </span><span class="l-note">Trust surfaces for agents: consent moments, receipts, interruption, handoff to a human. AI-native product definition. Discovery, ranking, and browse. Metrics-aware redesign — moving a product off an instrument that lies. Vision prototypes when the board needs to see it before it exists.</span></li>
+    <li><span class="l-primary">The seat</span><span class="sr-only"> · </span><span class="l-secondary">1–2 days/week, ongoing</span><span class="sr-only"> — </span><span class="l-note">Fractional design principal: direction, critique, hiring, and the standing argument with the metrics.</span></li>
+  </ul>
+  <p>
+    What I don’t do: production design. I don’t compete with your team’s
+    throughput. I decide what gets built, define how it should behave, and make
+    sure the numbers you steer by are honest.
+  </p>
+  <a href="mailto:d@loopzero.org">Start a conversation → d@loopzero.org</a>
+</section>
+
 <!-- CURRENT WORK -->
 <section>
   <h2>Current work</h2>
   <div class="work-card">
-    <span class="work-kicker">Loopzero</span>
+    <span class="work-kicker">The paper</span>
     <p>
-      An independent research program on how complex digital systems — the ones that
-      consume their own output as input: markets, models, recommenders, more — can
-      invisibly lose the ability to make progress before they suddenly break.
+      I built a benchmark to test a theory about early warning in recursive systems,
+      published a result that favoured the theory, then found the instrument was
+      broken: 69% of its control class could not, by construction, be recorded as
+      failing. I repaired it, re-ran the test under sealed criteria, and published
+      the null. Registrations, code, and a complete deviations log are public.
     </p>
     <p>
-      The Loopzero benchmarking framework I built is falsifiable and the directional evidence
-      consistent. That said, no detector — neither the standard methods nor my own —
-      has yet reached an accepted operating point under the locked test. So the
-      framework stands, and creating a working detector is still an open problem.
+      <em>Absorbing Shadow Classes in Conjunctive Label Rules</em> — arXiv [ARXIV-ID]
     </p>
     <a class="work-link" href="https://loopzero.org/" target="_blank" rel="noopener">The research program → loopzero.org</a>
   </div>
+  <p>
+    The book: <em>Thumb World</em> — in progress. On the instruments that read us
+    backwards, and why the last one is the narrator in your own head.
+  </p>
 </section>
 
 <!-- CONTINUITY -->
@@ -229,7 +265,10 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
     shared a common mechanism: digital systems feed on their own output until
     they consume themselves, and us with them. I spent the next two years taking
     the question apart, convinced there had to be something
-    formal underneath — a claim specific enough to fail. That search is Loopzero.
+    formal underneath — a claim specific enough to fail. That search became
+    Loopzero — and its first real finding was not about the systems. It was that
+    the instrument I built to study them was misreading its own data, and that I
+    could not see it from the inside. Everything I do now starts there.
   </p>
   <p>
     Design teaches us that the problem you’re given is rarely the problem — I think I’ve found the one worth naming.
@@ -240,9 +279,9 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
 <section id="getintouch">
   <h2>Contact</h2>
   <p>
-    I’m looking for critical readers and collaborators — people who’ll push on
-    the claim, especially from recommender evaluation, statistics, or formal
-    methods. The harder the scrutiny, the more useful.
+    I’m interested in three kinds of conversation: teams who want their evaluation
+    instruments audited, companies building AI products who need design leadership
+    without a full-time hire, and researchers who’ll push on the claims.
   </p>
   <a href="mailto:d@loopzero.org">Email → d@loopzero.org</a>
 </section>
