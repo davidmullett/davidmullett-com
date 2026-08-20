@@ -111,8 +111,8 @@ p:last-child { margin-bottom:0; }
 .l-secondary { font-size:var(--t-label); font-family:var(--mono); font-weight:300; color:var(--ink-2); letter-spacing:0.04em; }
 .l-note { font-size:var(--t-aux); line-height:1.55; color:var(--ink-2); max-width:50ch; margin-top:2px; }
 .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
-/* prose resuming after a ruled ledger or the work card */
-.ledger + p, .work-card + p { margin-top:24px; }
+/* prose resuming after a ruled ledger */
+.ledger + p { margin-top:24px; }
 
 .contact-list { list-style:none; max-width:54ch; }
 .contact-list li { padding:11px 0; border-bottom:1px solid var(--rule-lt); display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
@@ -143,8 +143,8 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
     {
       "@type":"Person","@id":"https://davidmullett.com/#person",
       "name":"David Mullett","url":"https://davidmullett.com/",
-      "jobTitle":"Independent researcher",
-      "description":"I designed the digital systems that shape behavior at scale. Now I study how they fail.",
+      "jobTitle":"Fractional design and measurement leadership · independent researcher",
+      "description":"I design AI products — and built the machine that checks if they’re really working, or just saying so.",
       "email":"d@loopzero.org",
       "sameAs":["https://orcid.org/0009-0004-2543-1664","https://scholar.google.com/citations?user=3SninzcAAAAJ","https://github.com/davidmullett"],
       "affiliation":{"@type":"Organization","name":"Loopzero","url":"https://loopzero.org"},
@@ -176,112 +176,85 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
     </svg>
   </a>
 
-  <h1 class="hero">I designed the digital systems that shape behaviour at&nbsp;scale —<span class="em">now I audit how they measure&nbsp;it.</span></h1>
+  <h1 class="hero">I design AI&nbsp;products —<span class="em">and built the machine that checks if they’re really working, or just saying&nbsp;so.</span></h1>
 
   <div class="descriptor">
-    Fractional&nbsp;design and measurement&nbsp;leadership for AI&nbsp;products · former&nbsp;Lead&nbsp;Product&nbsp;Designer, Meta&nbsp;Reality&nbsp;Labs · Mexico&nbsp;City&nbsp;/&nbsp;remote.
+    Former&nbsp;Lead&nbsp;Product&nbsp;Designer, Meta&nbsp;Reality&nbsp;Labs — discovery on&nbsp;Quest. Now fractional, for teams building AI&nbsp;products. Mexico&nbsp;City&nbsp;·&nbsp;remote.
   </div>
 
   <div class="header-meta">
     <a href="mailto:d@loopzero.org">d@loopzero.org</a>
-    <a href="https://orcid.org/0009-0004-2543-1664" target="_blank" rel="noopener" title="ORCID researcher profile">ORCID&nbsp;0009-0004-2543-1664</a>
-    <a href="https://scholar.google.com/citations?user=3SninzcAAAAJ" target="_blank" rel="noopener" title="Google Scholar profile">Google&nbsp;Scholar</a>
-    <a href="https://github.com/davidmullett" target="_blank" rel="noopener">GitHub</a>
   </div>
 </header>
+
+<!-- CONFESSION -->
+<section>
+  <h2>Confession</h2>
+  <p>
+    Earlier this year I built a test for a theory I believed in, and the test said
+    the theory worked. Then a safeguard I’d locked in before running it showed the
+    <em>test itself</em> was broken — its fine print was quietly filing the worst
+    failures as successes. I fixed the test, ran it again under rules I couldn’t
+    move, and my theory failed. I published that, in full.
+  </p>
+  <p>
+    Most teams never find out whether their test is broken. That’s the work.
+  </p>
+</section>
 
 <!-- WHAT I DO -->
 <section>
   <h2>What I do</h2>
-  <p>
-    Feeds became chat; chat is becoming agents; agents are becoming ambient. What
-    survives every one of those transitions is the measurement underneath — the
-    metric that decides what counts as a good answer, a good recommendation, a good
-    outcome. I design the surfaces of that transition, and I audit the instruments
-    behind them.
-  </p>
   <ul class="ledger">
-    <li><span class="l-primary">Benchmark validity audit</span><span class="sr-only"> · </span><span class="l-secondary">2–3 weeks, fixed scope</span><span class="sr-only"> — </span><span class="l-note">A shadow-class census and learnability gate run against your evaluation suite, label pipeline, or harm metric: which outcomes can your instrument structurally never record, how large is that population, and does the number still mean what it claims? You get an evidence packet, and a repair design if the audit finds a pathology.</span></li>
-    <li><span class="l-primary">Design sprint</span><span class="sr-only"> · </span><span class="l-secondary">2–6 weeks, fixed scope</span><span class="sr-only"> — </span><span class="l-note">Trust surfaces for agents: consent moments, receipts, interruption, handoff to a human. AI-native product definition. Discovery, ranking, and browse. Metrics-aware redesign — moving a product off an instrument that lies. Vision prototypes when the board needs to see it before it exists.</span></li>
-    <li><span class="l-primary">The seat</span><span class="sr-only"> · </span><span class="l-secondary">1–2 days/week, ongoing</span><span class="sr-only"> — </span><span class="l-note">Fractional design principal: direction, critique, hiring, and the standing argument with the metrics.</span></li>
+    <li><span class="l-primary">Benchmark validity audit</span><span class="sr-only"> · </span><span class="l-secondary">2–3 weeks</span><span class="sr-only"> — </span><span class="l-note">Your evals, harm metrics, and success numbers — audited for what they <em>structurally can’t see</em>. Which failures can your measurement never record? How many of your “good” outcomes are that? You get an evidence packet, and a repair if there’s a problem.</span></li>
+    <li><span class="l-primary">Design sprint</span><span class="sr-only"> · </span><span class="l-secondary">2–6 weeks</span><span class="sr-only"> — </span><span class="l-note">Trust surfaces for agents — consent, receipts, interruption, handoff to a human. AI-native product definition. Discovery, ranking, browse. Redesigns that move a product off a metric that lies.</span></li>
+    <li><span class="l-primary">The seat</span><span class="sr-only"> · </span><span class="l-secondary">1–2 days a week</span><span class="sr-only"> — </span><span class="l-note">Fractional design principal: direction, critique, hiring, and the standing argument with the metrics.</span></li>
   </ul>
   <p>
-    What I don’t do: production design. I don’t compete with your team’s
-    throughput. I decide what gets built, define how it should behave, and make
-    sure the numbers you steer by are honest.
-  </p>
-  <a href="mailto:d@loopzero.org">Start a conversation → d@loopzero.org</a>
-</section>
-
-<!-- CURRENT WORK -->
-<section>
-  <h2>Current work</h2>
-  <div class="work-card">
-    <span class="work-kicker">The paper</span>
-    <p>
-      I built a benchmark to test a theory about early warning in recursive systems,
-      published a result that favoured the theory, then found the instrument was
-      broken: 69% of its control class could not, by construction, be recorded as
-      failing. I repaired it, re-ran the test under sealed criteria, and published
-      the null. Registrations, code, and a complete deviations log are public.
-    </p>
-    <p>
-      <em>Absorbing Shadow Classes in Conjunctive Label Rules</em> — arXiv [ARXIV-ID]
-    </p>
-    <a class="work-link" href="https://loopzero.org/" target="_blank" rel="noopener">The research program → loopzero.org</a>
-  </div>
-  <p>
-    The book: <em>Thumb World</em> — in progress. On the instruments that read us
-    backwards, and why the last one is the narrator in your own head.
+    I don’t do production design. I decide what gets built, define how it behaves,
+    and make sure the numbers you steer by are honest.
   </p>
 </section>
 
-<!-- CONTINUITY -->
+<!-- BACKGROUND -->
 <section>
-  <h2>The throughline</h2>
+  <h2>Background</h2>
   <p>
-    I came to this sideways.
+    Art history at Northwestern. MA in Visual Design at the Royal College of Art.
+    Director at Ridley Scott Associates. Founded a cinematic VR studio; co-founded
+    Pupil, a machine-learning and spatial-data company. Lead Product Designer at
+    Meta Reality Labs, where I led design for discovery on Quest — ranking, browse,
+    and search: the product deciding what you see.
   </p>
   <p>
-    I studied art history at Northwestern, then found film through
-    post-production. Cubism had shown me the goal: an image that refuses a single fixed
-    viewpoint. The Royal College of Art trained me as a designer;
-    the pursuit carried on, bringing that eye
-    to the moving image as a director at Ridley Scott Associates.
+    Every generation of the interface — feed, chat, agent — does more for you and
+    shows you less about how it decides. I work on both sides of that line: the
+    surface you see, and the measurement you don’t.
   </p>
   <p>
-    Virtual reality finally exploded the frame — not just past the screen but
-    all the way around you, embodying what I’d spent years circling. I made
-    cinematic VR and founded a studio to build it.
-    Then the pursuit turned from the image to the system: I co-founded Pupil,
-    a machine-learning and spatial-data company, and went on to Meta Reality
-    Labs as Lead Product Designer for Engagement &amp; Growth, building
-    immersive digital products at scale — where I began to see how systems
-    shape attention itself.
+    I’m also writing a book about what the measurements miss.
   </p>
-  <p>
-    A few years ago I started to suspect that the breakdowns around us —
-    radicalization, polarization, outrage, eroding trust and attention spans —
-    shared a common mechanism: digital systems feed on their own output until
-    they consume themselves, and us with them. I spent the next two years taking
-    the question apart, convinced there had to be something
-    formal underneath — a claim specific enough to fail. That search became
-    Loopzero — and its first real finding was not about the systems. It was that
-    the instrument I built to study them was misreading its own data, and that I
-    could not see it from the inside. Everything I do now starts there.
-  </p>
-  <p>
-    Design teaches us that the problem you’re given is rarely the problem — I think I’ve found the one worth naming.
-  </p>
+</section>
+
+<!-- CHECK MY WORK -->
+<section>
+  <h2>Check my work</h2>
+  <ul class="ledger">
+    <li><span class="l-primary">Paper&nbsp;·&nbsp;<em>Absorbing Shadow Classes in Conjunctive Label Rules</em> — submitted to arXiv, August 2026 (identifier pending) · <a href="https://github.com/davidmullett/loopzero-paper-public/blob/main/manuscript_shadow_classes/build/paper_main.pdf" target="_blank" rel="noopener">manuscript PDF</a></span></li>
+    <li><span class="l-primary">Prior preprint&nbsp;·&nbsp;<em>Benchmarking Recursive-Collapse Warning Claims</em> — <a href="https://arxiv.org/abs/2606.00329" target="_blank" rel="noopener">arXiv 2606.00329</a> · superseded by the above, left public</span></li>
+    <li><span class="l-primary">Pre-registrations&nbsp;·&nbsp;<a href="https://osf.io/wka72" target="_blank" rel="noopener">osf.io/wka72</a> · <a href="https://osf.io/7bvgz" target="_blank" rel="noopener">osf.io/7bvgz</a> — timestamped before the results</span></li>
+    <li><span class="l-primary">Code, data, deviations log&nbsp;·&nbsp;<a href="https://github.com/davidmullett/loopzero-paper-public" target="_blank" rel="noopener">github.com/davidmullett/loopzero-paper-public</a></span></li>
+    <li><span class="l-primary">ORCID&nbsp;·&nbsp;<a href="https://orcid.org/0009-0004-2543-1664" target="_blank" rel="noopener">0009-0004-2543-1664</a>&nbsp;&nbsp;·&nbsp;&nbsp;Research program&nbsp;·&nbsp;<a class="lz" href="https://loopzero.org/" target="_blank" rel="noopener">loopzero.org</a></span></li>
+  </ul>
 </section>
 
 <!-- GET IN TOUCH -->
 <section id="getintouch">
   <h2>Contact</h2>
   <p>
-    I’m interested in three kinds of conversation: teams who want their evaluation
-    instruments audited, companies building AI products who need design leadership
-    without a full-time hire, and researchers who’ll push on the claims.
+    Three conversations I’m open to: your evaluation metrics audited, design
+    leadership for an AI product without the full-time hire, or pressure on the
+    claims.
   </p>
   <a href="mailto:d@loopzero.org">Email → d@loopzero.org</a>
 </section>
