@@ -40,7 +40,7 @@
   --rule-lt:#d8d4c8; --rule-2:#c9c4b6;
   --ph:#1faa5e; --ph-d:#157a43; --ph-border:rgba(45,214,122,.5);
   --serif:'IBM Plex Serif',Georgia,serif; --mono:'IBM Plex Mono','Courier New',monospace;
-  --t-label:0.56rem; --t-meta:0.66rem; --t-aux:0.86rem;
+  --t-label:0.56rem; --t-meta:0.66rem; --t-aux:0.86rem; --t-label-lg:0.92rem;
 }
 html { font-size:18px; -webkit-text-size-adjust:100%; text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased; font-feature-settings:"liga" 1,"kern" 1,"onum" 1;
@@ -72,7 +72,7 @@ a.lz:hover { color:var(--ph-d); text-decoration-color:var(--ph-d); }
 
 header { margin-bottom:54px; }
 /* the wordmark is the only tracked-out element */
-.wordmark { font-family:var(--mono); font-size:var(--t-meta); font-weight:400; letter-spacing:0.17em;
+.wordmark { font-family:var(--mono); font-size:var(--t-label-lg); font-weight:400; letter-spacing:0.17em;
   text-transform:uppercase; color:var(--ink); margin-bottom:22px; }
 .header-meta { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2);
   letter-spacing:0.05em; line-height:1.9; display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 18px; }
@@ -116,7 +116,7 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
     {
       "@type":"Person","@id":"https://davidmullett.com/#person",
       "name":"David Mullett","url":"https://davidmullett.com/",
-      "jobTitle":"Product and design direction · measurement validity · independent researcher",
+      "jobTitle":"Independent researcher",
       "email":"d@loopzero.org",
       "sameAs":["https://orcid.org/0009-0004-2543-1664","https://scholar.google.com/citations?user=3SninzcAAAAJ","https://github.com/davidmullett","https://loopzero.org/"]
     },
