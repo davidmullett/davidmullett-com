@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="only light">
 <meta name="theme-color" content="#f1f0ec">
-<meta name="description" content="I design AI products — and built the machine that checks if they’re really working, or just saying so. Fractional design and measurement leadership for AI products.">
+<title>David Mullett</title>
+<meta name="description" content="David Mullett. I design AI products, and I test whether the measurements behind them can see what they claim to see. Research published at loopzero.org.">
 
 <link rel="canonical" href="https://davidmullett.com/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -18,35 +19,35 @@
 <meta property="og:site_name" content="David Mullett">
 <meta property="og:url" content="https://davidmullett.com/">
 <meta property="og:title" content="David Mullett">
-<meta property="og:description" content="I design AI products — and built the machine that checks if they’re really working, or just saying so. Fractional design and measurement leadership for AI products.">
+<meta property="og:description" content="I design AI products, and I test whether the measurements behind them can see what they claim to see. Research published at loopzero.org.">
 <meta property="og:image" content="https://davidmullett.com/og-image-v3.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="David Mullett">
-<meta name="twitter:description" content="I design AI products — and built the machine that checks if they’re really working, or just saying so. Fractional design and measurement leadership for AI products.">
+<meta name="twitter:description" content="I design AI products, and I test whether the measurements behind them can see what they claim to see. Research published at loopzero.org.">
 <meta name="twitter:image" content="https://davidmullett.com/og-image-v3.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
 :root {
-  --cream:#f1f0ec; --paper-2:#efebe0; --ink:#1a1710; --ink-2:#48443c; --ink-3:#6e6a62;
-  --rule-lt:#d8d4c8; --rule-2:#c9c4b6; --ph:#1faa5e; --ph-d:#157a43; --ph-border:rgba(45,214,122,.5); --ph-dim:rgba(45,214,122,.07);
+  --cream:#f1f0ec; --ink:#1a1710; --ink-2:#48443c;
+  --rule-lt:#d8d4c8; --rule-2:#c9c4b6;
+  --ph:#1faa5e; --ph-d:#157a43; --ph-border:rgba(45,214,122,.5);
   --serif:'IBM Plex Serif',Georgia,serif; --mono:'IBM Plex Mono','Courier New',monospace;
-  --t-label-xs:0.52rem; --t-label:0.56rem; --t-meta:0.66rem; --t-aux:0.86rem; --t-label-lg:0.92rem;
-  --t-body:1rem; --t-lede:1.04rem; --t-hero:1.6rem; --t-hero-sm:1.42rem; --t-title:1.7rem; --t-title-sm:1.46rem;
+  --t-label:0.56rem; --t-meta:0.66rem; --t-aux:0.86rem; --t-hero:1.6rem; --t-hero-sm:1.42rem;
 }
 html { font-size:18px; -webkit-text-size-adjust:100%; text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased; font-feature-settings:"liga" 1,"kern" 1,"onum" 1;
   background:var(--cream); color-scheme:only light; }
 body { background:var(--cream) !important; color:var(--ink) !important; font-family:var(--serif); line-height:1.65; }
 
-/* Editorial column — airier than loopzero, same left anchor */
+/* Left-anchor asymmetry — unchanged from the standing layout */
 .page { max-width:680px; margin:0 auto 0 max(80px,14vw); padding:56px 0 132px; }
 
 a { color:var(--ink); text-decoration:underline; text-decoration-color:var(--rule-2);
@@ -56,15 +57,8 @@ a:hover { text-decoration-color:var(--ink-2); }
 a.lz { text-decoration-color:var(--ph-border); }
 a.lz:hover { color:var(--ph-d); text-decoration-color:var(--ph-d); }
 
-nav { margin-bottom:52px; padding-bottom:16px; border-bottom:1px solid var(--rule-lt); }
-.nav-list { list-style:none; display:flex; gap:0 28px; flex-wrap:wrap; }
-.nav-list a { font-family:var(--mono); font-size:var(--t-label); font-weight:400; letter-spacing:0.1em;
-  text-transform:uppercase; color:var(--ink-2); text-decoration:none; }
-.nav-list a:hover { color:var(--ink); }
-.nav-list a[aria-current="page"] { color:var(--ink); }
-
 /* Mark — quiet, static, links to the work */
-.mark { display:inline-block; line-height:0; margin-bottom:26px; }
+.mark { display:inline-block; line-height:0; margin-bottom:30px; }
 .mark svg { display:block; overflow:visible; }
 .mark .spiral { stroke:var(--ink); stroke-width:2; fill:none; stroke-linecap:round; }
 .mark .core { fill:var(--ink); transition:fill .15s; }
@@ -76,12 +70,15 @@ nav { margin-bottom:52px; padding-bottom:16px; border-bottom:1px solid var(--rul
 @keyframes draw { to { stroke-dashoffset:0; } }
 @keyframes glow { to { opacity:1; } }
 
-header { margin-bottom:56px; }
+header { margin-bottom:54px; }
+/* the wordmark is the only tracked-out element */
+.wordmark { font-family:var(--mono); font-size:var(--t-meta); font-weight:400; letter-spacing:0.17em;
+  text-transform:uppercase; color:var(--ink); margin-bottom:22px; }
 .hero { font-family:var(--serif); font-size:var(--t-hero); font-weight:400; line-height:1.34;
-  letter-spacing:-0.012em; color:var(--ink); max-width:21ch; margin-bottom:22px; text-wrap:balance; }
-.hero .em { display:block; font-style:normal; font-weight:400; }
-.descriptor { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2);
-  letter-spacing:0.03em; line-height:1.7; max-width:62ch; margin-bottom:16px; }
+  letter-spacing:-0.012em; color:var(--ink); max-width:25ch; margin-bottom:24px; text-wrap:pretty; }
+/* the line break is the pivot */
+.hero .line { display:block; }
+
 .header-meta { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2);
   letter-spacing:0.05em; line-height:1.9; display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 18px; }
 .header-meta a { font-family:var(--mono); font-size:var(--t-label); color:var(--ink-2); text-decoration:none; letter-spacing:0.05em; }
@@ -91,51 +88,30 @@ section { margin-bottom:52px; }
 h2 { font-family:var(--mono); font-size:var(--t-label); font-weight:400; letter-spacing:0.1em;
   text-transform:uppercase; color:var(--ink-2); margin-bottom:24px; margin-left:-80px;
   width:calc(100% + 80px); line-height:1.4; }
-p { max-width:54ch; margin-bottom:1.2em; font-size:var(--t-body); line-height:1.65; }
-p:last-child { margin-bottom:0; }
 
-/* Current work card — the one place green appears as accent (points to the work) */
-.work-card { max-width:54ch; border-left:2px solid var(--ph-border); background:var(--ph-dim); padding:20px 24px; }
-.work-kicker { font-family:var(--mono); font-size:var(--t-label-xs); font-weight:400; letter-spacing:0.1em;
-  text-transform:uppercase; color:var(--ph-d); display:block; margin-bottom:10px; }
-.work-card p { font-size:var(--t-lede); max-width:none; margin-bottom:14px; }
-.work-link { font-family:var(--mono); font-size:var(--t-label); font-weight:400; color:var(--ink);
-  text-decoration:underline; text-decoration-color:var(--ph-border); text-underline-offset:3px; }
-.work-link:hover { color:var(--ph-d); text-decoration-color:var(--ph-d); }
-
-
-/* Ledger — shared component, verbatim from about.html (title / meta / note) */
+/* Ledger — shared component (title / meta / note) */
 .ledger { list-style:none; max-width:54ch; border-top:1px solid var(--rule-lt); }
 .ledger li { display:flex; flex-direction:column; padding:12px 0; border-bottom:1px solid var(--rule-lt); gap:3px; }
 .l-primary { font-size:var(--t-aux); line-height:1.45; color:var(--ink); }
 .l-secondary { font-size:var(--t-label); font-family:var(--mono); font-weight:300; color:var(--ink-2); letter-spacing:0.04em; }
 .l-note { font-size:var(--t-aux); line-height:1.55; color:var(--ink-2); max-width:50ch; margin-top:2px; }
+.l-note a, .l-secondary a { font-family:var(--mono); font-size:var(--t-label); letter-spacing:0.04em; color:var(--ink-2); }
+.l-note a:hover, .l-secondary a:hover { color:var(--ink); }
+.l-secondary a.lz:hover { color:var(--ph-d); }
+cite { font-style:italic; }
 .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
-/* prose resuming after a ruled ledger */
-.ledger + p { margin-top:24px; }
-/* the hero's second breath — unlabelled, tight to the header */
-.lede { margin-top:24px; }
-
-.contact-list { list-style:none; max-width:54ch; }
-.contact-list li { padding:11px 0; border-bottom:1px solid var(--rule-lt); display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
-.contact-list li:first-child { border-top:1px solid var(--rule-lt); }
-.contact-list a { font-family:var(--mono); font-size:var(--t-label); font-weight:400; color:var(--ink-2); text-decoration:none; letter-spacing:0.04em; }
-.contact-list a:hover { color:var(--ink); }
-.contact-list a.lz:hover { color:var(--ph-d); }
-.contact-url { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2); letter-spacing:0.02em; }
-.contact-arrow { color:var(--ink-3); }
 
 footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt); }
 .footer-text { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2); letter-spacing:0.05em; line-height:1.9; display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 18px; }
 .footer-text a { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2); text-decoration:none; }
 .footer-text a:hover { color:var(--ph-d); }
 
-/* §06 — quiet hairline field separators between inline meta items, centered in the gap; dropped when stacked (see ≤460) */
-.header-meta > * + *, .footer-text a { position:relative; }
-.header-meta > * + *::before, .footer-text a::before { content:""; position:absolute; left:-9px; top:50%; transform:translateY(-50%); height:0.85em; border-left:1px solid var(--rule-2); }
+/* hairline field separators between inline meta items, centered in the gap; dropped when stacked */
+.header-meta > * + *, .footer-text > * + * { position:relative; }
+.header-meta > * + *::before, .footer-text > * + *::before { content:""; position:absolute; left:-9px; top:50%; transform:translateY(-50%); height:0.85em; border-left:1px solid var(--rule-2); }
 
 @media (max-width:760px){ html{font-size:17px;} .page{margin:0 auto 0 max(28px,6vw);padding:46px 32px 96px;} h2{margin-left:-32px;width:calc(100% + 32px);} .hero{font-size:var(--t-hero-sm);} }
-@media (max-width:460px){ html{font-size:16px;} .page{padding:34px 20px 80px;} h2{margin-left:-20px;width:calc(100% + 20px);} .nav-list{gap:12px 20px;} .header-meta{flex-direction:column;} .header-meta > * + *::before, .footer-text a::before{display:none;} }
+@media (max-width:460px){ html{font-size:16px;} .page{padding:34px 20px 80px;} h2{margin-left:-20px;width:calc(100% + 20px);} .header-meta{flex-direction:column;} .header-meta > * + *::before, .footer-text > * + *::before{display:none;} }
 </style>
 
 <script type="application/ld+json">
@@ -145,164 +121,61 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
     {
       "@type":"Person","@id":"https://davidmullett.com/#person",
       "name":"David Mullett","url":"https://davidmullett.com/",
-      "jobTitle":"Fractional design and measurement leadership · independent researcher",
-      "description":"I design AI products — and built the machine that checks if they’re really working, or just saying so.",
+      "jobTitle":"Product and design direction · measurement validity · independent researcher",
+      "description":"I design AI products, and I test whether the measurements behind them can see what they claim to see.",
       "email":"d@loopzero.org",
-      "sameAs":["https://orcid.org/0009-0004-2543-1664","https://scholar.google.com/citations?user=3SninzcAAAAJ","https://github.com/davidmullett"],
-      "affiliation":{"@type":"Organization","name":"Loopzero","url":"https://loopzero.org"},
-      "alumniOf":[{"@type":"CollegeOrUniversity","name":"Royal College of Art"},{"@type":"CollegeOrUniversity","name":"Northwestern University"}]
+      "sameAs":["https://orcid.org/0009-0004-2543-1664","https://scholar.google.com/citations?user=3SninzcAAAAJ","https://github.com/davidmullett","https://loopzero.org/"]
     },
     {"@type":"WebSite","@id":"https://davidmullett.com/#website","url":"https://davidmullett.com/","name":"David Mullett","publisher":{"@id":"https://davidmullett.com/#person"}}
   ]
 }
 </script>
 </head>
-
 <body>
 <div class="page">
 <main>
 
-<nav aria-label="Site navigation">
-  <ul class="nav-list">
-    <li><a href="/" aria-current="page">David Mullett</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="#getintouch">Contact</a></li>
-  </ul>
-</nav>
-
 <header>
-  <a class="mark" href="https://loopzero.org/" target="_blank" rel="noopener" aria-label="Loopzero — the research program">
+  <a class="mark" href="https://loopzero.org/" target="_blank" rel="noopener" aria-label="Loopzero — the research programme">
     <svg width="40" height="40" viewBox="-8 -8 96 96" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Loopzero mark">
       <path class="spiral" pathLength="1" d="M40.15,41.3 Q40,40.65 40,40 Q40,8 66,14 Q82,25 80,48 Q74,69 50,74 Q23,78 9,56 Q-4,34 8,14 Q20,-4 42,2 Q66,8 76,30 Q84,54 70,68 Q54,82 34,80 Q14,78 6,62 Q-2,46 8,34 Q18,22 34,20 Q52,18 60,34 Q68,50 58,62 Q48,74 36,70 Q24,66 22,54 Q20,44 28,38 Q36,32 44,36 Q52,40 50,48 Q48,56 42,54 Q38,52 38,48 Q38,44 41,42"/>
       <circle class="core" cx="41" cy="42" r="2"/>
     </svg>
   </a>
 
-  <h1 class="hero">I design AI&nbsp;products — <span class="em">and built the machine that checks if they’re really working, or just saying&nbsp;so.</span></h1>
+  <h1 class="wordmark">David Mullett</h1>
 
-  <div class="descriptor">
-    Former&nbsp;Lead&nbsp;Product&nbsp;Designer, Meta&nbsp;Reality&nbsp;Labs — discovery on&nbsp;Quest. Now fractional, for teams building AI&nbsp;products. Mexico&nbsp;City&nbsp;·&nbsp;remote.
-  </div>
+  <p class="hero">I design AI&nbsp;products,
+    <span class="line">and I test whether the measurements behind them can see what they claim to&nbsp;see.</span></p>
 
   <div class="header-meta">
     <a href="mailto:d@loopzero.org">d@loopzero.org</a>
     <a href="https://orcid.org/0009-0004-2543-1664" target="_blank" rel="noopener" title="ORCID researcher profile">ORCID&nbsp;0009-0004-2543-1664</a>
     <a href="https://scholar.google.com/citations?user=3SninzcAAAAJ" target="_blank" rel="noopener" title="Google Scholar profile">Google&nbsp;Scholar</a>
   </div>
-
-  <p class="lede">
-    Earlier this year I built a test for a theory I believed in, and the test said
-    the theory worked. Then a safeguard I’d locked in before running it showed the
-    <em>test itself</em> was broken — its fine print was quietly filing the worst
-    failures as successes. I fixed the test, ran it again under rules I couldn’t
-    move, and my theory failed. I published that, in full.
-  </p>
-  <p>
-    Most teams never find out whether their test is broken. That’s the work.
-  </p>
 </header>
 
-<!-- WHAT I DO -->
 <section>
-  <h2>What I do</h2>
+  <h2>The work</h2>
   <ul class="ledger">
-    <li><span class="l-primary">Benchmark validity audit</span><span class="sr-only"> · </span><span class="l-secondary">2–3 weeks</span><span class="sr-only"> — </span><span class="l-note">Your evals, harm metrics, and success numbers — audited for what they <em>structurally can’t see</em>. Which failures can your measurement never record? How many of your “good” outcomes are that? You get an evidence packet, and a repair if there’s a problem.</span></li>
-    <li><span class="l-primary">Design sprint</span><span class="sr-only"> · </span><span class="l-secondary">2–6 weeks</span><span class="sr-only"> — </span><span class="l-note">Trust surfaces for agents — consent, receipts, interruption, handoff to a human. AI-native product definition. Discovery, ranking, browse. Redesigns that move a product off a metric that lies.</span></li>
-    <li><span class="l-primary">The seat</span><span class="sr-only"> · </span><span class="l-secondary">1–2 days a week</span><span class="sr-only"> — </span><span class="l-note">Fractional design principal: direction, critique, hiring, and the standing argument with the metrics.</span></li>
+    <li>
+      <span class="l-primary">Research programme</span><span class="sr-only"> — </span>
+      <span class="l-secondary"><a class="lz" href="https://loopzero.org/" target="_blank" rel="noopener">loopzero.org</a></span>
+    </li>
+    <li>
+      <span class="l-primary">Paper<span class="sr-only">:</span> <cite>Absorbing Shadow Classes in Conjunctive Label Rules</cite></span><span class="sr-only"> — </span>
+      <span class="l-secondary">Submitted to arXiv, August 2026. Identifier pending.</span><span class="sr-only"> — </span>
+      <span class="l-note"><a href="https://github.com/davidmullett/loopzero-paper-public/blob/main/manuscript_shadow_classes/build/paper_main.pdf" target="_blank" rel="noopener">Manuscript PDF</a></span>
+    </li>
   </ul>
-  <p>
-    I don’t do production design. I decide what gets built, define how it behaves,
-    and make sure the numbers you steer by are honest.
-  </p>
-  <a href="mailto:d@loopzero.org">Start a conversation → d@loopzero.org</a>
-</section>
-
-<!-- BACKGROUND -->
-<section>
-  <h2>Background</h2>
-  <p>
-    Art history at Northwestern. MA in Visual Design at the Royal College of Art.
-    Director at Ridley Scott Associates. Founded a cinematic VR studio; co-founded
-    Pupil, a machine-learning and spatial-data company. Lead Product Designer at
-    Meta Reality Labs, where I led design for discovery on Quest — ranking, browse,
-    and search: the product deciding what you see.
-  </p>
-  <p>
-    Every generation of the interface — feed, chat, agent — does more for you and
-    shows you less about how it decides. I work on both sides of that line: the
-    surface you see, and the measurement you don’t.
-  </p>
-  <p>
-    I’m also writing a book about what the measurements miss.
-  </p>
-</section>
-
-<!-- CONTINUITY -->
-<section>
-  <h2>The throughline</h2>
-  <p>
-    I came to this sideways.
-  </p>
-  <p>
-    I studied art history at Northwestern, then found film through
-    post-production. Cubism had shown me the goal: an image that refuses a single fixed
-    viewpoint. The Royal College of Art trained me as a designer;
-    the pursuit carried on, bringing that eye
-    to the moving image as a director at Ridley Scott Associates.
-  </p>
-  <p>
-    Virtual reality finally exploded the frame — not just past the screen but
-    all the way around you, embodying what I’d spent years circling. I made
-    cinematic VR and founded a studio to build it.
-    Then the pursuit turned from the image to the system: I co-founded Pupil,
-    a machine-learning and spatial-data company, and went on to Meta Reality
-    Labs as Lead Product Designer for Engagement &amp; Growth, building
-    immersive digital products at scale — where I began to see how systems
-    shape attention itself.
-  </p>
-  <p>
-    A few years ago I started to suspect that the breakdowns around us —
-    radicalisation, polarisation, outrage, eroding trust and attention spans —
-    shared a common mechanism: digital systems feed on their own output until
-    they consume themselves, and us with them. I spent the next two years taking
-    the question apart, convinced there had to be something
-    formal underneath — a claim specific enough to fail. That search became
-    Loopzero — and its first real finding was not about the systems. It was that
-    the instrument I built to study them was misreading its own data, and that I
-    could not see it from the inside. Everything I do now starts there.
-  </p>
-</section>
-
-<!-- CHECK MY WORK -->
-<section>
-  <h2>Check my work</h2>
-  <ul class="ledger">
-    <li><span class="l-primary">Paper&nbsp;·&nbsp;<em>Absorbing Shadow Classes in Conjunctive Label Rules</em> — submitted to arXiv, August 2026 (identifier pending) · <a href="https://github.com/davidmullett/loopzero-paper-public/blob/main/manuscript_shadow_classes/build/paper_main.pdf" target="_blank" rel="noopener">manuscript PDF</a></span></li>
-    <li><span class="l-primary">Prior preprint&nbsp;·&nbsp;<em>Benchmarking Recursive-Collapse Warning Claims</em> — <a href="https://arxiv.org/abs/2606.00329" target="_blank" rel="noopener">arXiv 2606.00329</a> · superseded by the above, left public</span></li>
-    <li><span class="l-primary">Pre-registrations&nbsp;·&nbsp;<a href="https://osf.io/wka72" target="_blank" rel="noopener">osf.io/wka72</a> · <a href="https://osf.io/7bvgz" target="_blank" rel="noopener">osf.io/7bvgz</a> — timestamped before the results</span></li>
-    <li><span class="l-primary">Code, data, deviations log&nbsp;·&nbsp;<a href="https://github.com/davidmullett/loopzero-paper-public" target="_blank" rel="noopener">github.com/davidmullett/loopzero-paper-public</a></span></li>
-    <li><span class="l-primary">ORCID&nbsp;·&nbsp;<a href="https://orcid.org/0009-0004-2543-1664" target="_blank" rel="noopener">0009-0004-2543-1664</a>&nbsp;&nbsp;·&nbsp;&nbsp;Research program&nbsp;·&nbsp;<a class="lz" href="https://loopzero.org/" target="_blank" rel="noopener">loopzero.org</a></span></li>
-  </ul>
-</section>
-
-<!-- GET IN TOUCH -->
-<section id="getintouch">
-  <h2>Contact</h2>
-  <p>
-    Three conversations I’m open to: your evaluation metrics audited, design
-    leadership for an AI product without the full-time hire, or pressure on the
-    claims.
-  </p>
-  <a href="mailto:d@loopzero.org">Email → d@loopzero.org</a>
 </section>
 
 </main>
 
 <footer>
   <div class="footer-text">
-    davidmullett.com
-    <a href="https://orcid.org/0009-0004-2543-1664" target="_blank" rel="noopener">ORCID&nbsp;0009-0004-2543-1664</a>
-    <a href="https://scholar.google.com/citations?user=3SninzcAAAAJ" target="_blank" rel="noopener">Google&nbsp;Scholar</a>
+    <span>davidmullett.com</span>
+    <a href="mailto:d@loopzero.org">d@loopzero.org</a>
     <a class="lz" href="https://loopzero.org/" target="_blank" rel="noopener">loopzero.org</a>
   </div>
 </footer>
