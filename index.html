@@ -54,8 +54,10 @@ a { color:var(--ink); text-decoration:underline; text-decoration-color:var(--rul
   text-underline-offset:3px; text-decoration-thickness:1px; transition:text-decoration-color .14s,color .14s; }
 a:hover { text-decoration-color:var(--ink-2); }
 
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
 /* Mark — landing placement, so §02 permits the draw-on and dot glow */
-.mark { display:inline-block; line-height:0; margin-bottom:30px; }
+.mark { display:inline-block; line-height:0; }
 .mark svg { display:block; overflow:visible; }
 .mark .spiral { stroke:var(--ink); stroke-width:2; fill:none; stroke-linecap:round; }
 .mark .core { fill:var(--ink); transition:fill .15s; }
@@ -90,6 +92,8 @@ a:hover { text-decoration-color:var(--ink-2); }
 <body>
 <div class="page">
 <main>
+
+  <h1 class="sr-only">David Mullett</h1>
 
   <a class="mark" href="https://loopzero.org/" target="_blank" rel="noopener" aria-label="Loopzero — the research programme">
     <svg width="40" height="40" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Loopzero mark">
