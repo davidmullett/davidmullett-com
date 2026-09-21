@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="only light">
 <meta name="theme-color" content="#f1f0ec">
 <title>David Mullett</title>
-<meta name="description" content="Every screen you touch is keeping score — and the score reads you backwards. I spent twenty years designing what people see. Now I’m writing the book about what those measurements miss.">
+<meta name="description" content="Every screen you touch is keeping score — and the score reads you backwards. Twenty years designing what people see; now writing about what happens to attention as the machinery moves beyond the screen.">
 
 <link rel="canonical" href="https://davidmullett.com/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -19,14 +19,14 @@
 <meta property="og:site_name" content="David Mullett">
 <meta property="og:url" content="https://davidmullett.com/">
 <meta property="og:title" content="David Mullett">
-<meta property="og:description" content="Every screen you touch is keeping score — and the score reads you backwards. I spent twenty years designing what people see. Now I’m writing the book about what those measurements miss.">
+<meta property="og:description" content="Every screen you touch is keeping score — and the score reads you backwards. Twenty years designing what people see; now writing about what happens to attention as the machinery moves beyond the screen.">
 <meta property="og:image" content="https://davidmullett.com/og-image-v4.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="David Mullett">
-<meta name="twitter:description" content="Every screen you touch is keeping score — and the score reads you backwards. I spent twenty years designing what people see. Now I’m writing the book about what those measurements miss.">
+<meta name="twitter:description" content="Every screen you touch is keeping score — and the score reads you backwards. Twenty years designing what people see; now writing about what happens to attention as the machinery moves beyond the screen.">
 <meta name="twitter:image" content="https://davidmullett.com/og-image-v4.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,9 +87,10 @@ nav { margin-bottom:52px; padding-bottom:16px; border-bottom:1px solid var(--rul
 header { margin-bottom:56px; }
 .hero { font-family:var(--serif); font-size:var(--t-hero); font-weight:400; line-height:1.34;
   letter-spacing:-0.012em; color:var(--ink); margin-bottom:32px; text-wrap:pretty; }
-.hero-body p { margin-bottom:1.6em; }
+/* hero body: short blocks at body rhythm; the beats sit a step up with room around them */
 .hero-body .beat { font-size:var(--t-lede); margin:1.8em 0; }
 .hero-body p:last-child { margin-bottom:0; }
+.header-meta + .header-meta { margin-top:2px; }
 .header-meta { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2);
   letter-spacing:0.05em; line-height:1.9; display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 18px; }
 .header-meta a { font-family:var(--mono); font-size:var(--t-label); color:var(--ink-2); text-decoration:none; letter-spacing:0.05em; }
@@ -115,16 +116,18 @@ p:last-child { margin-bottom:0; }
 
 
 footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt); }
+.footer-name { font-family:var(--mono); font-size:var(--t-label); font-weight:400; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink); margin-bottom:6px; }
+.footer-line { font-size:var(--t-aux); color:var(--ink-2); max-width:54ch; margin-bottom:12px; }
 .footer-text { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2); letter-spacing:0.05em; line-height:1.9; display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 18px; }
 .footer-text a { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2); text-decoration:none; }
 .footer-text a:hover { color:var(--ph-d); }
 
 /* §06 — quiet hairline field separators between inline meta items, centered in the gap; dropped when stacked (see ≤460) */
-.header-meta > * + *, .footer-text a { position:relative; }
-.header-meta > * + *::before, .footer-text a::before { content:""; position:absolute; left:-9px; top:50%; transform:translateY(-50%); height:0.85em; border-left:1px solid var(--rule-2); }
+.header-meta > * + *, .footer-text > * + * { position:relative; }
+.header-meta > * + *::before, .footer-text > * + *::before { content:""; position:absolute; left:-9px; top:50%; transform:translateY(-50%); height:0.85em; border-left:1px solid var(--rule-2); }
 
 @media (max-width:760px){ html{font-size:17px;} .page{margin:0 auto 0 max(28px,6vw);padding:46px 32px 96px;} h2{margin-left:-32px;width:calc(100% + 32px);} .hero{font-size:var(--t-hero-sm);} }
-@media (max-width:460px){ html{font-size:16px;} .page{padding:34px 20px 80px;} h2{margin-left:-20px;width:calc(100% + 20px);} .nav-list{gap:12px 20px;} .header-meta{flex-direction:column;} .header-meta > * + *::before, .footer-text a::before{display:none;} }
+@media (max-width:460px){ html{font-size:16px;} .page{padding:34px 20px 80px;} h2{margin-left:-20px;width:calc(100% + 20px);} .nav-list{gap:12px 20px;} .header-meta{flex-direction:column;} .header-meta > * + *::before, .footer-text > * + *::before{display:none;} }
 </style>
 
 <script type="application/ld+json">
@@ -135,7 +138,7 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
       "@type":"Person","@id":"https://davidmullett.com/#person",
       "name":"David Mullett","url":"https://davidmullett.com/",
       "jobTitle":"Independent Researcher",
-      "description":"Every screen you touch is keeping score — and the score reads you backwards. I spent twenty years designing what people see. Now I’m writing the book about what those measurements miss.",
+      "description":"Every screen you touch is keeping score — and the score reads you backwards. Twenty years designing what people see; now writing about what happens to attention as the machinery moves beyond the screen.",
       "email":"d@loopzero.org",
       "sameAs":["https://orcid.org/0009-0004-2543-1664","https://scholar.google.com/citations?user=3SninzcAAAAJ","https://github.com/davidmullett"],
       "affiliation":{"@type":"Organization","name":"Loopzero","url":"https://loopzero.org"},
@@ -171,31 +174,23 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
   <h1 class="hero">Every screen you touch is keeping score — and the score reads you&nbsp;backwards.</h1>
 
   <div class="hero-body">
-  <p>
-    Below the glass, machinery counts your attention, weighs it, and uses it to
-    decide what happens to you next. It counts a sleepless night of scrolling as
-    healthy. The hour you put the phone down, it doesn’t count at all. A machine
-    can only weigh what reaches it. Then it serves you more of what it misread.
-  </p>
-  <p class="beat">
-    Now the screens talk back, and the thumb that trained the feed is training
-    what they say. Next they act for you, and the scoring moves somewhere you’ll
-    never look.
-  </p>
-  <p>
-    I spent twenty years above the glass, designing what people see: commercials
-    at Ridley Scott Associates, a cinematic VR studio, Lead Product Designer at
-    Meta Reality Labs on a team called Engagement and Growth. Then I went below
-    it, to follow the score all the way down — from the feed, to the numbers
-    behind it, to the story you tell yourself about who you are.
-  </p>
-  <p class="beat">
-    The check has to come from outside the loop. That’s what I went looking for.
-  </p>
+  <p>A sleepless night of scrolling leaves a perfect trail: session length, returns, taps, reactions.</p>
+  <p>The hour you put the phone down leaves almost nothing.</p>
+  <p class="beat">Capture leaves evidence of itself. Freedom may leave none.</p>
+  <p>Below the glass, machinery turns what it can see of your attention into instructions for what happens next. The result comes back through the interface, changes your behaviour, produces new signals, and the loop begins again.</p>
+  <p>The feed selected what appeared. Chat enters the exchange. Agents begin to act on its result. The machinery shaping attention is moving beyond the screen, into places where the interface itself may become harder to see.</p>
+  <p>I spent twenty years above the glass, designing what people see: moving image, cinematic VR, spatial computing, and eventually Engagement and Growth at Meta Reality Labs.</p>
+  <p class="beat">Then I went below it.</p>
+  <p>I followed the loop from the feed to the dashboard, from the dashboard to the benchmark, and finally to the story we tell ourselves about all three.</p>
+  <p>I’m interested in both ends of that loop: what happens to human attention as the systems shaping it become more intelligent and intimate — and what attention itself can become when it is deliberately trained rather than captured.</p>
+  <p class="beat">The check has to come from outside the loop.</p>
+  <p class="beat">That’s what I went looking for.</p>
   </div>
 
   <div class="header-meta">
     <a href="mailto:d@loopzero.org">d@loopzero.org</a>
+  </div>
+  <div class="header-meta">
     <a href="https://orcid.org/0009-0004-2543-1664" target="_blank" rel="noopener" title="ORCID researcher profile">ORCID&nbsp;0009-0004-2543-1664</a>
     <a href="https://scholar.google.com/citations?user=3SninzcAAAAJ" target="_blank" rel="noopener" title="Google Scholar profile">Google&nbsp;Scholar</a>
     <a class="lz" href="https://loopzero.org/" target="_blank" rel="noopener">loopzero.org</a>
@@ -205,121 +200,97 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
 <!-- THE INVESTIGATION -->
 <section>
   <h2>The investigation</h2>
-  <p>
-    I’m writing a book about how we measure whether technology is good for
-    people, and what those measurements miss as the machinery moves from screens
-    into AI.
-  </p>
-  <p>
-    The other half of the book is about the opposite extreme: the scientists,
-    teachers and traditions who train attention rather than capture it, and what
-    they’ve learned that none of the machinery can see.
-  </p>
-  <p>
-    Over the next twelve months I’m interviewing the people who understand
-    pieces of this better than I do — the researchers who build these
-    instruments, the people who study them, and the people who train attention
-    without any of them.
-  </p>
-  <p>
-    If you’re one of them, I’d like an hour.
-  </p>
+  <p>I’m writing a book about screens, AI and human attention.</p>
+  <p>It starts with a simple asymmetry:</p>
+  <p>The forms of attention easiest for machines to see are not necessarily the ones most valuable to a human life.</p>
+  <p>A system can measure a two-hour scroll in exquisite detail. An hour of stillness, concentration or chosen absence may leave no record at all.</p>
+  <p>That matters more as the interface changes.</p>
+  <p>A feed selects what you see.<br>Chat participates in what you think through.<br>Agents begin to participate in what gets done.</p>
+  <p>I want to understand what happens to human attention as that machinery moves beyond the screen — scientifically, culturally and experientially.</p>
+  <p>And I’m investigating the opposite extreme: attention deliberately trained toward its upper register.</p>
+  <p>I’m assembling researchers, builders, artists and contemplatives who understand different pieces of that territory: how attention is captured, how systems learn from it, how attention can be trained, and what our instruments fail to see.</p>
+  <p>The work will become a book and a wider body of research, writing and experience.</p>
+  <p>If you understand a part of this better than I do, I’d like an hour.</p>
 </section>
 
-<!-- CONTINUITY -->
+<!-- THE THROUGHLINE -->
 <section>
   <h2>The throughline</h2>
-  <p>
-    I came to this sideways.
-  </p>
-  <p>
-    I studied art history at Northwestern, then found film through
-    post-production. Cubism had shown me the goal: an image that refuses a single fixed
-    viewpoint. The Royal College of Art trained me as a designer;
-    the pursuit carried on, bringing that eye
-    to the moving image as a director at Ridley Scott Associates.
-  </p>
-  <p>
-    Virtual reality finally exploded the frame — not just past the screen but
-    all the way around you, embodying what I’d spent years circling. I made
-    cinematic VR and founded a studio to build it.
-    Then the pursuit turned from the image to the system: I co-founded Pupil,
-    a machine-learning and spatial-data company, and went on to Meta Reality
-    Labs as Lead Product Designer on the Engagement and Growth team, working on
-    discovery for Quest — what people saw when they put the headset on — where I
-    began to see how systems shape attention itself.
-  </p>
-  <p>
-    A few years ago I stopped asking what these systems do to attention and
-    started asking how anyone would know. Every claim about whether technology is
-    good for us comes from an instrument — a dashboard, a study, a benchmark. I
-    wanted to find out whether the instruments work, and I wanted a version of
-    the question specific enough to fail, so I built one and wrote down in
-    advance what would count as a real result.
-  </p>
-  <p>
-    That search became Loopzero. Its first real finding wasn’t about the systems
-    at all: the instrument I built to study them was misreading its own data, and
-    I could not see it from the inside. Everything I do now starts there.
-  </p>
-  <p>
-    Every generation of the interface — feed, chat, agent — does more for you and
-    shows you less about how it decides.
-  </p>
+  <p>I came to this sideways.</p>
+  <p>I studied art history at Northwestern, then found film through post-production. Cubism had shown me a problem that stayed with me: what happens to an image when there is no single fixed viewpoint?</p>
+  <p>At the Royal College of Art I trained as a designer. Then I carried the question into moving image, directing at Ridley Scott Associates.</p>
+  <p>Virtual reality removed the edge of the frame. The image surrounded the observer. I made cinematic VR and founded a studio to build it.</p>
+  <p>Then the pursuit moved from the image to the system.</p>
+  <p>I co-founded Pupil, a machine-learning and spatial-data company, and later joined Meta Reality Labs as Lead Product Designer on Engagement and Growth, working on discovery for Quest — what people encountered when they put the headset on.</p>
+  <p>That was where the question changed.</p>
+  <p>I had spent years designing things that direct attention. Now I wanted to understand the machinery that learns from attention and feeds the result back into the experience.</p>
+  <p>A few years ago I stopped asking only what these systems do to us and started asking how anyone would know.</p>
+  <p>Every answer depended on an instrument: a product metric, a study, a benchmark.</p>
+  <p>I wanted a version of the question specific enough to fail.</p>
+  <p>So I built one and wrote down in advance what would count as a real result.</p>
+  <p>That search became Loopzero.</p>
+  <p>Its first important finding was not the one I expected. The instrument I had built to detect degradation could lose sight of the very cases I cared about — and I could not see the error from inside the analysis.</p>
+  <p>That failure sharpened the larger question:</p>
+  <p>What happens when a system shaping human attention learns only from the parts of us that leave a signal?</p>
+  <p>Each new interface changes the question.</p>
+  <p>Feed. Headset. Chat. Agent.</p>
+  <p>The surface changes. The loop underneath becomes more intimate.</p>
 </section>
 
-<!-- THE INSTRUMENT — the confession, above the receipts it explains -->
-<!-- TODO: confirm the exact control-group count against the manuscript before publishing; do not print a number that has not been verified. -->
+<!-- THE INSTRUMENT — figures verified against manuscript_shadow_classes/build/paper_main.pdf (§2.2 and Fig. B): "69.2% of the nominal control class — 3,292 of 4,755". David to confirm the framing matches. -->
 <section>
   <h2>The instrument</h2>
-  <p>
-    Two years ago I built a detector for systems that degrade, and earlier this
-    year I ran it. It worked — the numbers came back the way I’d predicted. But
-    I’d pre-registered the analysis, which means I’d written down what would
-    count as a real result before I saw any data, and timestamped it. Checked
-    against that rule, most of my control group turned out to be unusable:
-    they’d left the platform, and my labelling rule required a user to still be
-    active to be marked as harmed. Everyone who quit had been recorded as fine.
-  </p>
-  <p>
-    The people most likely to have been hurt were the ones I had counted as
-    healthy. I had built the thing to find them.
-  </p>
-  <p>
-    I rewrote it, ran it again under rules I couldn’t move, and my original claim
-    failed. I published all of it.
-  </p>
+  <p>Two years ago I built a detector for systems that degrade. Earlier this year, I ran it.</p>
+  <p>At first, it worked.</p>
+  <p>The numbers came back the way I had predicted.</p>
+  <p>But I had pre-registered the analysis. Before seeing the results, I had written down what would count as a real finding and timestamped the rule.</p>
+  <p>Checked against that rule, 69.2% of my control group could no longer be evaluated — 3,292 of 4,755. They had left the platform, while my labelling rule required someone to remain active in order to be marked as harmed.</p>
+  <p>Everyone who quit had been recorded as fine.</p>
+  <p>The cases the instrument could no longer see had been absorbed into the healthy class — a shadow class the rule could not label.</p>
+  <p>I had built the thing to find them.</p>
+  <p>I rewrote the analysis, ran it again under rules I couldn’t move, and my original claim failed.</p>
+  <p>I published the failure.</p>
+  <p>It left me with a constraint I now carry into everything else:</p>
+  <p>An instrument cannot count what never reaches it.</p>
+  <p>Absence is not necessarily a low score.</p>
+  <p>Sometimes it is no score at all.</p>
+  <p>This is one layer of the attention problem, not the whole of it.</p>
+  <p>But it changed how I see the rest.</p>
 </section>
 
 <!-- CHECK MY WORK -->
 <section>
   <h2>Check my work</h2>
   <ul class="ledger">
-    <!-- TODO: confirm arXiv identifier and v2 status — the line below still reads "identifier pending" -->
-    <li><span class="l-primary">Paper&nbsp;·&nbsp;<em>Absorbing Shadow Classes in Conjunctive Label Rules</em> — submitted to arXiv, August 2026 (identifier pending) · <a href="https://github.com/davidmullett/loopzero-paper-public/blob/main/manuscript_shadow_classes/build/paper_main.pdf" target="_blank" rel="noopener">manuscript PDF</a></span></li>
-    <li><span class="l-primary">Prior preprint&nbsp;·&nbsp;<em>Benchmarking Recursive-Collapse Warning Claims</em> — <a href="https://arxiv.org/abs/2606.00329" target="_blank" rel="noopener">arXiv 2606.00329</a> · superseded by the above, left public</span></li>
-    <li><span class="l-primary">Pre-registrations&nbsp;·&nbsp;<a href="https://osf.io/wka72" target="_blank" rel="noopener">osf.io/wka72</a> · <a href="https://osf.io/7bvgz" target="_blank" rel="noopener">osf.io/7bvgz</a> — timestamped before the results</span></li>
-    <li><span class="l-primary">Code, data, deviations log&nbsp;·&nbsp;<a href="https://github.com/davidmullett/loopzero-paper-public" target="_blank" rel="noopener">github.com/davidmullett/loopzero-paper-public</a></span></li>
-    <li><span class="l-primary">ORCID&nbsp;·&nbsp;<a href="https://orcid.org/0009-0004-2543-1664" target="_blank" rel="noopener">0009-0004-2543-1664</a>&nbsp;&nbsp;·&nbsp;&nbsp;Research program&nbsp;·&nbsp;<a class="lz" href="https://loopzero.org/" target="_blank" rel="noopener">loopzero.org</a></span></li>
+    <!-- TODO: confirm arXiv identifier and v2 status before publishing -->
+    <li><span class="l-secondary">Paper<span class="sr-only">:</span></span><span class="l-primary"><em>Absorbing Shadow Classes in Conjunctive Label Rules</em></span><span class="l-note">Submitted to arXiv, August 2026 · <a href="https://github.com/davidmullett/loopzero-paper-public/blob/main/manuscript_shadow_classes/build/paper_main.pdf" target="_blank" rel="noopener">manuscript PDF</a></span></li>
+    <li><span class="l-secondary">Prior preprint<span class="sr-only">:</span></span><span class="l-primary"><em>Benchmarking Recursive-Collapse Warning Claims</em></span><span class="l-note"><a href="https://arxiv.org/abs/2606.00329" target="_blank" rel="noopener">arXiv 2606.00329</a> · superseded by the above, left public</span></li>
+    <li><span class="l-secondary">Pre-registrations<span class="sr-only">:</span></span><span class="l-primary"><a href="https://osf.io/wka72" target="_blank" rel="noopener">osf.io/wka72</a> · <a href="https://osf.io/7bvgz" target="_blank" rel="noopener">osf.io/7bvgz</a></span><span class="l-note">Timestamped before the results</span></li>
+    <li><span class="l-secondary">Code, data and deviations log<span class="sr-only">:</span></span><span class="l-primary"><a href="https://github.com/davidmullett/loopzero-paper-public" target="_blank" rel="noopener">github.com/davidmullett/loopzero-paper-public</a></span></li>
+    <li><span class="l-secondary">Research program<span class="sr-only">:</span></span><span class="l-primary"><a class="lz" href="https://loopzero.org/" target="_blank" rel="noopener">loopzero.org</a></span></li>
+    <li><span class="l-secondary">ORCID<span class="sr-only">:</span></span><span class="l-primary"><a href="https://orcid.org/0009-0004-2543-1664" target="_blank" rel="noopener">0009-0004-2543-1664</a></span></li>
   </ul>
 </section>
 
-<!-- GET IN TOUCH -->
+<!-- CONTACT -->
 <section id="getintouch">
   <h2>Contact</h2>
-  <p>
-    Three conversations I’m open to: an interview for the book, creative
-    direction or narrative work for a team building AI products, or pressure
-    on the claims.
-  </p>
-  <a href="mailto:d@loopzero.org">Email → d@loopzero.org</a>
+  <p>I’m particularly interested in three kinds of conversation.</p>
+  <ul class="ledger">
+    <li><span class="l-primary">The book</span><span class="l-note">Researchers, builders, artists and contemplatives working on attention, AI, interface design, behaviour or training.</span></li>
+    <li><span class="l-primary">Creative work</span><span class="l-note">Direction, narrative and experience design for teams working on how people encounter and attend to AI.</span></li>
+    <li><span class="l-primary">Pressure on the claims</span><span class="l-note">People who think I’m wrong and can show me where.</span></li>
+  </ul>
+  <p>If you understand a part of this better than I do, I’d like an hour.</p>
+  <a href="mailto:d@loopzero.org">d@loopzero.org</a>
 </section>
 
 </main>
 
 <footer>
+  <div class="footer-name">David Mullett</div>
+  <p class="footer-line">Designer and writer working on screens, attention and AI.</p>
   <div class="footer-text">
-    davidmullett.com
     <a href="https://orcid.org/0009-0004-2543-1664" target="_blank" rel="noopener">ORCID&nbsp;0009-0004-2543-1664</a>
     <a href="https://scholar.google.com/citations?user=3SninzcAAAAJ" target="_blank" rel="noopener">Google&nbsp;Scholar</a>
     <a class="lz" href="https://loopzero.org/" target="_blank" rel="noopener">loopzero.org</a>
