@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="only light">
 <meta name="theme-color" content="#f1f0ec">
 <title>David Mullett</title>
-<meta name="description" content="Investigating what happens to human attention as the machinery that captures and measures it moves from screens into AI. Twenty years building screens, including Meta Reality Labs. Writing the book.">
+<meta name="description" content="Your attention is scored every day by machinery running underneath every screen you touch. I spent twenty years designing what people see. Now I’m writing the book about what those measurements miss.">
 
 <link rel="canonical" href="https://davidmullett.com/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -19,15 +19,15 @@
 <meta property="og:site_name" content="David Mullett">
 <meta property="og:url" content="https://davidmullett.com/">
 <meta property="og:title" content="David Mullett">
-<meta property="og:description" content="Investigating what happens to human attention as the machinery that captures and measures it moves from screens into AI. Twenty years building screens, including Meta Reality Labs. Writing the book.">
-<meta property="og:image" content="https://davidmullett.com/og-image-v3.png">
+<meta property="og:description" content="Your attention is scored every day by machinery running underneath every screen you touch. I spent twenty years designing what people see. Now I’m writing the book about what those measurements miss.">
+<meta property="og:image" content="https://davidmullett.com/og-image-v4.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="David Mullett">
-<meta name="twitter:description" content="Investigating what happens to human attention as the machinery that captures and measures it moves from screens into AI. Twenty years building screens, including Meta Reality Labs. Writing the book.">
-<meta name="twitter:image" content="https://davidmullett.com/og-image-v3.png">
+<meta name="twitter:description" content="Your attention is scored every day by machinery running underneath every screen you touch. I spent twenty years designing what people see. Now I’m writing the book about what those measurements miss.">
+<meta name="twitter:image" content="https://davidmullett.com/og-image-v4.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,6 +57,13 @@ a:hover { text-decoration-color:var(--ink-2); }
 a.lz { text-decoration-color:var(--ph-border); }
 a.lz:hover { color:var(--ph-d); text-decoration-color:var(--ph-d); }
 
+/* accessibility — skip link and a focus ring that reads against the paper */
+.skip-link { position:absolute; left:-999px; top:8px; z-index:10; font-family:var(--mono); font-size:var(--t-label); letter-spacing:0.1em;
+  text-transform:uppercase; background:var(--ink); color:var(--cream); padding:8px 12px; text-decoration:none; }
+.skip-link:focus { left:16px; }
+a:focus-visible { outline:2px solid var(--ink); outline-offset:3px; border-radius:2px; }
+.mark:focus-visible { outline-offset:6px; border-radius:50%; }
+
 nav { margin-bottom:52px; padding-bottom:16px; border-bottom:1px solid var(--rule-lt); }
 .nav-list { list-style:none; display:flex; gap:0 28px; flex-wrap:wrap; }
 .nav-list a { font-family:var(--mono); font-size:var(--t-label); font-weight:400; letter-spacing:0.1em;
@@ -79,9 +86,8 @@ nav { margin-bottom:52px; padding-bottom:16px; border-bottom:1px solid var(--rul
 
 header { margin-bottom:56px; }
 .hero { font-family:var(--serif); font-size:var(--t-hero); font-weight:400; line-height:1.34;
-  letter-spacing:-0.012em; color:var(--ink); max-width:21ch; margin-bottom:22px; text-wrap:balance; }
-.descriptor { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2);
-  letter-spacing:0.03em; line-height:1.7; max-width:62ch; margin-bottom:16px; }
+  letter-spacing:-0.012em; color:var(--ink); margin-bottom:32px; text-wrap:pretty; }
+.hero-sub { margin-bottom:24px; }
 .header-meta { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2);
   letter-spacing:0.05em; line-height:1.9; display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 18px; }
 .header-meta a { font-family:var(--mono); font-size:var(--t-label); color:var(--ink-2); text-decoration:none; letter-spacing:0.05em; }
@@ -94,16 +100,7 @@ h2 { font-family:var(--mono); font-size:var(--t-label); font-weight:400; letter-
 p { max-width:54ch; margin-bottom:1.2em; font-size:var(--t-body); line-height:1.65; }
 p:last-child { margin-bottom:0; }
 
-/* Current work card — the one place green appears as accent (points to the work) */
-.work-card { max-width:54ch; border-left:2px solid var(--ph-border); background:var(--ph-dim); padding:20px 24px; }
-.work-kicker { font-family:var(--mono); font-size:var(--t-label-xs); font-weight:400; letter-spacing:0.1em;
   text-transform:uppercase; color:var(--ph-d); display:block; margin-bottom:10px; }
-.work-card p { font-size:var(--t-lede); max-width:none; margin-bottom:14px; }
-.work-link { font-family:var(--mono); font-size:var(--t-label); font-weight:400; color:var(--ink);
-  text-decoration:underline; text-decoration-color:var(--ph-border); text-underline-offset:3px; }
-.work-link:hover { color:var(--ph-d); text-decoration-color:var(--ph-d); }
-
-
 /* Ledger — shared component, verbatim from about.html (title / meta / note) */
 .ledger { list-style:none; max-width:54ch; border-top:1px solid var(--rule-lt); }
 .ledger li { display:flex; flex-direction:column; padding:12px 0; border-bottom:1px solid var(--rule-lt); gap:3px; }
@@ -113,18 +110,7 @@ p:last-child { margin-bottom:0; }
 .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 /* prose resuming after a ruled ledger */
 .ledger + p { margin-top:24px; }
-/* the standing — no heading, slightly above body, tight to the header */
-.lede { margin-top:24px; }
-.lede p { font-size:var(--t-lede); }
 
-.contact-list { list-style:none; max-width:54ch; }
-.contact-list li { padding:11px 0; border-bottom:1px solid var(--rule-lt); display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
-.contact-list li:first-child { border-top:1px solid var(--rule-lt); }
-.contact-list a { font-family:var(--mono); font-size:var(--t-label); font-weight:400; color:var(--ink-2); text-decoration:none; letter-spacing:0.04em; }
-.contact-list a:hover { color:var(--ink); }
-.contact-list a.lz:hover { color:var(--ph-d); }
-.contact-url { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2); letter-spacing:0.02em; }
-.contact-arrow { color:var(--ink-3); }
 
 footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt); }
 .footer-text { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2); letter-spacing:0.05em; line-height:1.9; display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 18px; }
@@ -147,7 +133,7 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
       "@type":"Person","@id":"https://davidmullett.com/#person",
       "name":"David Mullett","url":"https://davidmullett.com/",
       "jobTitle":"Independent Researcher",
-      "description":"Investigating what happens to human attention as the machinery that captures and measures it moves from screens into AI. Twenty years building screens, including Meta Reality Labs. Writing the book.",
+      "description":"Your attention is scored every day by machinery running underneath every screen you touch. I spent twenty years designing what people see. Now I’m writing the book about what those measurements miss.",
       "email":"d@loopzero.org",
       "sameAs":["https://orcid.org/0009-0004-2543-1664","https://scholar.google.com/citations?user=3SninzcAAAAJ","https://github.com/davidmullett"],
       "affiliation":{"@type":"Organization","name":"Loopzero","url":"https://loopzero.org"},
@@ -160,8 +146,9 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
 </head>
 
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="page">
-<main>
+<main id="main">
 
 <nav aria-label="Site navigation">
   <ul class="nav-list">
@@ -179,29 +166,21 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
     </svg>
   </a>
 
-  <h1 class="hero">I’m investigating what happens to human attention as the machinery that captures and measures it moves from screens into&nbsp;AI.</h1>
+  <h1 class="hero">Your attention is scored every day, by machinery running underneath every screen you touch. Below the glass, your attention is counted, weighed, and used to decide what happens to you&nbsp;next.</h1>
 
-  <div class="descriptor">
-    Twenty years building screens — commercials, cinematic&nbsp;VR, and finally Meta&nbsp;Reality&nbsp;Labs, on a team called Engagement and&nbsp;Growth. Now writing the book about what those instruments can’t&nbsp;see. Mexico&nbsp;City.
-  </div>
+  <p class="hero-sub">
+    I spent twenty years above the glass designing what people see — commercials
+    at Ridley Scott Associates, a cinematic VR studio, Lead Product Designer at
+    Meta Reality Labs on a team called Engagement and Growth. Then I left to
+    follow attention the whole way down: from the screens we touch, to the
+    numbers that judge us, to the story you tell yourself about who you are.
+  </p>
 
   <div class="header-meta">
     <a href="mailto:d@loopzero.org">d@loopzero.org</a>
     <a href="https://orcid.org/0009-0004-2543-1664" target="_blank" rel="noopener" title="ORCID researcher profile">ORCID&nbsp;0009-0004-2543-1664</a>
     <a href="https://scholar.google.com/citations?user=3SninzcAAAAJ" target="_blank" rel="noopener" title="Google Scholar profile">Google&nbsp;Scholar</a>
-  </div>
-
-  <div class="lede">
-  <p>
-    Earlier this year I built a test for a theory I believed in, and the test said
-    the theory worked. Then a safeguard I’d locked in before running it showed the
-    <em>test itself</em> was broken — its fine print was quietly filing the worst
-    failures as successes. I fixed the test, ran it again under rules I couldn’t
-    move, and my theory failed. I published that, in full.
-  </p>
-  <p>
-    Most instruments never find out. That’s the subject.
-  </p>
+    <a class="lz" href="https://loopzero.org/" target="_blank" rel="noopener">loopzero.org</a>
   </div>
 </header>
 
@@ -209,46 +188,23 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
 <section>
   <h2>The investigation</h2>
   <p>
-    Four instruments read a life: the feed, the dashboard, the benchmark, and the
-    storyteller in your head. Each counts only what still reaches it — and a good
-    hour leaves almost nothing behind. A sleepless night of scrolling counts as
-    healthy. The hour you put the phone down doesn’t count at all.
+    I’m writing a book about how we measure whether technology is good for
+    people, and what those measurements miss as the machinery moves from screens
+    into AI.
   </p>
   <p>
-    I’m writing the book about what that costs, and assembling the researchers,
-    builders, artists and contemplatives who understand different pieces of the
-    problem.
+    The other half of the book is about the opposite extreme: the scientists,
+    teachers and traditions who train attention rather than capture it, and what
+    they’ve learned that none of the machinery can see.
   </p>
   <p>
-    <a class="lz" href="/the-master-ladder"><strong>The master ladder</strong></a> — working architecture, claims under test.
-  </p>
-</section>
-
-<!-- WRITING — placeholder until the essay publishes; one-line change then -->
-<section>
-  <h2>Writing</h2>
-  <p>
-    <em>[Essay title]</em> — <em>[venue]</em>, <em>[date]</em>
-  </p>
-</section>
-
-<!-- BACKGROUND -->
-<section>
-  <h2>Background</h2>
-  <p>
-    Art history at Northwestern. MA in Visual Design at the Royal College of Art.
-    Director at Ridley Scott Associates. Founded a cinematic VR studio; co-founded
-    Pupil, a machine-learning and spatial-data company. Lead Product Designer on
-    the Engagement and Growth team at Meta Reality Labs, working on discovery for
-    Quest — what people saw when they put the headset on.
+    Over the next twelve months I’m interviewing the people who understand
+    pieces of this better than I do — the researchers who build these
+    instruments, the people who study them, and the people who train attention
+    without any of them.
   </p>
   <p>
-    Every generation of the interface — feed, chat, agent — does more for you and
-    shows you less about how it decides. I work on both sides of that line: the
-    surface you see, and the measurement you don’t.
-  </p>
-  <p>
-    I’m also writing a book about what the measurements miss.
+    If you’re one of them, I’d like an hour.
   </p>
 </section>
 
@@ -286,12 +242,40 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
     the instrument I built to study them was misreading its own data, and that I
     could not see it from the inside. Everything I do now starts there.
   </p>
+  <p>
+    Every generation of the interface — feed, chat, agent — does more for you and
+    shows you less about how it decides.
+  </p>
+</section>
+
+<!-- THE INSTRUMENT — the confession, above the receipts it explains -->
+<!-- TODO: confirm the exact control-group count against the manuscript before publishing; do not print a number that has not been verified. -->
+<section>
+  <h2>The instrument</h2>
+  <p>
+    Two years ago I built a detector for systems that degrade, and earlier this
+    year I ran it. It worked — the numbers came back the way I’d predicted. But
+    I’d pre-registered the analysis, which means I’d written down what would
+    count as a real result before I saw any data, and timestamped it. Checked
+    against that rule, most of my control group turned out to be unusable:
+    they’d left the platform, and my labelling rule required a user to still be
+    active to be marked as harmed. Everyone who quit had been recorded as fine.
+  </p>
+  <p>
+    The people most likely to have been hurt were the ones I had counted as
+    healthy. I had built the thing to find them.
+  </p>
+  <p>
+    I rewrote it, ran it again under rules I couldn’t move, and my original claim
+    failed. I published all of it.
+  </p>
 </section>
 
 <!-- CHECK MY WORK -->
 <section>
   <h2>Check my work</h2>
   <ul class="ledger">
+    <!-- TODO: confirm arXiv identifier and v2 status — the line below still reads "identifier pending" -->
     <li><span class="l-primary">Paper&nbsp;·&nbsp;<em>Absorbing Shadow Classes in Conjunctive Label Rules</em> — submitted to arXiv, August 2026 (identifier pending) · <a href="https://github.com/davidmullett/loopzero-paper-public/blob/main/manuscript_shadow_classes/build/paper_main.pdf" target="_blank" rel="noopener">manuscript PDF</a></span></li>
     <li><span class="l-primary">Prior preprint&nbsp;·&nbsp;<em>Benchmarking Recursive-Collapse Warning Claims</em> — <a href="https://arxiv.org/abs/2606.00329" target="_blank" rel="noopener">arXiv 2606.00329</a> · superseded by the above, left public</span></li>
     <li><span class="l-primary">Pre-registrations&nbsp;·&nbsp;<a href="https://osf.io/wka72" target="_blank" rel="noopener">osf.io/wka72</a> · <a href="https://osf.io/7bvgz" target="_blank" rel="noopener">osf.io/7bvgz</a> — timestamped before the results</span></li>
@@ -305,7 +289,7 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
   <h2>Contact</h2>
   <p>
     Three conversations I’m open to: an interview for the book, creative
-    direction or narrative work for a team building agent products, or pressure
+    direction or narrative work for a team building AI products, or pressure
     on the claims.
   </p>
   <a href="mailto:d@loopzero.org">Email → d@loopzero.org</a>

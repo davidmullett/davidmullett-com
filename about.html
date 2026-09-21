@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="only light">
 <meta name="theme-color" content="#f1f0ec">
 <title>About · David Mullett</title>
-<meta name="description" content="David Mullett — writer and independent researcher. Twenty years designing screens, including Meta Reality Labs; now investigating the instruments that measure attention. Background and research orientation.">
+<meta name="description" content="David Mullett — writer and independent researcher. Twenty years designing screens, including Meta Reality Labs; now investigating the systems that measure attention.">
 
 <link rel="canonical" href="https://davidmullett.com/about">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -20,14 +20,14 @@
 <meta property="og:url" content="https://davidmullett.com/about">
 <meta property="og:title" content="About · David Mullett">
 <meta property="og:description" content="From designing behaviour-shaping systems to studying how they fail. Background and research orientation.">
-<meta property="og:image" content="https://davidmullett.com/og-image-v3.png">
+<meta property="og:image" content="https://davidmullett.com/og-image-v4.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="About · David Mullett">
 <meta name="twitter:description" content="From designing behaviour-shaping systems to studying how they fail.">
-<meta name="twitter:image" content="https://davidmullett.com/og-image-v3.png">
+<meta name="twitter:image" content="https://davidmullett.com/og-image-v4.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,6 +53,13 @@ a { color:var(--ink); text-decoration:underline; text-decoration-color:var(--rul
 a:hover { text-decoration-color:var(--ink-2); }
 a.lz { text-decoration-color:var(--ph-border); }
 a.lz:hover { color:var(--ph-d); text-decoration-color:var(--ph-d); }
+
+/* accessibility — skip link and a focus ring that reads against the paper */
+.skip-link { position:absolute; left:-999px; top:8px; z-index:10; font-family:var(--mono); font-size:var(--t-label); letter-spacing:0.1em;
+  text-transform:uppercase; background:var(--ink); color:var(--cream); padding:8px 12px; text-decoration:none; }
+.skip-link:focus { left:16px; }
+a:focus-visible { outline:2px solid var(--ink); outline-offset:3px; border-radius:2px; }
+.mark:focus-visible { outline-offset:6px; border-radius:50%; }
 
 nav { margin-bottom:52px; padding-bottom:16px; border-bottom:1px solid var(--rule-lt); }
 .nav-list { list-style:none; display:flex; gap:0 28px; flex-wrap:wrap; }
@@ -113,7 +120,7 @@ footer { margin-top:84px; padding-top:20px; border-top:1px solid var(--rule-lt);
 {
   "@context":"https://schema.org","@type":"Person","@id":"https://davidmullett.com/#person",
   "name":"David Mullett","url":"https://davidmullett.com/","jobTitle":"Independent Researcher",
-  "description":"David Mullett — writer and independent researcher. Twenty years designing screens, including Meta Reality Labs; now investigating the instruments that measure attention. Background and research orientation.",
+  "description":"David Mullett — writer and independent researcher. Twenty years designing screens, including Meta Reality Labs; now investigating the systems that measure attention.",
   "email":"d@loopzero.org",
   "sameAs":["https://orcid.org/0009-0004-2543-1664","https://scholar.google.com/citations?user=3SninzcAAAAJ","https://github.com/davidmullett"],
   "affiliation":{"@type":"Organization","name":"Loopzero","url":"https://loopzero.org"},
@@ -123,8 +130,9 @@ footer { margin-top:84px; padding-top:20px; border-top:1px solid var(--rule-lt);
 </head>
 
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="page">
-<main>
+<main id="main">
 
 <nav aria-label="Site navigation">
   <ul class="nav-list">
@@ -167,20 +175,21 @@ footer { margin-top:84px; padding-top:20px; border-top:1px solid var(--rule-lt);
     I came to the question through that critical literature, and through working
     at scale inside recommendation and discovery systems; Loopzero is where that
     specification got tested. The first real finding was that the instrument I
-    built to test it was misreading its own data — which is now the subject. That
-    finding is now the spine of a book, and of a year of interviews across the
-    people who build these instruments, the people who study them, and the people
-    who train attention without them. The boundary is the point, and I keep it
-    explicit.
+    built to test it was misreading its own data — which is now the subject. The
+    boundary is the point, and I keep it explicit. That finding is now the spine
+    of a book, and of a year of interviews across the people who build these
+    instruments, the people who study them, and the people who train attention
+    without them.
   </p>
 </section>
 
 <section>
   <h2>Background</h2>
   <ul class="ledger">
+    <!-- TODO: confirm whether the working title should appear publicly at this stage -->
     <li><span class="l-primary">Writer&nbsp;·&nbsp;<em>Thumb World</em></span><span class="sr-only"> · </span><span class="l-secondary">2026–</span></li>
     <li><span class="l-primary">Independent researcher&nbsp;·&nbsp;<a class="lz" href="https://loopzero.org/" target="_blank" rel="noopener">Loopzero</a></span><span class="sr-only"> · </span><span class="l-secondary">2023–present</span></li>
-    <li><span class="l-primary">Lead Product Designer on the Engagement and Growth team at Meta Reality Labs (Los Angeles)</span><span class="sr-only"> · </span><span class="l-secondary">2021–2023</span><span class="sr-only"> — </span><span class="l-note">working on discovery for Quest — what people saw when they put the headset on</span></li>
+    <li><span class="l-primary">Lead Product Designer on the Engagement and Growth team at Meta Reality Labs (Los Angeles)</span><span class="sr-only"> · </span><span class="l-secondary">2021–2023</span><!-- TODO: confirm dates — tenure is one year; do not guess --><span class="sr-only"> — </span><span class="l-note">working on discovery for Quest — what people saw when they put the headset on</span></li>
     <li><span class="l-primary">Co-Founder &amp; Chief Design Officer&nbsp;·&nbsp;Pupil (London)</span><span class="sr-only"> · </span><span class="l-secondary">2015–2021</span><span class="sr-only"> — </span><span class="l-note">machine learning + spatial data company, ~$50M raised (now Digital Reality Corp); Innovate UK AI grant, 2019–20</span></li>
     <li><span class="l-primary">Earlier — Director at Ridley Scott Associates (London &amp; Los Angeles); Founder of cinematic-VR studio Virtualize (New York).</span></li>
     <li><span class="l-primary">Education — MA Visual Design, Royal College of Art (London); BA Art History, Northwestern University (Evanston).</span></li>

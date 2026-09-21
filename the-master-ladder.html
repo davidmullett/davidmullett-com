@@ -8,27 +8,27 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&display=swap" rel="stylesheet">
 <style>
-  :root{ --paper:#F3F0E7; --ink:#151412; --stone:#8B8677; --rule:#D6D1C2; --acc:#C8401E; --glass:#C6D3D1; --glasshi:#FFFFFF; --deep:#DFE7E4; }
-  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --paper:#151412; --ink:#EFEADB; --stone:#9B9587; --rule:#3A3731; --acc:#E8663F; --glass:#2A3634; --glasshi:#7C8B88; --deep:#1B2220; } }
-  :root[data-theme="dark"]{ --paper:#151412; --ink:#EFEADB; --stone:#9B9587; --rule:#3A3731; --acc:#E8663F; --glass:#2A3634; --glasshi:#7C8B88; --deep:#1B2220; }
+  :root{ --paper:#F3F0E7; --ink:#151412; --stone:#8B8677; --stone-text:#67635A; --rule:#D6D1C2; --acc:#C8401E; --acc-text:#C43E1D; --glass:#C6D3D1; --glasshi:#FFFFFF; --deep:#DFE7E4; }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --paper:#151412; --ink:#EFEADB; --stone:#9B9587; --stone-text:#9B9587; --rule:#3A3731; --acc:#E8663F; --acc-text:#E8663F; --glass:#2A3634; --glasshi:#7C8B88; --deep:#1B2220; } }
+  :root[data-theme="dark"]{ --paper:#151412; --ink:#EFEADB; --stone:#9B9587; --stone-text:#9B9587; --rule:#3A3731; --acc:#E8663F; --acc-text:#E8663F; --glass:#2A3634; --glasshi:#7C8B88; --deep:#1B2220; }
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--paper);color:var(--ink)}
   .sheet{max-width:1440px;margin:0 auto;padding:28px 24px 40px}
   .scroll{overflow-x:auto}
   svg.poster{width:100%;height:auto;min-width:1100px;display:block}
   .colophon{border-top:3px solid var(--ink);margin-top:16px;padding-top:12px;font-family:"Newsreader",Georgia,serif;display:grid;grid-template-columns:1fr 2fr;gap:20px}
-  .colophon .m{font-family:"IBM Plex Mono",Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone)}
-  .colophon p{margin:0;font-size:14px;line-height:1.5;color:var(--stone);max-width:80ch}
+  .colophon .m{font-family:"IBM Plex Mono",Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone-text)}
+  .colophon p{margin:0;font-size:14px;line-height:1.5;color:var(--stone-text);max-width:80ch}
   @media (max-width:760px){ .colophon{grid-template-columns:1fr} }
 
-  text{font-family:"IBM Plex Mono",Menlo,monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;fill:var(--stone)}
+  text{font-family:"IBM Plex Mono",Menlo,monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;fill:var(--stone-text)}
   text.ink{fill:var(--ink)}
-  text.acc{fill:var(--acc)}
+  text.acc{fill:var(--acc-text)}
   text.own{font-size:10.5px;letter-spacing:.06em}
   text.s{font-family:"Newsreader",Georgia,serif;font-size:16.5px;letter-spacing:0;text-transform:none;fill:var(--ink)}
   text.s.big{font-size:30px;font-weight:300}
   text.s.name{font-size:21px;font-weight:300}
-  text.s.dim{fill:var(--stone);font-style:italic;font-size:14px}
+  text.s.dim{fill:var(--stone-text);font-style:italic;font-size:14px}
   .ln{stroke:var(--ink);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
   .beam{stroke:var(--ink);fill:none;stroke-width:2.4;stroke-linecap:round}
   .hair{stroke:var(--ink);fill:none;stroke-width:1.2;stroke-linecap:round}
@@ -39,7 +39,7 @@
   .open.acc{fill:var(--paper);stroke:var(--acc)}
   .glass{fill:var(--glass)}
   @media print{
-    :root{--paper:#fff;--ink:#111;--stone:#666;--rule:#cfcfcf;--acc:#C8401E;--glass:#CCD8D6;--glasshi:#fff;--deep:#E6ECEA}
+    :root{--paper:#fff;--ink:#111;--stone:#666;--stone-text:#666;--rule:#cfcfcf;--acc:#C8401E;--acc-text:#C43E1D;--glass:#CCD8D6;--glasshi:#fff;--deep:#E6ECEA}
     @page{size:A3 portrait;margin:12mm}
     .sheet{max-width:none;padding:0}
     svg.poster{min-width:0}
@@ -186,7 +186,7 @@
   <text x="72" y="1024" class="ink">Rung 1</text>
   <text x="72" y="1042">the world · visible surface</text>
   <text x="72" y="1064" class="ink">at the glass</text>
-  <text x="330" y="1026" class="s name">The feed<tspan font-family="IBM Plex Mono, Menlo, monospace" font-size="12" letter-spacing=".12em" fill="var(--stone)">   the ranking behind every surface</tspan></text>
+  <text x="330" y="1026" class="s name">The feed<tspan font-family="IBM Plex Mono, Menlo, monospace" font-size="12" letter-spacing=".12em" fill="var(--stone-text)">   the ranking behind every surface</tspan></text>
   <text x="330" y="1046" class="own">owner: the platform · optimises: predicted engagement · benefits: the platform</text>
   <text x="330" y="1072" class="s">Capture is scored as delight;</text>
   <text x="330" y="1094" class="s">peace is scored as nothing.</text>
@@ -207,7 +207,7 @@
   <text x="72" y="1192">the industry ·</text>
   <text x="72" y="1208">glass-walled metrics</text>
   <text x="72" y="1230" class="ink">behind the glass</text>
-  <text x="330" y="1176" class="s name">The dashboard<tspan font-family="IBM Plex Mono, Menlo, monospace" font-size="12" letter-spacing=".12em" fill="var(--stone)">   the misreading, industrialised</tspan></text>
+  <text x="330" y="1176" class="s name">The dashboard<tspan font-family="IBM Plex Mono, Menlo, monospace" font-size="12" letter-spacing=".12em" fill="var(--stone-text)">   the misreading, industrialised</tspan></text>
   <text x="330" y="1196" class="own">owner: the business · optimises: retention · benefits: the business</text>
   <text x="330" y="1222" class="s">Leaving is scored as loss;</text>
   <text x="330" y="1244" class="s">staying is scored as health.</text>
@@ -227,7 +227,7 @@
   <text x="72" y="1324" class="ink">Rung 3</text>
   <text x="72" y="1342">science · code few will read</text>
   <text x="72" y="1364" class="ink">behind the glass</text>
-  <text x="330" y="1326" class="s name">The benchmark<tspan font-family="IBM Plex Mono, Menlo, monospace" font-size="12" letter-spacing=".12em" fill="var(--stone)">   the auditor's own tool</tspan></text>
+  <text x="330" y="1326" class="s name">The benchmark<tspan font-family="IBM Plex Mono, Menlo, monospace" font-size="12" letter-spacing=".12em" fill="var(--stone-text)">   the auditor's own tool</tspan></text>
   <text x="330" y="1346" class="own">owner: whoever ships the system · optimises: a passing score · benefits: the publisher</text>
   <text x="330" y="1372" class="s">The checker disposes of what it cannot</text>
   <text x="330" y="1394" class="s">score, and the headline never says so.</text>
@@ -256,7 +256,7 @@
   <text x="72" y="1540" class="ink">in front of the glass —</text>
   <text x="72" y="1556" class="ink">and where you read</text>
   <text x="72" y="1572" class="ink">the other three</text>
-  <text x="330" y="1502" class="s name">The narrator<tspan font-family="IBM Plex Mono, Menlo, monospace" font-size="12" letter-spacing=".12em" fill="var(--stone)">   your own life, from inside</tspan></text>
+  <text x="330" y="1502" class="s name">The narrator<tspan font-family="IBM Plex Mono, Menlo, monospace" font-size="12" letter-spacing=".12em" fill="var(--stone-text)">   your own life, from inside</tspan></text>
   <text x="330" y="1522" class="own">owner: you · optimises: coherence · benefits: you</text>
   <text x="330" y="1548" class="s">The feeling of certainty is read</text>
   <text x="330" y="1570" class="s">as evidence of truth.</text>
