@@ -1,1 +1,9 @@
 .DS_Store
+
+# Local secrets — never commit. No Cal.com credential is used by the current
+# embed integration; these entries exist so a future API v2 integration cannot
+# leak one by accident.
+.env
+.env.*
+!.env.example
+.dev.vars
