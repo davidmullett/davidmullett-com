@@ -88,7 +88,8 @@ header { margin-bottom:56px; }
 .hero { font-family:var(--serif); font-size:var(--t-hero); font-weight:400; line-height:1.34;
   letter-spacing:-0.012em; color:var(--ink); margin-bottom:32px; text-wrap:pretty; }
 /* hero body: short blocks at body rhythm; the beats sit a step up with room around them */
-.hero-body .beat { font-size:var(--t-lede); margin:1.8em 0; }
+.hero-body .beat, .beat { font-size:var(--t-lede); margin:1.8em 0; }
+.breathe { margin:1.9em 0; }
 .hero-body p:last-child { margin-bottom:0; }
 .header-meta + .header-meta { margin-top:2px; }
 .header-meta { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2);
@@ -96,9 +97,9 @@ header { margin-bottom:56px; }
 .header-meta a { font-family:var(--mono); font-size:var(--t-label); color:var(--ink-2); text-decoration:none; letter-spacing:0.05em; }
 .header-meta a:hover { color:var(--ink); }
 
-section { margin-bottom:52px; }
-h2 { font-family:var(--mono); font-size:var(--t-label); font-weight:400; letter-spacing:0.1em;
-  text-transform:uppercase; color:var(--ink-2); margin-bottom:24px; margin-left:-80px;
+section { margin-bottom:88px; }
+h2 { font-family:var(--mono); font-size:var(--t-meta); font-weight:400; letter-spacing:0.1em;
+  text-transform:uppercase; color:var(--ink); margin-bottom:30px; margin-left:-80px;
   width:calc(100% + 80px); line-height:1.4; }
 p { max-width:54ch; margin-bottom:1.2em; font-size:var(--t-body); line-height:1.65; }
 p:last-child { margin-bottom:0; }
@@ -107,6 +108,8 @@ p:last-child { margin-bottom:0; }
 /* Ledger — shared component, verbatim from about.html (title / meta / note) */
 .ledger { list-style:none; max-width:54ch; border-top:1px solid var(--rule-lt); }
 .ledger li { display:flex; flex-direction:column; padding:12px 0; border-bottom:1px solid var(--rule-lt); gap:3px; }
+.ledger.compact li { padding:8px 0; gap:1px; }
+.ledger.compact .l-note { margin-top:0; }
 .l-primary { font-size:var(--t-aux); line-height:1.45; color:var(--ink); }
 .l-secondary { font-size:var(--t-label); font-family:var(--mono); font-weight:300; color:var(--ink-2); letter-spacing:0.04em; }
 .l-note { font-size:var(--t-aux); line-height:1.55; color:var(--ink-2); max-width:50ch; margin-top:2px; }
@@ -205,9 +208,11 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
   <p>The forms of attention easiest for machines to see are not necessarily the ones most valuable to a human life.</p>
   <p>A system can measure a two-hour scroll in exquisite detail. An hour of stillness, concentration or chosen absence may leave no record at all.</p>
   <p>That matters more as the interface changes.</p>
-  <p>A feed selects what you see.<br>Chat participates in what you think through.<br>Agents begin to participate in what gets done.</p>
+  <p class="breathe">A feed selects what you see.<br>Chat participates in what you think through.<br>Agents begin to participate in what gets done.</p>
   <p>I want to understand what happens to human attention as that machinery moves beyond the screen — scientifically, culturally and experientially.</p>
   <p>And I’m investigating the opposite extreme: attention deliberately trained toward its upper register.</p>
+  <p>Attention is not only something systems compete to capture. It is a human capacity that can itself be trained: toward greater stability, sensitivity and choice.</p>
+  <p>That makes the question larger than digital wellbeing: what are our machines training attention toward, and what might we deliberately train it toward instead?</p>
   <p>I’m assembling researchers, builders, artists and contemplatives who understand different pieces of that territory: how attention is captured, how systems learn from it, how attention can be trained, and what our instruments fail to see.</p>
   <p>The work will become a book and a wider body of research, writing and experience.</p>
   <p>If you understand a part of this better than I do, I’d like an hour.</p>
@@ -231,38 +236,38 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
   <p>That search became Loopzero.</p>
   <p>Its first important finding was not the one I expected. The instrument I had built to detect degradation could lose sight of the very cases I cared about — and I could not see the error from inside the analysis.</p>
   <p>That failure sharpened the larger question:</p>
-  <p>What happens when a system shaping human attention learns only from the parts of us that leave a signal?</p>
+  <p class="beat">What happens when a system shaping human attention learns only from the parts of us that leave a signal?</p>
   <p>Each new interface changes the question.</p>
-  <p>Feed. Headset. Chat. Agent.</p>
+  <p class="breathe">Feed. Headset. Chat. Agent.</p>
   <p>The surface changes. The loop underneath becomes more intimate.</p>
 </section>
 
 <!-- THE INSTRUMENT -->
-<!-- TODO: figures reverted to "most of my control group" at David's direction, 22 Sept. The manuscript states 69.2% — 3,292 of 4,755 (paper_main.pdf §2.2 and Fig. B) if the figures are ever wanted back. -->
+<!-- Figures verified against loopzero-paper-public/manuscript_shadow_classes/build/paper_main.pdf,
+     §2.2 and the Fig. B caption: "69.2% of the nominal control class — 3,292 of 4,755". -->
 <section>
   <h2>The instrument</h2>
-  <p>Two years ago I built a detector for systems that degrade. Earlier this year, I ran it.</p>
-  <p>At first, it worked.</p>
-  <p>The numbers came back the way I had predicted.</p>
-  <p>But I had pre-registered the analysis. Before seeing the results, I had written down what would count as a real finding and timestamped the rule.</p>
-  <p>Checked against that rule, most of my control group could no longer be evaluated. They had left the platform, while my labelling rule required someone to remain active in order to be marked as harmed.</p>
-  <p>Everyone who quit had been recorded as fine.</p>
+  <p>Two years ago I built an instrument to detect systems that degrade.</p>
+  <p>At first, it appeared to work. The numbers came back the way I had predicted.</p>
+  <p>Then I checked them against the rules I had registered before seeing the result.</p>
+  <p>69.2% of my control group — 3,292 of 4,755 — could no longer be evaluated. They had left the platform, while my labelling rule required someone to remain active in order to be marked as harmed.</p>
+  <p class="breathe">Everyone who quit had been recorded as fine.</p>
   <p>The cases the instrument could no longer see had been absorbed into the healthy class.</p>
   <p>I had built the thing to find them.</p>
-  <p>I rewrote the analysis, ran it again under rules I couldn’t move, and my original claim failed.</p>
-  <p>I published the failure.</p>
+  <p>I rewrote the analysis under rules I couldn’t move. My original claim failed.</p>
+  <p class="breathe">I published the failure.</p>
   <p>It left me with a constraint I now carry into everything else:</p>
   <p>An instrument cannot count what never reaches it.</p>
   <p>Absence is not necessarily a low score.</p>
   <p>Sometimes it is no score at all.</p>
-  <p>This is one layer of the attention problem, not the whole of it.</p>
-  <p>But it changed how I see the rest.</p>
+  <p>I found the error in my own instrument.</p>
+  <p>The larger question is what happens when the instruments belong to systems that learn from us.</p>
 </section>
 
 <!-- CHECK MY WORK -->
 <section>
   <h2>Check my work</h2>
-  <ul class="ledger">
+  <ul class="ledger compact">
     <!-- TODO: confirm arXiv identifier and v2 status before publishing -->
     <li><span class="l-secondary">Paper<span class="sr-only">:</span></span><span class="l-primary"><em>Absorbing Shadow Classes in Conjunctive Label Rules</em></span><span class="l-note">Submitted to arXiv, August 2026 · <a href="https://github.com/davidmullett/loopzero-paper-public/blob/main/manuscript_shadow_classes/build/paper_main.pdf" target="_blank" rel="noopener">manuscript PDF</a></span></li>
     <li><span class="l-secondary">Prior preprint<span class="sr-only">:</span></span><span class="l-primary"><em>Benchmarking Recursive-Collapse Warning Claims</em></span><span class="l-note"><a href="https://arxiv.org/abs/2606.00329" target="_blank" rel="noopener">arXiv 2606.00329</a> · superseded by the above, left public</span></li>
@@ -279,7 +284,7 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
   <p>I’m particularly interested in three kinds of conversation.</p>
   <ul class="ledger">
     <li><span class="l-primary">The book</span><span class="l-note">Researchers, builders, artists and contemplatives working on attention, AI, interface design, behaviour or training.</span></li>
-    <li><span class="l-primary">Creative work</span><span class="l-note">Direction, narrative and experience design for teams working on how people encounter and attend to AI.</span></li>
+    <li><span class="l-primary">Creative work</span><span class="l-note">Direction, narrative and experience design for teams building the interfaces through which people encounter AI.</span></li>
     <li><span class="l-primary">Pressure on the claims</span><span class="l-note">People who think I’m wrong and can show me where.</span></li>
   </ul>
   <p>If you understand a part of this better than I do, I’d like an hour.</p>
