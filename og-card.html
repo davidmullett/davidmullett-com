@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>OG card source — davidmullett.com (v4)</title>
+<title>OG card source — davidmullett.com (v5)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400&family=IBM+Plex+Mono:wght@500&display=block" rel="stylesheet">
@@ -11,36 +11,51 @@
   html, body { width: 1200px; height: 630px; background: #f1f0ec; overflow: hidden; }
   body { position: relative; }
 
-  /* THE LINE — first sentence of the hero, site serif, flush left at x=120 */
-  .line {
+  /* THE MARK — canonical site spiral, at registration scale, not logo scale */
+  .mark {
     position: absolute;
-    left: 120px; top: 150px;
-    width: 960px;
+    left: 120px; top: 144px;
+    line-height: 0;
+  }
+  .mark svg { display: block; overflow: visible; }
+  .mark .spiral { stroke: #1a1710; stroke-width: 2; fill: none; stroke-linecap: round; }
+  .mark .core { fill: #1a1710; }
+
+  /* THE NAME — small, mono, tracked like the site wordmark */
+  .name {
+    position: absolute;
+    left: 120px; top: 292px;
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+    color: #1a1710;
+    line-height: 1;
+  }
+
+  /* THE DESCRIPTOR — site serif, the card's primary reading weight */
+  .descriptor {
+    position: absolute;
+    left: 120px; top: 356px;
+    width: 860px;
     font-family: 'IBM Plex Serif', Georgia, serif;
     font-weight: 400;
     font-size: 54px;
     line-height: 1.28;
     letter-spacing: -0.012em;
     color: #1a1710;
-    text-wrap: pretty;
-  }
-
-  /* THE NAME — small, mono, tracked like the wordmark, beneath */
-  .name {
-    position: absolute;
-    left: 120px; bottom: 96px;
-    font-family: 'IBM Plex Mono', 'Courier New', monospace;
-    font-weight: 500;
-    font-size: 20px;
-    letter-spacing: 0.17em;
-    text-transform: uppercase;
-    color: #1a1710;
-    line-height: 1;
   }
 </style>
 </head>
 <body>
-  <p class="line">Every screen you touch is keeping score — and the score reads you&nbsp;backwards.</p>
+  <span class="mark">
+    <svg width="100" height="100" viewBox="-8 -8 96 96" xmlns="http://www.w3.org/2000/svg">
+      <path class="spiral" pathLength="1" d="M40.15,41.3 Q40,40.65 40,40 Q40,8 66,14 Q82,25 80,48 Q74,69 50,74 Q23,78 9,56 Q-4,34 8,14 Q20,-4 42,2 Q66,8 76,30 Q84,54 70,68 Q54,82 34,80 Q14,78 6,62 Q-2,46 8,34 Q18,22 34,20 Q52,18 60,34 Q68,50 58,62 Q48,74 36,70 Q24,66 22,54 Q20,44 28,38 Q36,32 44,36 Q52,40 50,48 Q48,56 42,54 Q38,52 38,48 Q38,44 41,42"/>
+      <circle class="core" cx="41" cy="42" r="2"/>
+    </svg>
+  </span>
   <span class="name">David Mullett</span>
+  <p class="descriptor">Designer and writer working on screens, attention and&nbsp;AI.</p>
 </body>
 </html>
