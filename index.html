@@ -309,13 +309,15 @@ Cal("ui", {
 
 /* embed.js 1.6.0 opens the modal from a document click listener but does not
    preventDefault, so a real <a href> would navigate before the modal renders.
-   Suppress the default only for our own anchors, and only once the embed is
-   actually loaded — so no-JS, failed-load, and cmd/middle-click all still
-   follow the href. */
+   Suppress the default only for our own anchors, and only once embed.js has
+     actually executed. Gate on Cal.version, not Cal.loaded: the stub sets
+     .loaded the instant it appends the script tag, so it stays true even if
+     the script never arrives, which would leave a dead link. .version is set
+     inside embed.js. No-JS, failed-load and cmd/middle-click follow the href. */
 document.querySelectorAll('a[data-cal-link]').forEach(function (a) {
   a.addEventListener('click', function (e) {
     if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    if (window.Cal && window.Cal.loaded) e.preventDefault();
+    if (window.Cal && window.Cal.version) e.preventDefault();
   });
 });
 </script>
