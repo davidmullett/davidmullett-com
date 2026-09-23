@@ -7,3 +7,7 @@
 .env.*
 !.env.example
 .dev.vars
+
+# Generated at build time by build.sh — never commit a static copy.
+version.json
+*.bak
