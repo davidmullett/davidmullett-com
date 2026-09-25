@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="only light">
 <meta name="theme-color" content="#f1f0ec">
 <title>David Mullett</title>
-<meta name="description" content="Writing and research on what happens to human attention as intelligent systems move beyond the screen.">
+<meta name="description" content="Every screen you touch is keeping score. The score reads you backwards. And the part of you that would notice is the part it can’t see. Thumb World — a book about the rule of thumb, and the people who live outside it.">
 
 <link rel="canonical" href="https://davidmullett.com/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -19,15 +19,15 @@
 <meta property="og:site_name" content="David Mullett">
 <meta property="og:url" content="https://davidmullett.com/">
 <meta property="og:title" content="David Mullett">
-<meta property="og:description" content="Writing and research on what happens to human attention as intelligent systems move beyond the screen.">
-<meta property="og:image" content="https://davidmullett.com/og-image-v5.png">
+<meta property="og:description" content="Every screen you touch is keeping score. The score reads you backwards. And the part of you that would notice is the part it can’t see. Thumb World — a book about the rule of thumb, and the people who live outside it.">
+<meta property="og:image" content="https://davidmullett.com/og-image-v6.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="David Mullett">
-<meta name="twitter:description" content="Writing and research on what happens to human attention as intelligent systems move beyond the screen.">
-<meta name="twitter:image" content="https://davidmullett.com/og-image-v5.png">
+<meta name="twitter:description" content="Every screen you touch is keeping score. The score reads you backwards. And the part of you that would notice is the part it can’t see. Thumb World — a book about the rule of thumb, and the people who live outside it.">
+<meta name="twitter:image" content="https://davidmullett.com/og-image-v6.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +40,7 @@
   --rule-lt:#d8d4c8; --rule-2:#c9c4b6; --ph:#1faa5e; --ph-d:#157a43; --ph-border:rgba(45,214,122,.5); --ph-dim:rgba(45,214,122,.07);
   --serif:'IBM Plex Serif',Georgia,serif; --mono:'IBM Plex Mono','Courier New',monospace;
   --t-label-xs:0.52rem; --t-label:0.56rem; --t-meta:0.66rem; --t-aux:0.86rem; --t-label-lg:0.92rem;
-  --t-body:1rem; --t-lede:1.04rem; --t-hero:1.6rem; --t-hero-sm:1.42rem; --t-title:1.7rem; --t-title-sm:1.46rem;
+  --t-body:1rem; --t-lede:1.04rem; --t-sub:1.24rem; --t-hero:1.6rem; --t-hero-sm:1.42rem; --t-title:1.7rem; --t-title-sm:1.46rem;
 }
 html { font-size:18px; -webkit-text-size-adjust:100%; text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased; font-feature-settings:"liga" 1,"kern" 1,"onum" 1;
@@ -90,6 +90,15 @@ header { margin-bottom:56px; }
 /* hero body: short blocks at body rhythm; the beats sit a step up with room around them */
 .hero-body .beat, .beat { font-size:var(--t-lede); margin:1.8em 0; }
 .breathe { margin:1.9em 0; }
+/* dictionary entry above the hero — mono, quiet, hairline beneath */
+.defn { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2);
+  letter-spacing:0.04em; line-height:1.8; max-width:54ch; margin-bottom:22px;
+  padding-bottom:12px; border-bottom:1px solid var(--rule-lt); }
+.defn .term { text-transform:uppercase; letter-spacing:0.1em; color:var(--ink); }
+.defn .pos { font-style:italic; }
+/* display heading inside a section, below the mono label */
+h3.name { font-family:var(--serif); font-size:var(--t-sub); font-weight:400; line-height:1.3;
+  letter-spacing:-0.012em; color:var(--ink); margin-bottom:26px; }
 .hero-body p:last-child { margin-bottom:0; }
 .header-meta + .header-meta { margin-top:2px; }
 .header-meta { font-family:var(--mono); font-size:var(--t-label); font-weight:300; color:var(--ink-2);
@@ -141,7 +150,7 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
       "@type":"Person","@id":"https://davidmullett.com/#person",
       "name":"David Mullett","url":"https://davidmullett.com/",
       "jobTitle":"Independent Researcher",
-      "description":"Writing and research on what happens to human attention as intelligent systems move beyond the screen.",
+      "description":"Every screen you touch is keeping score. The score reads you backwards. And the part of you that would notice is the part it can’t see. Thumb World — a book about the rule of thumb, and the people who live outside it.",
       "email":"d@loopzero.org",
       "sameAs":["https://orcid.org/0009-0004-2543-1664","https://scholar.google.com/citations?user=3SninzcAAAAJ","https://github.com/davidmullett"],
       "affiliation":{"@type":"Organization","name":"Loopzero","url":"https://loopzero.org"},
@@ -161,6 +170,8 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
 <nav aria-label="Site navigation">
   <ul class="nav-list">
     <li><a href="/" aria-current="page">David Mullett</a></li>
+    <li><a href="#check">Check my work</a></li>
+    <li><a href="https://cal.com/david-mullett-8mcmpk/30min" target="_blank" rel="noopener">Half an hour</a></li>
     <li><a href="#getintouch">Contact</a></li>
   </ul>
 </nav>
@@ -173,17 +184,14 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
     </svg>
   </a>
 
-  <h1 class="hero">Every screen you touch is keeping score. And the score reads you&nbsp;backwards.</h1>
+  <p class="defn"><span class="term">Rule of thumb</span> <span class="pos">n.</span> Any rough measure, trusted from practice rather than proof.</p>
+
+  <h1 class="hero">Every screen you touch is keeping score. The score reads you backwards. And the part of you that would notice is the part it can’t see.</h1>
 
   <div class="hero-body">
-  <p>A sleepless night of scrolling leaves a perfect trail: session length, returns, taps, reactions. The hour you put the phone down leaves nothing.</p>
-  <p class="beat">Capture leaves evidence of itself. Freedom, none.</p>
-  <p>Below the glass, machinery turns what it can see of your attention into instructions for what happens to you next. The result comes back through your interface, changes your behaviour, produces new signals, and the loop begins again.</p>
-  <p>The feed selected what appeared. Chat enters the exchange. Agents begin to act on its result. The machinery shaping attention is moving beyond the screen, into places where the interface itself begins to disappear.</p>
   <p>I spent twenty years above the glass, designing what people see: moving image, cinematic VR, spatial computing, and eventually Engagement and Growth at Meta Reality Labs.</p>
   <p class="beat">Then I went below it.</p>
-  <p>I followed the loop from the feed to the dashboard, from the dashboard to the benchmark, and finally to the story we tell ourselves about all three.</p>
-  <p>I’m interested in both ends of that loop: what happens to human attention as the systems shaping it become more intelligent and intimate — and what attention itself can become when it is deliberately trained rather than captured.</p>
+  <p class="beat">The check has to come from outside the loop. That’s what I went looking for.</p>
   </div>
 
   <div class="header-meta">
@@ -196,22 +204,75 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
   </div>
 </header>
 
+<!-- THE PROBLEM -->
+<section id="problem">
+  <h2>The problem</h2>
+  <h3 class="name">Rule of thumb</h3>
+  <p>Here is what a system knows about your worst night. It knows you opened the app at 11:04, and 11:31, and 12:02, 12:20, 12:33, 12:41. It knows each session to the second and each scroll to the pixel. It knows the moment you stopped. By 2:47 it has several hundred events from you. On every dashboard that reads this record, you are a success.</p>
+  <p>Here is what it knows about your best hour. Nothing. You put the phone face-down and sat with someone, or walked, or grieved. There is no entry. Not a low score. No row.</p>
+  <p class="beat">Machines only count what touches them.</p>
+  <p>English already had a phrase for a rough measure trusted from habit rather than proof. We never meant it literally. But every system that decides something about you — what you’re shown, what you’re offered, whether you’re flagged, what a model trained on people like you will do on your behalf — runs on a measure that was never checked against the thing it claims to measure. Not hidden. Never run, because the number kept coming back clean.</p>
+  <p>The captured thumb scores as healthy. The thumb that put the phone down scores as absent. The sick read as well. The well read as gone.</p>
+  <p class="beat">Backwards. Both of them. Every time.</p>
+  <p>There is a thumb on the scale. It isn’t pressing down. It’s the only thing the scale can feel.</p>
+</section>
+
+<!-- THE LOOP -->
+<section id="loop">
+  <h2>The loop</h2>
+  <p>Nothing stops at a reading. The reading becomes the instruction. The system serves more of what it saw; you respond, because your surroundings are now built for the version of you it recorded; the next reading is sharper, in the same direction; it trains the next model; the model acts.</p>
+  <p class="beat">The machines don’t just read your story backwards. They write your next chapter from the backwards reading.</p>
+  <p>Run that for a year and the picture of you is wrong. Run it for a decade and the picture stops being wrong, because you’ve been shaped into it.</p>
+  <p>And the surface where you could once watch this happen is thinning. A feed had a screen you could point at. A dashboard had column headers written in words. An agent that acts for you has no surface at all. As the work is handed over, the judgements move underground — out of reach of anyone who might check them.</p>
+  <p class="beat">The era of no screens is the era of invisible scales.</p>
+</section>
+
+<!-- THE COMFORT -->
+<section id="comfort">
+  <h2>The comfort</h2>
+  <p>The old dystopias needed a villain. A boot, a Ministry, a Controller. This one needs none. Nobody drew the picture. Everyone who built these instruments wanted the right answer — the engineers, the researchers, the people who wrote the rules. I know, because I was one of them. Twice.</p>
+  <p>Huxley came closest: citizens who loved their servitude, a gramme better than a damn. But soma needed a pharmacist. What we built needs no one. It’s administered by your own thumb, and it produces not happiness but something quieter.</p>
+  <p class="beat">Everyone is fine.</p>
+  <p>Every number is good. The capacity to notice what’s missing was the first thing that stopped leaving a trace, so there’s nothing left to notice with. Not a boot. A pleasant hum. Not the end of the world — the end of the alarm.</p>
+</section>
+
+<!-- THE NARRATOR -->
+<section id="narrator">
+  <h2>The narrator</h2>
+  <p>There’s one more instrument, and it’s the one you run on yourself.</p>
+  <p>Asked how you are, you consult the record — your memory, assembled from what can be told. And what can be told is what left a mark. The hours that actually made the week leave you nothing to say about them. So the story comes back coherent, and coherence feels like accuracy, and you say: <em>I’m fine. I’m just relaxing. This is my choice.</em></p>
+  <p>There’s a hole in your field of vision where the nerve enters the eye. Your brain fills it so perfectly you have never once seen it. The loop fills in the missing person as fine the way the brain fills in the hole as scenery.</p>
+  <p>I know this from the inside. I spent two years building an instrument to detect harm before it became visible. It returned the result I wanted. Then a rule I had sealed against myself before opening the data showed that 3,292 of my 4,755 controls had left the platform — and my own definition required a person to still be present in order to count as harmed. Everyone who quit had been filed as healthy. I built the thing to find them, and I could not see the error from anywhere inside my own work. I published the failure.</p>
+  <p class="beat">The world this builds, I call <em>Thumb World</em>.</p>
+  <p>After the digit that swipes, likes and trains. A world in the theme-park sense: an enclosure, engineered, mistaken for nature by the people inside it.</p>
+</section>
+
 <!-- THE INVESTIGATION -->
-<section>
+<section id="investigation">
   <h2>The investigation</h2>
-  <p>The forms of attention easiest for machines to see are not necessarily the ones most valuable to a human life.</p>
-  <p>A system can measure a two-hour scroll in exquisite detail. An hour of stillness, concentration or chosen absence may leave no record at all.</p>
-  <p>That matters more as the interface changes.</p>
-  <p class="breathe">A feed shapes what gets your attention.<br>Chat becomes a thinking partner.<br>Agents act on your behalf.</p>
-  <p>I want to understand what happens to human attention as that machinery moves beyond the screen — scientifically, culturally and experientially.</p>
-  <p>But I’m equally interested in the other end of the spectrum: what human attention can become when it is deliberately cultivated — through contemplative practice, deep listening, art and other forms of sustained attention.</p>
-  <p>I’m assembling researchers, builders, artists and contemplatives who understand different pieces of this territory: how attention is shaped, how intelligent systems learn from it, how attention can be cultivated, and what our instruments fail to see.</p>
-  <p>The work will become a book and a wider body of research, writing and experience.</p>
+  <p>I’m writing <em>Thumb World</em>, a book about the rule of thumb and the people who live outside it — the scientists, teachers and traditions who train attention rather than capture it: contemplative practice, deep listening, art, and the room with no feed in it.</p>
+  <p>A better instrument isn’t the answer. A better instrument has a better builder with the same blind spot. What survives is a check that sits outside the loop — and territory the map can’t reach: the hour spent well, chosen for its own sake, because nothing will ever record it.</p>
+  <p>Nobody has measured how common the error is. The test is cheap: for every published benchmark, what happens to the cases it can’t score, and does the number say so. That census is the next piece of work.</p>
+  <p>Over the next twelve months I’m interviewing the people who understand pieces of this better than I do: the researchers who build these instruments, the people who study them, and the people who train attention without any of them.</p>
   <p>If you understand a part of this better than I do, I’d like <a href="https://cal.com/david-mullett-8mcmpk/30min" data-cal-link="david-mullett-8mcmpk/30min" data-cal-config='{"layout":"month_view"}' data-cal-origin="https://cal.com">half an hour of your time</a>.</p>
 </section>
 
+<!-- CHECK MY WORK -->
+<section id="check">
+  <h2>Check my work</h2>
+  <ul class="ledger compact">
+    <li><span class="l-secondary">Pre-registered audit<span class="sr-only">:</span></span><span class="l-primary">The KKBOX / WSDM Cup 2018 churn dataset and Sierra’s τ-bench harnesses</span><span class="l-note">Plan written, hashed and registered before either was opened; both returned negative on the registered hypothesis. Seven further findings, each with an evidence grade; eleven deviations logged. <a href="https://loopzero.org/audit" target="_blank" rel="noopener">Write-up</a> · <a href="https://github.com/davidmullett/loopzero-audit-2026" target="_blank" rel="noopener">record</a></span></li>
+    <li><span class="l-secondary">Manuscript<span class="sr-only">:</span></span><span class="l-primary"><em>Absorbing Shadow Classes in Conjunctive Label Rules</em></span><span class="l-note">2026 · available on request</span></li>
+    <li><span class="l-secondary">Prior preprint<span class="sr-only">:</span></span><span class="l-primary"><em>Benchmarking Recursive-Collapse Warning Claims</em></span><span class="l-note"><a href="https://arxiv.org/abs/2606.00329" target="_blank" rel="noopener">arXiv 2606.00329</a> · superseded by the above, left public</span></li>
+    <li><span class="l-secondary">Pre-registrations<span class="sr-only">:</span></span><span class="l-primary"><a href="https://osf.io/ksm3n" target="_blank" rel="noopener">osf.io/ksm3n</a> · <a href="https://osf.io/wka72" target="_blank" rel="noopener">osf.io/wka72</a> · <a href="https://osf.io/7bvgz" target="_blank" rel="noopener">osf.io/7bvgz</a></span><span class="l-note">Timestamped before the results · ksm3n DOI 10.17605/OSF.IO/KSM3N</span></li>
+    <li><span class="l-secondary">Code, data and deviations log<span class="sr-only">:</span></span><span class="l-primary"><a href="https://github.com/davidmullett/loopzero-paper-public" target="_blank" rel="noopener">github.com/davidmullett/loopzero-paper-public</a></span></li>
+    <li><span class="l-secondary">Research program<span class="sr-only">:</span></span><span class="l-primary"><a class="lz" href="https://loopzero.org/" target="_blank" rel="noopener">loopzero.org</a></span></li>
+    <li><span class="l-secondary">ORCID<span class="sr-only">:</span></span><span class="l-primary"><a href="https://orcid.org/0009-0004-2543-1664" target="_blank" rel="noopener">0009-0004-2543-1664</a></span></li>
+  </ul>
+</section>
+
 <!-- THE THROUGHLINE -->
-<section>
+<section id="throughline">
   <h2>The throughline</h2>
   <p>I came to this sideways. I studied art history at Northwestern, then found film through post-production. Cubism had shown me a problem that stayed with me: what happens to an image when there is no single fixed viewpoint?</p>
   <p>At the Royal College of Art I trained as a designer. Then I carried the question into moving image, directing at Ridley Scott Associates.</p>
@@ -224,32 +285,17 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
   <p class="beat">What happens when intelligent systems learn about us from what we do, but cannot learn from what we choose not to&nbsp;do?</p>
   <p>Each new interface changes the question.</p>
   <p class="breathe">Feed. Headset. Chat. Agent. Post-screen.</p>
-  <p>The interface disappears. The loop remains, increasingly deciding what reaches you.</p>
+  <p>The interface thins. The loop does not, and it decides more of what reaches you.</p>
 </section>
 
-
 <!-- BACKGROUND -->
-<section>
+<section id="background">
   <h2>Background</h2>
   <ul class="ledger compact">
     <li><span class="l-primary">Independent Researcher&nbsp;·&nbsp;Loopzero</span><span class="sr-only"> · </span><span class="l-secondary">2023–present</span></li>
-    <li><span class="l-primary">Lead Product Designer, Engagement &amp; Growth&nbsp;·&nbsp;Meta Reality Labs</span><span class="sr-only"> · </span><span class="l-secondary">Los Angeles&nbsp;·&nbsp;2021–2023</span></li>
+    <li><span class="l-primary">Lead Product Designer, Engagement &amp; Growth&nbsp;·&nbsp;Meta Reality Labs</span><span class="sr-only"> · </span><span class="l-secondary">Los Angeles&nbsp;·&nbsp;2021–2022</span></li>
     <li><span class="l-primary">Co-Founder &amp; Chief Design Officer&nbsp;·&nbsp;Pupil</span><span class="sr-only"> · </span><span class="l-secondary">London&nbsp;·&nbsp;2015–2021</span><span class="sr-only"> — </span><span class="l-note">Machine learning and spatial data company; approximately $50M raised. Now <a href="https://drc.co/" target="_blank" rel="noopener">Digital Reality Corp</a>.</span><span class="sr-only"> — </span><span class="l-secondary">UK Tier 1 Exceptional Talent visa&nbsp;·&nbsp;digital&nbsp;technology</span></li>
-    <li><span class="l-primary">Earlier — Director at Ridley Scott Associates; founder of Virtualize; directed the VR for Samsung × Punchdrunk’s <em>Believe Your Eyes</em>, a 2017 Cannes Lions Silver Lion recipient.</span></li>
-  </ul>
-</section>
-
-<!-- CHECK MY WORK -->
-<section>
-  <h2>Check my work</h2>
-  <ul class="ledger compact">
-    <li><span class="l-secondary">Pre-registered audit<span class="sr-only">:</span></span><span class="l-primary">The KKBOX / WSDM Cup 2018 churn dataset and Sierra’s τ-bench harnesses</span><span class="l-note">Plan written, hashed and registered before either was opened; both returned negative on the registered hypothesis. Seven further findings, each with an evidence grade; eleven deviations logged. <a href="https://loopzero.org/audit" target="_blank" rel="noopener">Write-up</a> · <a href="https://github.com/davidmullett/loopzero-audit-2026" target="_blank" rel="noopener">record</a></span></li>
-    <li><span class="l-secondary">Manuscript<span class="sr-only">:</span></span><span class="l-primary"><em>Absorbing Shadow Classes in Conjunctive Label Rules</em></span><span class="l-note">2026 · available on request</span></li>
-    <li><span class="l-secondary">Prior preprint<span class="sr-only">:</span></span><span class="l-primary"><em>Benchmarking Recursive-Collapse Warning Claims</em></span><span class="l-note"><a href="https://arxiv.org/abs/2606.00329" target="_blank" rel="noopener">arXiv 2606.00329</a> · superseded by the above, left public</span></li>
-    <li><span class="l-secondary">Pre-registrations<span class="sr-only">:</span></span><span class="l-primary"><a href="https://osf.io/ksm3n" target="_blank" rel="noopener">osf.io/ksm3n</a> · <a href="https://osf.io/wka72" target="_blank" rel="noopener">osf.io/wka72</a> · <a href="https://osf.io/7bvgz" target="_blank" rel="noopener">osf.io/7bvgz</a></span><span class="l-note">Timestamped before the results · ksm3n DOI 10.17605/OSF.IO/KSM3N</span></li>
-    <li><span class="l-secondary">Code, data and deviations log<span class="sr-only">:</span></span><span class="l-primary"><a href="https://github.com/davidmullett/loopzero-paper-public" target="_blank" rel="noopener">github.com/davidmullett/loopzero-paper-public</a></span></li>
-    <li><span class="l-secondary">Research program<span class="sr-only">:</span></span><span class="l-primary"><a class="lz" href="https://loopzero.org/" target="_blank" rel="noopener">loopzero.org</a></span></li>
-    <li><span class="l-secondary">ORCID<span class="sr-only">:</span></span><span class="l-primary"><a href="https://orcid.org/0009-0004-2543-1664" target="_blank" rel="noopener">0009-0004-2543-1664</a></span></li>
+    <li><span class="l-primary">Earlier — Director at Ridley Scott Associates; founder of Virtualize; executive producer and creative direction on the virtual reality for Punchdrunk’s <a href="https://www.punchdrunk.com/work/believe-your-eyes/" target="_blank" rel="noopener"><em>Believe Your Eyes</em></a> for Samsung, directed by Felix Barrett, Hector Harkness and Kath Duggan — Cannes Silver Lion, Entertainment, 2017.</span></li>
   </ul>
 </section>
 
@@ -270,7 +316,8 @@ footer { margin-top:80px; padding-top:20px; border-top:1px solid var(--rule-lt);
 
 <footer>
   <div class="footer-name">David Mullett</div>
-  <p class="footer-line">Designer and writer working on screens, attention and AI.</p>
+  <p class="footer-line">Writing <em>Thumb World</em> — a book about the instruments that measure attention, and what they can’t see.</p>
+  <div class="footer-text" style="margin-bottom:12px"><span>Updated September 2026</span></div>
   <div class="footer-text">
     <a href="https://orcid.org/0009-0004-2543-1664" target="_blank" rel="noopener">ORCID&nbsp;0009-0004-2543-1664</a>
     <a href="https://scholar.google.com/citations?user=3SninzcAAAAJ" target="_blank" rel="noopener">Google&nbsp;Scholar</a>
